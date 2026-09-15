@@ -1,9 +1,10 @@
 # AhaSlides Slide Plugin Platform Policy
 
 - **Edition:** 1.0 (internal)
+- **Version:** 1.1
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
 - **Status:** Draft for review
-- **Last updated:** 11 September 2026
+- **Last updated:** 15 September 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -54,6 +55,24 @@ submissions and answer within the same week.
  not fix the issues for you. The fixes are yours to make.
 - **Open backlog.** The pending-review queue is transparent: every slide developer can see what is
  waiting.
+
+### How a review is recorded
+
+- Each reviewer sets a **status** on your submission - Pending, Reviewing, Approved or Rejected -
+ with a comment. A comment is required to reject.
+- Reviews are **transparent per reviewer**: you can see each role's status and comment, who left it,
+ and when. A reviewer edits only their own review.
+- Reviews stay **editable until full sign-off**. A reviewer can revise their status or comment at any
+ time; the review locks only once all three roles approve and the slide type goes live.
+
+### Notifications
+
+You do not need to watch the queue. You are notified when a role requests changes or rejects, when a
+new review comment is added, and when the final approval lands and your slide type goes live.
+
+- **Slack DM** - live.
+- **A reply in your original submission thread** - live.
+- **Email** - coming soon.
 
 ## 4. QA review - Lily or Amber
 
@@ -114,6 +133,7 @@ approved it, and each approved change is recorded below.
 | Version | Date | Change | Approved by |
 | --- | --- | --- | --- |
 | 1.0 | 11 September 2026 | Initial internal edition - submission package, weekly review process, QA / UI-UX / Marketing criteria. | Pending - Dave |
+| 1.1 | 15 September 2026 | Documented the live review portal: how you submit (submission dashboard and Submit-new flow, submission types and their differences), per-reviewer status and comments, reviews editable until full sign-off, and submitter notifications (Slack DM and origin-thread reply live, email coming soon). Reviewer roles, submission package and weekly SLA unchanged. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
