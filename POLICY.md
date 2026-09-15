@@ -1,7 +1,7 @@
 # AhaSlides Slide Plugin Platform Policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.1
+- **Version:** 1.2
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
 - **Status:** Draft for review
 - **Last updated:** 15 September 2026
@@ -31,7 +31,46 @@ Every submission is more than the implementation. It must include:
 - **3–5 screenshots** - *optional.*
 - **Templates** demonstrating use cases - *optional.*
 
-## 3. The review process
+## 3. How you submit
+
+You submit and track everything from the **Submitter view** of the developer portal at
+`staging-slides-marketplace.ahaslides.io/developer` - no CLI needed. Sign in with your AhaSlides
+account.
+
+### The submission dashboard
+
+Your dashboard lists every slide type you have submitted, each as a card showing its name,
+subheading, version, category and last-updated time, with a status chip - Pending, Approved or
+Rejected. Open a card for the full detail: your editable submission info, the published surfaces
+(or, for a first-party slide, its live implementation links), the per-reviewer status and comments,
+and the submission history. From here you resubmit after changes, submit a new version, or delete a
+submission.
+
+![Submitter dashboard listing submitted slide types with their status chips](assets/submission-dashboard.png)
+
+### Submitting a new slide type
+
+Hit **Submit new slide type** to open the submission form. Choose a **submission type**, then fill
+in the catalogue listing and send it straight to the reviewers. The submission package from section
+2 - subheading, long description, preview GIF, tags (screenshots optional) - is required whichever
+type you pick.
+
+![The Submit a new slide type form, showing the two submission types and the catalogue-listing fields](assets/submit-new-slide-type.png)
+
+### The two submission types
+
+- **Upload bundle** - pick this if you built the slide type **outside** the repo and already have
+ its HTML files (`presenter.html`, `audience.html`, `settings.html`) ready to upload. You attach the
+ bundle files directly.
+- **First-party (reference)** - pick this if you built it **inside** the AhaSlides repo. Instead of
+ uploading files you link its live implementation, and a **Pick from the repo** dropdown can
+ auto-fill the fields from a slide type already built in the repo. It goes live via its repo PR
+ merge - approval here is the review sign-off.
+
+The difference is only in *how the implementation reaches us* - upload the files, or reference a
+live in-repo build. The submission package is required either way.
+
+## 4. The review process
 
 The same process applies to **new slide types and to changes** to an existing one.
 
@@ -47,9 +86,9 @@ submissions and answer within the same week.
 
 | Role | Reviewer | Owns |
 | --- | --- | --- |
-| QA | Lily or Amber | Function, SDK use, data, edge cases (section 4) |
-| UI / UX | Lan | Design system, style, assets, accessibility (section 5) |
-| Marketing | Trent | Name, metadata, tagging & categorisation (section 6) |
+| QA | Lily or Amber | Function, SDK use, data, edge cases (section 5) |
+| UI / UX | Lan | Design system, style, assets, accessibility (section 6) |
+| Marketing | Trent | Name, metadata, tagging & categorisation (section 7) |
 
 - **Work with your reviewers.** You are welcome to reach out and work with them - but reviewers will
  not fix the issues for you. The fixes are yours to make.
@@ -74,7 +113,7 @@ new review comment is added, and when the final approval lands and your slide ty
 - **A reply in your original submission thread** - live.
 - **Email** - coming soon.
 
-## 4. QA review - Lily or Amber
+## 5. QA review - Lily or Amber
 
 A submission is **rejected** if any of these is true:
 
@@ -84,7 +123,7 @@ A submission is **rejected** if any of these is true:
 - It does not handle **edge cases** gracefully.
 - Data - **real-time and persistent** - is not recorded correctly.
 
-## 5. UI / UX review - Lan
+## 6. UI / UX review - Lan
 
 ### The Editing View
 
@@ -120,12 +159,12 @@ The implementation must comply with AhaSlides' accessibility standards. Most not
 
 The slide must follow the presentation's audio setting.
 
-## 6. Marketing review - Trent
+## 7. Marketing review - Trent
 
 The marketing reviewer reserves the right to alter the slide type's **name, metadata, and
 tagging / categorisation** for marketing and strategic reasons.
 
-## 7. Approval & change history
+## 8. Approval & change history
 
 **Dave is the sole approver of changes to this policy.** No change takes effect until Dave has
 approved it, and each approved change is recorded below.
@@ -134,6 +173,7 @@ approved it, and each approved change is recorded below.
 | --- | --- | --- | --- |
 | 1.0 | 11 September 2026 | Initial internal edition - submission package, weekly review process, QA / UI-UX / Marketing criteria. | Pending - Dave |
 | 1.1 | 15 September 2026 | Documented the live review portal: how you submit (submission dashboard and Submit-new flow, submission types and their differences), per-reviewer status and comments, reviews editable until full sign-off, and submitter notifications (Slack DM and origin-thread reply live, email coming soon). Reviewer roles, submission package and weekly SLA unchanged. | Pending - Dave |
+| 1.2 | 15 September 2026 | Added section 3, "How you submit", with UI captures of the Submitter view (submission dashboard and the Submit-new-slide-type form) and a description of the two submission types (Upload bundle vs first-party reference) and their difference. Renumbered the review, QA, UI/UX, marketing and change-history sections accordingly. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.

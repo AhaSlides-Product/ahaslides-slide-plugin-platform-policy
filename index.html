@@ -52,6 +52,9 @@ li{margin:6px 0;}
 .pill.red{color:var(--red);background:var(--red-soft);}
 .note{background:var(--soft);border:1px dashed var(--line);border-radius:10px;
   padding:14px 16px;font-size:14px;color:var(--muted);margin-top:8px;}
+figure.shot{margin:14px 0 6px;}
+figure.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:12px;background:var(--soft);}
+figure.shot figcaption{margin-top:8px;font-size:13px;color:var(--muted);text-align:center;}
 code{background:var(--soft);padding:1px 6px;border-radius:5px;font-size:13.5px;}
 strong{font-weight:650;}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;margin-top:6px;}
@@ -141,6 +144,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <ol>
       <li><a href="#who">Who this is for</a></li>
       <li><a href="#submit">What you submit</a></li>
+      <li><a href="#how-you-submit">How you submit</a></li>
       <li><a href="#review">The review process</a></li>
       <li><a href="#qa">QA review</a></li>
       <li><a href="#uiux">UI / UX review</a></li>
@@ -173,8 +177,51 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     </ul>
   </section>
 
+  <section id="how-you-submit">
+    <h2 class="sec"><span class="n">3.</span> How you submit</h2>
+    <p>You submit and track everything from the <strong>Submitter view</strong> of the developer
+      portal at <code>staging-slides-marketplace.ahaslides.io/developer</code>  -  no CLI needed.
+      Sign in with your AhaSlides account.</p>
+    <h3>The submission dashboard</h3>
+    <p>Your dashboard lists every slide type you have submitted, each as a card showing its name,
+      subheading, version, category and last-updated time, with a status
+      <span class="pill">Pending</span>, <span class="pill ok">Approved</span> or
+      <span class="pill red">Rejected</span> chip. Open a card for the full detail: your editable
+      submission info, the published surfaces (or, for a first-party slide, its live implementation
+      links), the per-reviewer status and comments, and the submission history. From here you
+      resubmit after changes, submit a new version, or delete a submission.</p>
+    <figure class="shot">
+      <img src="assets/submission-dashboard.png"
+        alt="Submitter dashboard listing submitted slide types, each card showing its name, subheading, version, category, last-updated time and a status chip.">
+      <figcaption>Submitter view  -  the submission dashboard.</figcaption>
+    </figure>
+    <h3>Submitting a new slide type</h3>
+    <p>Hit <strong>Submit new slide type</strong> to open the submission form. Choose a
+      <strong>submission type</strong>, then fill in the catalogue listing and send it straight to
+      the reviewers. The submission package from section 2  -  subheading, long description, preview
+      GIF, tags (screenshots optional)  -  is required whichever type you pick.</p>
+    <figure class="shot">
+      <img src="assets/submit-new-slide-type.png"
+        alt="The Submit a new slide type form, showing the two submission-type options and the catalogue-listing fields.">
+      <figcaption>Submitter view  -  the Submit a new slide type form.</figcaption>
+    </figure>
+    <h3>The two submission types</h3>
+    <ul>
+      <li><strong>Upload bundle</strong>  -  pick this if you built the slide type <strong>outside</strong>
+        the repo and already have its HTML files (<code>presenter.html</code>, <code>audience.html</code>,
+        <code>settings.html</code>) ready to upload. You attach the bundle files directly.</li>
+      <li><strong>First-party (reference)</strong>  -  pick this if you built it <strong>inside</strong>
+        the AhaSlides repo. Instead of uploading files you link its live implementation, and a
+        <strong>Pick from the repo</strong> dropdown can auto-fill the fields from a slide type
+        already built in the repo. It goes live via its repo PR merge  -  approval here is the review
+        sign-off.</li>
+    </ul>
+    <p class="note">The difference is only in <em>how the implementation reaches us</em>  -  upload
+      the files, or reference a live in-repo build. The submission package is required either way.</p>
+  </section>
+
   <section id="review">
-    <h2 class="sec"><span class="n">3.</span> The review process</h2>
+    <h2 class="sec"><span class="n">4.</span> The review process</h2>
     <p>The same process applies to <strong>new slide types and to changes</strong> to an existing one.</p>
     <h3>Weekly rhythm</h3>
     <div class="flow">
@@ -195,9 +242,9 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <table>
         <thead><tr><th>Role</th><th>Reviewer</th><th>Owns</th></tr></thead>
         <tbody>
-          <tr><td class="role">QA</td><td class="who">Lily or Amber</td><td>Function, SDK use, data, edge cases (section 4).</td></tr>
-          <tr><td class="role">UI / UX</td><td class="who">Lan</td><td>Design system, style, assets, accessibility (section 5).</td></tr>
-          <tr><td class="role">Marketing</td><td class="who">Trent</td><td>Name, metadata, tagging &amp; categorisation (section 6).</td></tr>
+          <tr><td class="role">QA</td><td class="who">Lily or Amber</td><td>Function, SDK use, data, edge cases (section 5).</td></tr>
+          <tr><td class="role">UI / UX</td><td class="who">Lan</td><td>Design system, style, assets, accessibility (section 6).</td></tr>
+          <tr><td class="role">Marketing</td><td class="who">Trent</td><td>Name, metadata, tagging &amp; categorisation (section 7).</td></tr>
         </tbody>
       </table>
     </div>
@@ -228,7 +275,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
   </section>
 
   <section id="qa">
-    <h2 class="sec"><span class="n">4.</span> QA review <span class="who"> -  Lily or Amber</span></h2>
+    <h2 class="sec"><span class="n">5.</span> QA review <span class="who"> -  Lily or Amber</span></h2>
     <p>A submission is <strong>rejected</strong> if any of these is true:</p>
     <ul class="reject">
       <li>It does not support <strong>Report / Export</strong> features.</li>
@@ -240,7 +287,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
   </section>
 
   <section id="uiux">
-    <h2 class="sec"><span class="n">5.</span> UI / UX review <span class="who"> -  Lan</span></h2>
+    <h2 class="sec"><span class="n">6.</span> UI / UX review <span class="who"> -  Lan</span></h2>
     <h3>The Editing View</h3>
     <p>Must comply with AhaSlides' design system  -  no exceptions.</p>
     <h3>The Presenting View &amp; the Participant View</h3>
@@ -278,13 +325,13 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
   </section>
 
   <section id="marketing">
-    <h2 class="sec"><span class="n">6.</span> Marketing review <span class="who"> -  Trent</span></h2>
+    <h2 class="sec"><span class="n">7.</span> Marketing review <span class="who"> -  Trent</span></h2>
     <p>The marketing reviewer reserves the right to alter the slide type's <strong>name, metadata, and
       tagging / categorisation</strong> for marketing and strategic reasons.</p>
   </section>
 
   <section id="history">
-    <h2 class="sec"><span class="n">7.</span> Approval &amp; change history</h2>
+    <h2 class="sec"><span class="n">8.</span> Approval &amp; change history</h2>
     <p class="lead"><strong>Dave is the sole approver of changes to this policy.</strong> No change takes
       effect until Dave has approved it, and each approved change is recorded below.</p>
     <div class="tablewrap">
@@ -293,6 +340,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
         <tbody>
           <tr><td>1.0</td><td>11 September 2026</td><td>Initial internal edition  -  submission package, weekly review process, QA / UI-UX / Marketing criteria.</td><td>Pending  -  Dave</td></tr>
           <tr><td>1.1</td><td>15 September 2026</td><td>Documented the live review portal: how it works from build to live, where to submit (bundle vs first-party reference), per-reviewer status and comments, reviews editable until full sign-off, and submitter notifications (Slack DM and origin-thread reply live, email coming soon). Reviewer roles, submission package and weekly SLA unchanged.</td><td>Pending  -  Dave</td></tr>
+          <tr><td>1.2</td><td>15 September 2026</td><td>Added section 3, &ldquo;How you submit&rdquo;, with UI captures of the Submitter view (the submission dashboard and the Submit-new-slide-type form) and a description of the two submission types (Upload bundle vs first-party reference) and their difference. Renumbered the review, QA, UI/UX, marketing and change-history sections accordingly.</td><td>Pending  -  Dave</td></tr>
         </tbody>
       </table>
     </div>
