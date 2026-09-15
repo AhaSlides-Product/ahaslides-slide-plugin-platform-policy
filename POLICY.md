@@ -70,6 +70,12 @@ type you pick.
 The difference is only in *how the implementation reaches us* - upload the files, or reference a
 live in-repo build. The submission package is required either way.
 
+Choosing **First-party (reference)** swaps the bundle-file upload for the implementation fields - the
+live implementation URL and the **Pick from the repo** dropdown that fills the details from a slide
+type already built in the repo.
+
+![The Submit form in First-party (reference) mode, showing the live implementation URL and the Pick from the repo dropdown in place of the bundle-file upload](assets/submit-new-first-party.png)
+
 ## 4. The review process
 
 The same process applies to **new slide types and to changes** to an existing one.
