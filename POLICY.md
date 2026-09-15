@@ -30,12 +30,24 @@ Every submission is more than the implementation. It must include:
 - **3–5 screenshots** - *optional.*
 - **Templates** demonstrating use cases - *optional.*
 
+**Getting started.** You don't have to work through this alone - ask **Agent Fleet** (in the
+slide-types channel) to walk you through it. It knows the policy, can assemble the package, and can
+file the submission for you. Good opening prompts:
+
+- "Where do we start with a slide-type submission?"
+- "What's the submission checklist, and what should we do before submitting?"
+
 ## 3. The review process
 
 The same process applies to **new slide types and to changes** to an existing one.
 
 **Weekly rhythm:** Submit before every Monday. Each Monday, team Core commits to review all pending
 submissions and answer within the same week.
+
+**Where to file.** A submission is a **Jira Story in project `AHA`**, titled
+`Slide MarketPlace > Review new slide type: <Name>`, left in the pending-review backlog. Not sure how?
+Ask Agent Fleet - *"Where should our slide-type submission go - and can you file it?"* - and it will
+create the Story with the full package for you.
 
 **The answer is one of:**
 
