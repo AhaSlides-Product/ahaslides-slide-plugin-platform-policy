@@ -47,6 +47,8 @@ ul{margin:0 0 4px;padding-left:20px;}
 li{margin:6px 0;}
 .lead{color:var(--muted);}
 .journey li{margin:9px 0;}
+.faq p{margin:10px 0;padding:11px 14px;background:var(--soft);border-radius:9px;}
+.faq strong{color:var(--ink);}
 .pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;}
 .pill.ok{color:var(--ok);background:var(--ok-soft);}
 .pill.red{color:var(--red);background:var(--red-soft);}
@@ -135,7 +137,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <span><b>Applies to</b> AhaSliders &amp; trusted partners</span>
       <span><b>Edition</b> 1.0 (internal)</span>
       <span><b>Status</b> Draft for review</span>
-      <span><b>Last updated</b> 15 September 2026</span>
+      <span><b>Last updated</b> 16 September 2026</span>
     </div>
   </header>
 
@@ -149,6 +151,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <li><a href="#qa">QA review</a></li>
       <li><a href="#uiux">UI / UX review</a></li>
       <li><a href="#marketing">Marketing review</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#history">Approval &amp; change history</a></li>
     </ol>
   </nav>
@@ -167,6 +170,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <h2 class="sec"><span class="n">2.</span> What you submit</h2>
     <p>Every submission is more than the implementation. It must include:</p>
     <ul>
+      <li><strong>Slide type name</strong>  -  what the slide type is called. <em>Mandatory.</em></li>
       <li><strong>The implementation</strong>  -  the working slide type.</li>
       <li><strong>Subheading</strong>  -  the one-line summary.</li>
       <li><strong>Long description</strong>  -  spelling out its <strong>use cases</strong> and <strong>instructions</strong>.</li>
@@ -179,53 +183,12 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
 
   <section id="how-you-submit">
     <h2 class="sec"><span class="n">3.</span> How you submit</h2>
-    <p>You submit and track everything from the <strong>Submitter view</strong> of the developer
-      portal at <code>staging-slides-marketplace.ahaslides.io/developer</code>  -  no CLI needed.
-      Sign in with your AhaSlides account.</p>
-    <h3>The submission dashboard</h3>
-    <p>Your dashboard lists every slide type you have submitted, each as a card showing its name,
-      subheading, version, category and last-updated time, with a status
-      <span class="pill">Pending</span>, <span class="pill ok">Approved</span> or
-      <span class="pill red">Rejected</span> chip. Open a card for the full detail: your editable
-      submission info, the published surfaces (or, for a first-party slide, its live implementation
-      links), the per-reviewer status and comments, and the submission history. From here you
-      resubmit after changes, submit a new version, or delete a submission.</p>
-    <figure class="shot">
-      <img src="assets/submission-dashboard.png"
-        alt="Submitter dashboard listing submitted slide types, each card showing its name, subheading, version, category, last-updated time and a status chip.">
-      <figcaption>Submitter view  -  the submission dashboard.</figcaption>
-    </figure>
-    <h3>Submitting a new slide type</h3>
-    <p>Hit <strong>Submit new slide type</strong> to open the submission form. Choose a
-      <strong>submission type</strong>, then fill in the catalogue listing and send it straight to
-      the reviewers. The submission package from section 2  -  subheading, long description, preview
-      GIF, tags (screenshots optional)  -  is required whichever type you pick.</p>
-    <figure class="shot">
-      <img src="assets/submit-new-slide-type.png"
-        alt="The Submit a new slide type form, showing the two submission-type options and the catalogue-listing fields.">
-      <figcaption>Submitter view  -  the Submit a new slide type form.</figcaption>
-    </figure>
-    <h3>The two submission types</h3>
+    <p>There are two ways to submit a slide type for review:</p>
     <ul>
-      <li><strong>Upload bundle</strong>  -  pick this if you built the slide type <strong>outside</strong>
-        the repo and already have its HTML files (<code>presenter.html</code>, <code>audience.html</code>,
-        <code>settings.html</code>) ready to upload. You attach the bundle files directly.</li>
-      <li><strong>First-party (reference)</strong>  -  pick this if you built it <strong>inside</strong>
-        the AhaSlides repo. Instead of uploading files you link its live implementation, and a
-        <strong>Pick from the repo</strong> dropdown can auto-fill the fields from a slide type
-        already built in the repo. It goes live via its repo PR merge  -  approval here is the review
-        sign-off.</li>
+      <li><strong>Via Agent Fleet</strong>  -  in the slide-types channel, ask the AhaSlides agent to submit your slide type for review; it gathers the submission package and files it for you.</li>
+      <li><strong>Via the web interface</strong>  -  sign in to the developer portal at <code>staging-slides-marketplace.ahaslides.io/developer</code> and use <strong>Submit new slide type</strong>. The form is self-explanatory.</li>
     </ul>
-    <p class="note">The difference is only in <em>how the implementation reaches us</em>  -  upload
-      the files, or reference a live in-repo build. The submission package is required either way.</p>
-    <p>Choosing <strong>First-party (reference)</strong> swaps the bundle-file upload for the
-      implementation fields  -  the live implementation URL and the <strong>Pick from the repo</strong>
-      dropdown that fills the details from a slide type already built in the repo.</p>
-    <figure class="shot">
-      <img src="assets/submit-new-first-party.png"
-        alt="The Submit form in First-party (reference) mode, showing the live implementation URL and the Pick from the repo dropdown in place of the bundle-file upload.">
-      <figcaption>Submitter view  -  the Submit form in First-party (reference) mode.</figcaption>
-    </figure>
+    <p class="note">Either way, you choose a <strong>submission type</strong>: <strong>Upload bundle</strong> if you built the slide type outside the repo and upload its files, or <strong>First-party (reference)</strong> if you built it inside the AhaSlides repo and link its live implementation instead. The submission package in section 2 is required whichever you pick.</p>
   </section>
 
   <section id="review">
@@ -258,28 +221,8 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     </div>
     <p class="note"><strong>Work with your reviewers.</strong> You are welcome to reach out and work with
       them  -  but reviewers will not fix the issues for you. The fixes are yours to make.</p>
-    <p class="note"><strong>Open backlog.</strong> The pending-review queue is transparent: every slide
-      developer can see what is waiting.</p>
-    <h3>How a review is recorded</h3>
-    <ul>
-      <li>Each reviewer sets a <strong>status</strong> on your submission - <span class="pill">Pending</span>,
-        <span class="pill">Reviewing</span>, <span class="pill ok">Approved</span> or
-        <span class="pill red">Rejected</span> - with a comment. A comment is required to reject.</li>
-      <li>Reviews are <strong>transparent per reviewer</strong>: you can see each role's status and
-        comment, who left it, and when. A reviewer edits only their own review.</li>
-      <li>Reviews stay <strong>editable until full sign-off</strong>. A reviewer can revise their
-        status or comment at any time; the review locks only once all three roles approve and the
-        slide type goes live.</li>
-    </ul>
-    <h3>Notifications</h3>
-    <p>You do not need to watch the queue. You are notified the moment a review needs you - when a
-      role requests changes or rejects, when a new review comment is added, and when the final
-      approval lands and your slide type goes live.</p>
-    <ul>
-      <li><strong>Slack DM</strong> - live.</li>
-      <li><strong>A reply in your original submission thread</strong> - live.</li>
-      <li><strong>Email</strong> - coming soon.</li>
-    </ul>
+    <p class="note"><strong>Track your submission.</strong> The review queue is open  -  check your submission's status and reviewer feedback any time in the developer portal at <code>staging-slides-marketplace.ahaslides.io/developer</code>.</p>
+    <p class="note"><strong>You are notified</strong> when a review needs you or your slide type goes live  -  by Slack DM and a reply in your original submission thread (email coming soon).</p>
   </section>
 
   <section id="qa">
@@ -338,6 +281,21 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       tagging / categorisation</strong> for marketing and strategic reasons.</p>
   </section>
 
+  <section id="faq">
+    <h2 class="sec">FAQ</h2>
+    <div class="faq">
+      <p><strong>Who can submit a slide type?</strong><br>Any internal developer  -  an AhaSlider or an invited partner (section 1).</p>
+      <p><strong>How do I submit?</strong><br>Two ways: ask the AhaSlides agent in the slide-types channel, or use <strong>Submit new slide type</strong> in the developer portal (section 3).</p>
+      <p><strong>What must I include?</strong><br>The submission package in section 2: the slide type name, the implementation, a subheading, a long description, a preview GIF and tags (screenshots optional).</p>
+      <p><strong>Upload bundle or first-party (reference)  -  which do I pick?</strong><br>Upload bundle if you built it outside the repo and have the files; first-party (reference) if you built it inside the AhaSlides repo and link its live implementation.</p>
+      <p><strong>How long does review take?</strong><br>Submit before Monday; team Core reviews that week and answers within the same week (section 4).</p>
+      <p><strong>Who approves my slide type?</strong><br>All three reviewers must approve  -  QA, UI / UX and Marketing (section 4).</p>
+      <p><strong>How do I track progress and hear the outcome?</strong><br>Track status and reviewer feedback in the developer portal; you are also notified by Slack DM and a reply in your submission thread (email coming soon).</p>
+      <p><strong>What if my slide type is rejected?</strong><br>You get the reviewers' comments on what to change. Fix it and resubmit, which reopens the review round.</p>
+      <p><strong>Can I use my own styling?</strong><br>Yes  -  declare <strong>Standard</strong> (design-system compliant) or <strong>Immersive</strong> (its own look, with a good reason) (section 6).</p>
+    </div>
+  </section>
+
   <section id="history">
     <h2 class="sec"><span class="n">8.</span> Approval &amp; change history</h2>
     <p class="lead"><strong>Dave is the sole approver of changes to this policy.</strong> No change takes
@@ -349,6 +307,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
           <tr><td>1.0</td><td>11 September 2026</td><td>Initial internal edition  -  submission package, weekly review process, QA / UI-UX / Marketing criteria.</td><td>Pending  -  Dave</td></tr>
           <tr><td>1.1</td><td>15 September 2026</td><td>Documented the live review portal: how it works from build to live, where to submit (bundle vs first-party reference), per-reviewer status and comments, reviews editable until full sign-off, and submitter notifications (Slack DM and origin-thread reply live, email coming soon). Reviewer roles, submission package and weekly SLA unchanged.</td><td>Dave</td></tr>
           <tr><td>1.2</td><td>15 September 2026</td><td>Added section 3, &ldquo;How you submit&rdquo;, with UI captures of the Submitter view (the submission dashboard and the Submit-new-slide-type form) and a description of the two submission types (Upload bundle vs first-party reference) and their difference. Renumbered the review, QA, UI/UX, marketing and change-history sections accordingly.</td><td>Dave</td></tr>
+          <tr><td>1.3</td><td>16 September 2026</td><td>Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web) without web-UI detail; exposed the developer portal link for tracking progress; trimmed the human-readable page to essentials and added an FAQ.</td><td>Dave</td></tr>
         </tbody>
       </table>
     </div>
@@ -392,7 +351,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <path class="ahalogo-cls-1" d="M209.66,170.77c.3.12.6.23.9.33,4.63,1.56,9.71,1.95,14.55,1.33,3.83-.49,8.13-1.64,10.95-4.45.74-.73,1.35-1.59,1.71-2.57,1.69-4.61-2.7-6.88-3.85-7.3-2.56-.94-6.07-.4-8.42.72-4.04,1.93-8.63,4.98-13.24,4.92-1.77-.02-3.62-.66-4.73-2.05-2.76-3.43-.48-8.4,2.06-11.19,1.71-1.88,3.75-3.49,5.67-5.15,2.09-1.81,4.14-3.65,6.22-5.47,1.96-1.7,3.94-3.38,5.88-5.1,4.19-3.71,8.7-7.23,12.02-11.78,1.12-1.57,2.04-3.25,2.62-5.07,1.3-3.91.71-8.73-2.49-11.47-3.75-3.24-9.39-2.03-13.1.8-4.14,3.07-7,7.52-9.72,11.83-4.01,6.47-7.52,13.23-10.75,20.11-.84,1.87-1.64,3.76-2.4,5.67-2.14,5.36-4.84,11-2.8,16.8,1.49,4.25,4.7,7.43,8.92,9.1Z"/>
   </g>
 </svg>
-    <p>Slide Plugin Platform Policy · Edition 1.0 (internal) · Version 1.2 · Last updated 15 September 2026</p>
+    <p>Slide Plugin Platform Policy · Edition 1.0 (internal) · Version 1.3 · Last updated 16 September 2026</p>
   </footer>
 
 </div>
