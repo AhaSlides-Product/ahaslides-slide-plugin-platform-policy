@@ -7,11 +7,13 @@ developers follow to build, submit, review and publish slide types.
 
 | Format | File | For |
 | --- | --- | --- |
-| **Agent-readable** | [`POLICY.md`](./POLICY.md) | Agents and tools — the canonical, parseable source of truth. |
-| **Human-readable** | [`index.html`](./index.html) | People — a styled, web-viewable page (AhaSlides branding, table of contents, change history). |
+| **Agent-readable** | [`POLICY.md`](./POLICY.md) | Agents and tools — the canonical, parseable source of truth; carries the full detail. |
+| **Human-readable** | [`index.html`](./index.html) | People — a styled, web-viewable page kept **concise**: only what every slide developer must know, plus an FAQ. |
 
 The web-viewable version is published for humans; the latest link lives in the Confluence article
-for this policy. `POLICY.md` is the source that version is generated from.
+for this policy. `POLICY.md` is canonical: the human page is a concise summary of it, so the two can
+differ in depth (the human page trims learn-later detail and adds an FAQ). Keep both in step on the
+essentials, and **refresh the FAQ in `index.html` whenever the policy changes.**
 
 ## Editions
 
