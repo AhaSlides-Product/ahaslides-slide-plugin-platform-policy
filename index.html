@@ -40,15 +40,16 @@ nav.toc a:hover{color:var(--accent);text-decoration:underline;}
 section{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
   padding:24px 30px;margin-bottom:16px;scroll-margin-top:16px;}
 h2.sec{font-size:19px;margin:0 0 12px;display:flex;align-items:baseline;gap:10px;font-weight:700;}
-h2.sec .n{font-size:13px;color:var(--accent);font-weight:700;min-width:22px;}
-h3{font-size:15px;margin:20px 0 7px;font-weight:600;}
+h2.sec h3{font-size:15px;margin:20px 0 7px;font-weight:600;}
 p{margin:0 0 12px;}
 ul{margin:0 0 4px;padding-left:20px;}
 li{margin:6px 0;}
 .lead{color:var(--muted);}
+details.qa,details.panel{border:1px solid var(--line);border-radius:9px;margin:8px 0;}
+details.qa>summary,details.panel>summary{cursor:pointer;padding:11px 14px;font-weight:600;}
+details.qa>p{margin:0 14px 13px;color:var(--muted);}
+details.panel>.tablewrap{margin:0 14px 13px;}
 .journey li{margin:9px 0;}
-.faq p{margin:10px 0;padding:11px 14px;background:var(--soft);border-radius:9px;}
-.faq strong{color:var(--ink);}
 .pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;}
 .pill.ok{color:var(--ok);background:var(--ok-soft);}
 .pill.red{color:var(--red);background:var(--red-soft);}
@@ -124,8 +125,6 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <path class="ahalogo-cls-1" d="M209.66,170.77c.3.12.6.23.9.33,4.63,1.56,9.71,1.95,14.55,1.33,3.83-.49,8.13-1.64,10.95-4.45.74-.73,1.35-1.59,1.71-2.57,1.69-4.61-2.7-6.88-3.85-7.3-2.56-.94-6.07-.4-8.42.72-4.04,1.93-8.63,4.98-13.24,4.92-1.77-.02-3.62-.66-4.73-2.05-2.76-3.43-.48-8.4,2.06-11.19,1.71-1.88,3.75-3.49,5.67-5.15,2.09-1.81,4.14-3.65,6.22-5.47,1.96-1.7,3.94-3.38,5.88-5.1,4.19-3.71,8.7-7.23,12.02-11.78,1.12-1.57,2.04-3.25,2.62-5.07,1.3-3.91.71-8.73-2.49-11.47-3.75-3.24-9.39-2.03-13.1.8-4.14,3.07-7,7.52-9.72,11.83-4.01,6.47-7.52,13.23-10.75,20.11-.84,1.87-1.64,3.76-2.4,5.67-2.14,5.36-4.84,11-2.8,16.8,1.49,4.25,4.7,7.43,8.92,9.1Z"/>
   </g>
 </svg>
-    <span class="divider"></span>
-    <span class="ed">Platform Policy</span>
   </div>
 
   <header class="doc">
@@ -136,7 +135,6 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <div class="meta">
       <span><b>Applies to</b> AhaSliders &amp; trusted partners</span>
       <span><b>Edition</b> 1.0 (internal)</span>
-      <span><b>Status</b> Draft for review</span>
       <span><b>Last updated</b> 16 September 2026</span>
     </div>
   </header>
@@ -157,7 +155,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
   </nav>
 
   <section id="who">
-    <h2 class="sec"><span class="n">1.</span> Who this is for</h2>
+    <h2 class="sec">1. Who this is for</h2>
     <p class="lead">This first edition covers <strong>internal slide developers</strong> only  - 
       AhaSliders and trusted partners we have invited. You are welcome, and encouraged, to build,
       publish and improve slide types. These rules set a shared quality bar and a predictable review
@@ -167,10 +165,10 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
   </section>
 
   <section id="submit">
-    <h2 class="sec"><span class="n">2.</span> What you submit</h2>
+    <h2 class="sec">2. What you submit</h2>
     <p>Every submission is more than the implementation. It must include:</p>
     <ul>
-      <li><strong>Slide type name</strong>  -  what the slide type is called. <em>Mandatory.</em></li>
+      <li><strong>Slide type name</strong>  -  what the slide type is called.</li>
       <li><strong>The implementation</strong>  -  the working slide type.</li>
       <li><strong>Subheading</strong>  -  the one-line summary.</li>
       <li><strong>Long description</strong>  -  spelling out its <strong>use cases</strong> and <strong>instructions</strong>.</li>
@@ -182,17 +180,17 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
   </section>
 
   <section id="how-you-submit">
-    <h2 class="sec"><span class="n">3.</span> How you submit</h2>
+    <h2 class="sec">3. How you submit</h2>
     <p>There are two ways to submit a slide type for review:</p>
     <ul>
-      <li><strong>Via Agent Fleet</strong>  -  in the slide-types channel, ask the AhaSlides agent to submit your slide type for review; it gathers the submission package and files it for you.</li>
-      <li><strong>Via the web interface</strong>  -  sign in to the developer portal at <code>staging-slides-marketplace.ahaslides.io/developer</code> and use <strong>Submit new slide type</strong>. The form is self-explanatory.</li>
+      <li>Via Agent Fleet  -  in the slide-types channel, ask the AhaSlides agent to submit your slide type for review; it gathers the submission package and files it for you.</li>
+      <li>Via the web interface  -  sign in to the developer portal at <a href="https://staging-slides-marketplace.ahaslides.io/developer">staging-slides-marketplace.ahaslides.io/developer</a> and use Submit new slide type. The form is self-explanatory.</li>
     </ul>
-    <p class="note">Either way, you choose a <strong>submission type</strong>: <strong>Upload bundle</strong> if you built the slide type outside the repo and upload its files, or <strong>First-party (reference)</strong> if you built it inside the AhaSlides repo and link its live implementation instead. The submission package in section 2 is required whichever you pick.</p>
+    <p class="note">Either way, you choose a submission type: <strong>Upload bundle</strong> if you built the slide type outside the repo and upload its files, or <strong>First-party (reference)</strong> if you built it inside the AhaSlides repo and link its live implementation instead. The submission package in section 2 is required whichever you pick.</p>
   </section>
 
   <section id="review">
-    <h2 class="sec"><span class="n">4.</span> The review process</h2>
+    <h2 class="sec">4. The review process</h2>
     <p>The same process applies to <strong>new slide types and to changes</strong> to an existing one.</p>
     <h3>Weekly rhythm</h3>
     <div class="flow">
@@ -221,12 +219,12 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     </div>
     <p class="note"><strong>Work with your reviewers.</strong> You are welcome to reach out and work with
       them  -  but reviewers will not fix the issues for you. The fixes are yours to make.</p>
-    <p class="note"><strong>Track your submission.</strong> The review queue is open  -  check your submission's status and reviewer feedback any time in the developer portal at <code>staging-slides-marketplace.ahaslides.io/developer</code>.</p>
-    <p class="note"><strong>You are notified</strong> when a review needs you or your slide type goes live  -  by Slack DM and a reply in your original submission thread (email coming soon).</p>
+    <p class="note">Track your submission: the review queue is open  -  check your submission's status and reviewer feedback any time in the developer portal at <a href="https://staging-slides-marketplace.ahaslides.io/developer">staging-slides-marketplace.ahaslides.io/developer</a>.</p>
+    <p class="note">You are notified when a review needs you or your slide type goes live  -  by Slack DM and a reply in your original submission thread (email coming soon).</p>
   </section>
 
   <section id="qa">
-    <h2 class="sec"><span class="n">5.</span> QA review <span class="who"> -  Lily or Amber</span></h2>
+    <h2 class="sec">5. QA review <span class="who"> -  Lily or Amber</span></h2>
     <p>A submission is <strong>rejected</strong> if any of these is true:</p>
     <ul class="reject">
       <li>It does not support <strong>Report / Export</strong> features.</li>
@@ -238,7 +236,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
   </section>
 
   <section id="uiux">
-    <h2 class="sec"><span class="n">6.</span> UI / UX review <span class="who"> -  Lan</span></h2>
+    <h2 class="sec">6. UI / UX review <span class="who"> -  Lan</span></h2>
     <h3>The Editing View</h3>
     <p>Must comply with AhaSlides' design system  -  no exceptions.</p>
     <h3>The Presenting View &amp; the Participant View</h3>
@@ -276,30 +274,31 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
   </section>
 
   <section id="marketing">
-    <h2 class="sec"><span class="n">7.</span> Marketing review <span class="who"> -  Trent</span></h2>
+    <h2 class="sec">7. Marketing review <span class="who"> -  Trent</span></h2>
     <p>The marketing reviewer reserves the right to alter the slide type's <strong>name, metadata, and
       tagging / categorisation</strong> for marketing and strategic reasons.</p>
   </section>
 
   <section id="faq">
-    <h2 class="sec">FAQ</h2>
+    <h2 class="sec">8. FAQ</h2>
     <div class="faq">
-      <p><strong>Who can submit a slide type?</strong><br>Any internal developer  -  an AhaSlider or an invited partner (section 1).</p>
-      <p><strong>How do I submit?</strong><br>Two ways: ask the AhaSlides agent in the slide-types channel, or use <strong>Submit new slide type</strong> in the developer portal (section 3).</p>
-      <p><strong>What must I include?</strong><br>The submission package in section 2: the slide type name, the implementation, a subheading, a long description, a preview GIF and tags (screenshots optional).</p>
-      <p><strong>Upload bundle or first-party (reference)  -  which do I pick?</strong><br>Upload bundle if you built it outside the repo and have the files; first-party (reference) if you built it inside the AhaSlides repo and link its live implementation.</p>
-      <p><strong>How long does review take?</strong><br>Submit before Monday; team Core reviews that week and answers within the same week (section 4).</p>
-      <p><strong>Who approves my slide type?</strong><br>All three reviewers must approve  -  QA, UI / UX and Marketing (section 4).</p>
-      <p><strong>How do I track progress and hear the outcome?</strong><br>Track status and reviewer feedback in the developer portal; you are also notified by Slack DM and a reply in your submission thread (email coming soon).</p>
-      <p><strong>What if my slide type is rejected?</strong><br>You get the reviewers' comments on what to change. Fix it and resubmit, which reopens the review round.</p>
-      <p><strong>Can I use my own styling?</strong><br>Yes  -  declare <strong>Standard</strong> (design-system compliant) or <strong>Immersive</strong> (its own look, with a good reason) (section 6).</p>
+      <details class="qa"><summary>Who can submit a slide type?</summary><p>Any internal developer  -  an AhaSlider or an invited partner (section 1).</p></details>
+      <details class="qa"><summary>How do I submit?</summary><p>Two ways: ask the AhaSlides agent in the slide-types channel, or use Submit new slide type in the developer portal (section 3).</p></details>
+      <details class="qa"><summary>What must I include?</summary><p>The submission package in section 2: the slide type name, the implementation, a subheading, a long description, a preview GIF and tags (screenshots optional).</p></details>
+      <details class="qa"><summary>Upload bundle or first-party (reference)  -  which do I pick?</summary><p>Upload bundle if you built it outside the repo and have the files; first-party (reference) if you built it inside the AhaSlides repo and link its live implementation.</p></details>
+      <details class="qa"><summary>How long does review take?</summary><p>Submit before Monday; team Core reviews that week and answers within the same week (section 4).</p></details>
+      <details class="qa"><summary>Who approves my slide type?</summary><p>All three reviewers must approve  -  QA, UI / UX and Marketing (section 4).</p></details>
+      <details class="qa"><summary>How do I track progress and hear the outcome?</summary><p>Track status and reviewer feedback in the developer portal; you are also notified by Slack DM and a reply in your submission thread (email coming soon).</p></details>
+      <details class="qa"><summary>What if my slide type is rejected?</summary><p>You get the reviewers' comments on what to change. Fix it and resubmit, which reopens the review round.</p></details>
+      <details class="qa"><summary>Can I use my own styling?</summary><p>Yes  -  declare Standard (design-system compliant) or Immersive (its own look, with a good reason) (section 6).</p></details>
     </div>
   </section>
 
   <section id="history">
-    <h2 class="sec"><span class="n">8.</span> Approval &amp; change history</h2>
+    <h2 class="sec">9. Approval &amp; change history</h2>
     <p class="lead"><strong>Dave is the sole approver of changes to this policy.</strong> No change takes
       effect until Dave has approved it, and each approved change is recorded below.</p>
+    <details class="panel"><summary>Full change history</summary>
     <div class="tablewrap">
       <table>
         <thead><tr><th>Version</th><th>Date</th><th>Change</th><th>Approved by</th></tr></thead>
@@ -308,9 +307,11 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
           <tr><td>1.1</td><td>15 September 2026</td><td>Documented the live review portal: how it works from build to live, where to submit (bundle vs first-party reference), per-reviewer status and comments, reviews editable until full sign-off, and submitter notifications (Slack DM and origin-thread reply live, email coming soon). Reviewer roles, submission package and weekly SLA unchanged.</td><td>Dave</td></tr>
           <tr><td>1.2</td><td>15 September 2026</td><td>Added section 3, &ldquo;How you submit&rdquo;, with UI captures of the Submitter view (the submission dashboard and the Submit-new-slide-type form) and a description of the two submission types (Upload bundle vs first-party reference) and their difference. Renumbered the review, QA, UI/UX, marketing and change-history sections accordingly.</td><td>Dave</td></tr>
           <tr><td>1.3</td><td>16 September 2026</td><td>Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web) without web-UI detail; exposed the developer portal link for tracking progress; trimmed the human-readable page to essentials and added an FAQ.</td><td>Dave</td></tr>
+          <tr><td>1.4</td><td>16 September 2026</td><td>Marked the policy official (removed the draft status). Polished the human-readable page: collapsible FAQ and change history, lighter emphasis, plain section numbers, a linked developer portal, and no redundant labels.</td><td>Pending  -  Dave</td></tr>
         </tbody>
       </table>
     </div>
+    </details>
     <p class="note">To propose a change: raise it, have it drafted, and route it to Dave for approval.
       Once approved, add a dated row here and bump the version.</p>
   </section>
@@ -351,7 +352,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <path class="ahalogo-cls-1" d="M209.66,170.77c.3.12.6.23.9.33,4.63,1.56,9.71,1.95,14.55,1.33,3.83-.49,8.13-1.64,10.95-4.45.74-.73,1.35-1.59,1.71-2.57,1.69-4.61-2.7-6.88-3.85-7.3-2.56-.94-6.07-.4-8.42.72-4.04,1.93-8.63,4.98-13.24,4.92-1.77-.02-3.62-.66-4.73-2.05-2.76-3.43-.48-8.4,2.06-11.19,1.71-1.88,3.75-3.49,5.67-5.15,2.09-1.81,4.14-3.65,6.22-5.47,1.96-1.7,3.94-3.38,5.88-5.1,4.19-3.71,8.7-7.23,12.02-11.78,1.12-1.57,2.04-3.25,2.62-5.07,1.3-3.91.71-8.73-2.49-11.47-3.75-3.24-9.39-2.03-13.1.8-4.14,3.07-7,7.52-9.72,11.83-4.01,6.47-7.52,13.23-10.75,20.11-.84,1.87-1.64,3.76-2.4,5.67-2.14,5.36-4.84,11-2.8,16.8,1.49,4.25,4.7,7.43,8.92,9.1Z"/>
   </g>
 </svg>
-    <p>Slide Plugin Platform Policy · Edition 1.0 (internal) · Version 1.3 · Last updated 16 September 2026</p>
+    <p>Slide Plugin Platform Policy · Edition 1.0 (internal) · Version 1.4 · Last updated 16 September 2026</p>
   </footer>
 
 </div>
