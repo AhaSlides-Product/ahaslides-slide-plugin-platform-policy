@@ -1,10 +1,10 @@
 # AhaSlides Slide Plugin Platform Policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.3
+- **Version:** 1.4
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
 - **Status:** Draft for review
-- **Last updated:** 16 September 2026
+- **Last updated:** 22 September 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -76,6 +76,11 @@ submissions and answer within the same week.
 | UI / UX | Lan | Design system, style, assets, accessibility (section 6) |
 | Marketing | Trent | Name, metadata, tagging & categorisation (section 7) |
 
+- **Your QA reviewer is fixed per slide type.** Each slide type has one permanent QA reviewer -
+ either Lily or Amber. It is set the first time the slide type is submitted and never changes: every
+ later submission and resubmission of that same slide type goes to the **same** QA reviewer, so they
+ build up context on your slide type across versions. UI / UX (Lan) and Marketing (Trent) are single
+ reviewers and are unaffected.
 - **Work with your reviewers.** You are welcome to reach out and work with them - but reviewers will
  not fix the issues for you. The fixes are yours to make.
 - **Track your submission.** The review queue is open - check your submission's status and reviewer
@@ -100,6 +105,9 @@ new review comment is added, and when the final approval lands and your slide ty
 - **Email** - coming soon.
 
 ## 5. QA review - Lily or Amber
+
+Each slide type has a permanent QA reviewer (Lily or Amber), fixed at first submission and unchanged
+for every later submission of that slide type (section 4).
 
 A submission is **rejected** if any of these is true:
 
@@ -161,6 +169,7 @@ approved it, and each approved change is recorded below.
 | 1.1 | 15 September 2026 | Documented the live review portal: how you submit (submission dashboard and Submit-new flow, submission types and their differences), per-reviewer status and comments, reviews editable until full sign-off, and submitter notifications (Slack DM and origin-thread reply live, email coming soon). Reviewer roles, submission package and weekly SLA unchanged. | Dave |
 | 1.2 | 15 September 2026 | Added section 3, "How you submit", with UI captures of the Submitter view (submission dashboard and the Submit-new-slide-type form) and a description of the two submission types (Upload bundle vs first-party reference) and their difference. Renumbered the review, QA, UI/UX, marketing and change-history sections accordingly. | Dave |
 | 1.3 | 16 September 2026 | Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web); exposed the developer portal link for tracking progress; kept the human-readable page concise and added an FAQ to it. | Dave |
+| 1.4 | 22 September 2026 | QA reviewer is now fixed per slide type: each slide type has one permanent QA reviewer (Lily or Amber), set at first submission and unchanged for every later submission of that slide type. UI/UX and Marketing reviewers unaffected. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
