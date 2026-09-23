@@ -219,7 +219,6 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
         </tbody>
       </table>
     </div>
-    <p class="note"><strong>Your QA reviewer is fixed per slide type.</strong> Each slide type has one permanent QA reviewer  -  either Lily or Amber  -  picked at random at first submission and unchanged for every later submission of that slide type, so they build up context on it across versions. UI / UX and Marketing are single reviewers and are unaffected.</p>
     <p class="note"><strong>Work with your reviewers.</strong> You are welcome to reach out and work with
       them  -  but reviewers will not fix the issues for you. The fixes are yours to make.</p>
     <p class="note"><strong>Track your submission.</strong> The review queue is open  -  check your submission's status and reviewer feedback any time in the developer portal at <code>staging-slides-marketplace.ahaslides.io/developer</code>.</p>
@@ -291,7 +290,6 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <p><strong>Upload bundle or first-party (reference)  -  which do I pick?</strong><br>Upload bundle if you built it outside the repo and have the files; first-party (reference) if you built it inside the AhaSlides repo and link its live implementation.</p>
       <p><strong>How long does review take?</strong><br>Submit before Monday; team Core reviews that week and answers within the same week (section 4).</p>
       <p><strong>Who approves my slide type?</strong><br>All three reviewers must approve  -  QA, UI / UX and Marketing (section 4).</p>
-      <p><strong>Do I always get the same QA reviewer?</strong><br>Yes  -  each slide type has one permanent QA reviewer (Lily or Amber), picked at random at first submission. Every later submission of that same slide type goes to the same QA reviewer (section 4).</p>
       <p><strong>How do I track progress and hear the outcome?</strong><br>Track status and reviewer feedback in the developer portal; you are also notified by Slack DM and a reply in your submission thread (email coming soon).</p>
       <p><strong>What if my slide type is rejected?</strong><br>You get the reviewers' comments on what to change. Fix it and resubmit, which reopens the review round.</p>
       <p><strong>Can I use my own styling?</strong><br>Yes  -  declare <strong>Standard</strong> (design-system compliant) or <strong>Immersive</strong> (its own look, with a good reason) (section 6).</p>
@@ -310,7 +308,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
           <tr><td>1.1</td><td>15 September 2026</td><td>Documented the live review portal: how it works from build to live, where to submit (bundle vs first-party reference), per-reviewer status and comments, reviews editable until full sign-off, and submitter notifications (Slack DM and origin-thread reply live, email coming soon). Reviewer roles, submission package and weekly SLA unchanged.</td><td>Dave</td></tr>
           <tr><td>1.2</td><td>15 September 2026</td><td>Added section 3, &ldquo;How you submit&rdquo;, with UI captures of the Submitter view (the submission dashboard and the Submit-new-slide-type form) and a description of the two submission types (Upload bundle vs first-party reference) and their difference. Renumbered the review, QA, UI/UX, marketing and change-history sections accordingly.</td><td>Dave</td></tr>
           <tr><td>1.3</td><td>16 September 2026</td><td>Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web) without web-UI detail; exposed the developer portal link for tracking progress; trimmed the human-readable page to essentials and added an FAQ.</td><td>Dave</td></tr>
-          <tr><td>1.4</td><td>22 September 2026</td><td>QA reviewer is now fixed per slide type: each slide type has one permanent QA reviewer (Lily or Amber), picked at random at first submission and unchanged for every later submission of that slide type. Enforced in the review portal. UI/UX and Marketing reviewers unaffected.</td><td>Dave</td></tr>
+          <tr><td>1.4</td><td>22 September 2026</td><td>QA reviewer assignment is now fixed per slide type internally: each slide type keeps the same QA reviewer (Lily or Amber), picked at random at first submission, across every resubmission. Kept reviewer-side and not shown to submitters. Enforced in the review portal. UI/UX and Marketing reviewers unaffected.</td><td>Dave</td></tr>
         </tbody>
       </table>
     </div>
