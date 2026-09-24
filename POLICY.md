@@ -1,10 +1,10 @@
 # AhaSlides Slide Plugin Platform Policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.4
+- **Version:** 1.5
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
 - **Status:** Draft for review
-- **Last updated:** 22 September 2026
+- **Last updated:** 24 September 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -30,7 +30,8 @@ Every submission is more than the implementation. It must include:
 - **Preview GIF** - showing it in action.
 - **Tags** - chosen from the platform's tag list.
 - **3–5 screenshots** - *optional.*
-- **Templates** demonstrating use cases - *optional.*
+- **Templates** demonstrating use cases - *optional at submission.* Sample presentations become
+ required once the slide type is approved (see section 4, "After approval").
 
 ## 3. How you submit
 
@@ -65,7 +66,8 @@ submissions and answer within the same week.
 
 **The answer is one of:**
 
-- **Pass** - approved to go live.
+- **Pass** - approved. You then provide sample presentations (see "After approval" below) and the
+ slide type goes live.
 - **Rejection** - always with comments on **why** and **what to change**.
 
 **Three reviewers - a submission passes only if all three approve:**
@@ -88,12 +90,22 @@ submissions and answer within the same week.
 - Reviews are **transparent per reviewer**: you can see each role's status and comment, who left it,
  and when. A reviewer edits only their own review.
 - Reviews stay **editable until full sign-off**. A reviewer can revise their status or comment at any
- time; the review locks only once all three roles approve and the slide type goes live.
+ time; the review locks once all three roles approve.
+
+### After approval - sample presentations
+
+Once all three reviewers approve, you must provide **at least 5 sample presentations**, each shared
+via a **share link**, that together demonstrate **at least 3 different use cases** for the slide type.
+The slide type goes live once they are in.
+
+- Each sample is a real AhaSlides presentation that uses the slide type, shared by its share link.
+- The 3+ use cases should be genuinely different ways of using the slide type, not variations on one.
 
 ### Notifications
 
 You do not need to watch the queue. You are notified when a role requests changes or rejects, when a
-new review comment is added, and when the final approval lands and your slide type goes live.
+new review comment is added, when the final approval lands (your cue to send the sample
+presentations), and when your slide type goes live.
 
 - **Slack DM** - live.
 - **A reply in your original submission thread** - live.
@@ -166,6 +178,7 @@ approved it, and each approved change is recorded below.
 | 1.2 | 15 September 2026 | Added section 3, "How you submit", with UI captures of the Submitter view (submission dashboard and the Submit-new-slide-type form) and a description of the two submission types (Upload bundle vs first-party reference) and their difference. Renumbered the review, QA, UI/UX, marketing and change-history sections accordingly. | Dave |
 | 1.3 | 16 September 2026 | Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web); exposed the developer portal link for tracking progress; kept the human-readable page concise and added an FAQ to it. | Dave |
 | 1.4 | 22 September 2026 | QA reviewer assignment is now fixed per slide type internally: each slide type keeps the same QA reviewer (Lily or Amber), picked at random at first submission, across every resubmission. Kept reviewer-side and not shown to submitters. Enforced in the review portal. UI/UX and Marketing reviewers unaffected. | Dave |
+| 1.5 | 24 September 2026 | Added the post-approval step: once all three reviewers approve, the submitter provides at least 5 sample presentations via share link, demonstrating at least 3 different use cases, before the slide type goes live. Templates stay optional at submission. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
