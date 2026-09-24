@@ -95,11 +95,12 @@ submissions and answer within the same week.
 ### After approval - sample presentations
 
 Once all three reviewers approve, you must provide **at least 5 sample presentations**, each shared
-via a **share link**, that together demonstrate **at least 3 different use cases** for the slide type.
-The slide type goes live once they are in.
+via a **share link**, each demonstrating a **different use case** for the slide type - 5 presentations,
+5 use cases. The slide type goes live once they are in.
 
 - Each sample is a real AhaSlides presentation that uses the slide type, shared by its share link.
-- The 3+ use cases should be genuinely different ways of using the slide type, not variations on one.
+- Name the use case each sample shows. The use cases must be genuinely different ways of using the
+ slide type, not variations on one.
 
 ### Notifications
 
@@ -178,7 +179,7 @@ approved it, and each approved change is recorded below.
 | 1.2 | 15 September 2026 | Added section 3, "How you submit", with UI captures of the Submitter view (submission dashboard and the Submit-new-slide-type form) and a description of the two submission types (Upload bundle vs first-party reference) and their difference. Renumbered the review, QA, UI/UX, marketing and change-history sections accordingly. | Dave |
 | 1.3 | 16 September 2026 | Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web); exposed the developer portal link for tracking progress; kept the human-readable page concise and added an FAQ to it. | Dave |
 | 1.4 | 22 September 2026 | QA reviewer assignment is now fixed per slide type internally: each slide type keeps the same QA reviewer (Lily or Amber), picked at random at first submission, across every resubmission. Kept reviewer-side and not shown to submitters. Enforced in the review portal. UI/UX and Marketing reviewers unaffected. | Dave |
-| 1.5 | 24 September 2026 | Added the post-approval step: once all three reviewers approve, the submitter provides at least 5 sample presentations via share link, demonstrating at least 3 different use cases, before the slide type goes live. Templates stay optional at submission. | Pending - Dave |
+| 1.5 | 24 September 2026 | Added the post-approval step: once all three reviewers approve, the submitter provides at least 5 sample presentations via share link, each demonstrating a different use case (5 presentations, 5 use cases), before the slide type goes live. Templates stay optional at submission. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
