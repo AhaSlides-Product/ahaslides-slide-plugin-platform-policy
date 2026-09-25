@@ -137,7 +137,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <span><b>Applies to</b> AhaSliders &amp; trusted partners</span>
       <span><b>Edition</b> 1.0 (internal)</span>
       <span><b>Status</b> Draft for review</span>
-      <span><b>Last updated</b> 16 September 2026</span>
+      <span><b>Last updated</b> 25 September 2026</span>
     </div>
   </header>
 
@@ -230,7 +230,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <p>A submission is <strong>rejected</strong> if any of these is true:</p>
     <ul class="reject">
       <li>It does not support <strong>Report / Export</strong> features.</li>
-      <li>It does not support <strong>AI</strong> features.</li>
+      <li>The <strong>AhaSlides Slides Agent</strong> (the in-product AI) cannot create or edit it. This does <em>not</em> mean the slide type must include AI features of its own.</li>
       <li>It misuses or does not comply with the <strong>SDK</strong>.</li>
       <li>It does not handle <strong>edge cases</strong> gracefully.</li>
       <li>Data  -  <strong>real-time and persistent</strong>  -  is not recorded correctly.</li>
@@ -292,6 +292,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <p><strong>Who approves my slide type?</strong><br>All three reviewers must approve  -  QA, UI / UX and Marketing (section 4).</p>
       <p><strong>How do I track progress and hear the outcome?</strong><br>Track status and reviewer feedback in the developer portal; you are also notified by Slack DM and a reply in your submission thread (email coming soon).</p>
       <p><strong>What if my slide type is rejected?</strong><br>You get the reviewers' comments on what to change. Fix it and resubmit, which reopens the review round.</p>
+      <p><strong>Must my slide type include AI features?</strong><br>No. The QA rule is that the AhaSlides Slides Agent must be able to create and edit your slide type. You do not need to add generative-AI actions to its editing panel (section 5).</p>
       <p><strong>Can I use my own styling?</strong><br>Yes  -  declare <strong>Standard</strong> (design-system compliant) or <strong>Immersive</strong> (its own look, with a good reason) (section 6).</p>
     </div>
   </section>
@@ -309,6 +310,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
           <tr><td>1.2</td><td>15 September 2026</td><td>Added section 3, &ldquo;How you submit&rdquo;, with UI captures of the Submitter view (the submission dashboard and the Submit-new-slide-type form) and a description of the two submission types (Upload bundle vs first-party reference) and their difference. Renumbered the review, QA, UI/UX, marketing and change-history sections accordingly.</td><td>Dave</td></tr>
           <tr><td>1.3</td><td>16 September 2026</td><td>Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web) without web-UI detail; exposed the developer portal link for tracking progress; trimmed the human-readable page to essentials and added an FAQ.</td><td>Dave</td></tr>
           <tr><td>1.4</td><td>22 September 2026</td><td>QA reviewer assignment is now fixed per slide type internally: each slide type keeps the same QA reviewer (Lily or Amber), picked at random at first submission, across every resubmission. Kept reviewer-side and not shown to submitters. Enforced in the review portal. UI/UX and Marketing reviewers unaffected.</td><td>Dave</td></tr>
+          <tr><td>1.5</td><td>25 September 2026</td><td>Clarified the QA AI rule: a slide type is rejected if the AhaSlides Slides Agent cannot create or edit it. It does not need AI features of its own.</td><td>Pending  -  Dave</td></tr>
         </tbody>
       </table>
     </div>
@@ -352,7 +354,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <path class="ahalogo-cls-1" d="M209.66,170.77c.3.12.6.23.9.33,4.63,1.56,9.71,1.95,14.55,1.33,3.83-.49,8.13-1.64,10.95-4.45.74-.73,1.35-1.59,1.71-2.57,1.69-4.61-2.7-6.88-3.85-7.3-2.56-.94-6.07-.4-8.42.72-4.04,1.93-8.63,4.98-13.24,4.92-1.77-.02-3.62-.66-4.73-2.05-2.76-3.43-.48-8.4,2.06-11.19,1.71-1.88,3.75-3.49,5.67-5.15,2.09-1.81,4.14-3.65,6.22-5.47,1.96-1.7,3.94-3.38,5.88-5.1,4.19-3.71,8.7-7.23,12.02-11.78,1.12-1.57,2.04-3.25,2.62-5.07,1.3-3.91.71-8.73-2.49-11.47-3.75-3.24-9.39-2.03-13.1.8-4.14,3.07-7,7.52-9.72,11.83-4.01,6.47-7.52,13.23-10.75,20.11-.84,1.87-1.64,3.76-2.4,5.67-2.14,5.36-4.84,11-2.8,16.8,1.49,4.25,4.7,7.43,8.92,9.1Z"/>
   </g>
 </svg>
-    <p>Slide Plugin Platform Policy · Edition 1.0 (internal) · Version 1.4 · Last updated 22 September 2026</p>
+    <p>Slide Plugin Platform Policy · Edition 1.0 (internal) · Version 1.5 · Last updated 25 September 2026</p>
   </footer>
 
 </div>
