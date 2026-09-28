@@ -1,10 +1,10 @@
 # AhaSlides Slide Plugin Platform Policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.5
+- **Version:** 1.6
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
 - **Status:** Draft for review
-- **Last updated:** 25 September 2026
+- **Last updated:** 29 September 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -36,13 +36,13 @@ Every submission is more than the implementation. It must include:
 
 There are two ways to submit a slide type for review:
 
-- **Via Agent Fleet** - in the slide-types channel, ask the AhaSlides agent to submit your slide
- type for review; it gathers the submission package and files it for you.
+- **Via Agent Fleet** - in the slide platform agents channel <#C0C2MDAJ38V>, ask the AhaSlides agent
+ to submit your slide type for review; it gathers the submission package and files it for you.
 - **Via the web interface** - sign in to the developer portal at
  `staging-slides-marketplace.ahaslides.io/developer` and use **Submit new slide type**. The form is
  self-explanatory (and may change).
 
-### The two submission types
+### The three submission types
 
 Whichever method you use, you choose a submission type:
 
@@ -52,9 +52,29 @@ Whichever method you use, you choose a submission type:
 - **First-party (reference)** - pick this if you built it **inside** the AhaSlides repo. Instead of
  uploading files you link its live implementation, and a **Pick from the repo** dropdown can auto-fill
  the fields. It goes live via its repo PR merge - approval here is the review sign-off.
+- **Hosted page** - pick this if you built it on a hosted page. You give its **page ID**; everything
+ else comes from the page automatically - every file on it, its catalogue entry, its preview link and
+ its test-presentation links. Reviewers approve a **frozen snapshot** taken at submit time, not the
+ live page, so you can keep working on the page once you've submitted. It goes live only when a
+ reviewer or admin publishes it (see "Going live" below).
 
-The difference is only in *how the implementation reaches us* - upload the files, or reference a live
-in-repo build. The submission package in section 2 is required either way.
+The difference is only in *how the implementation reaches us* - upload the files, reference a live
+in-repo build, or point at a hosted page. The submission package in section 2 is required either way,
+including tags chosen from the platform's tag list.
+
+### Going live (Upload bundle and Hosted page)
+
+- **Approval does not publish.** Once all three reviewers approve and the submission has a test
+ presentation link, it appears in the review portal's **Publish** tab.
+- **A reviewer or admin publishes it**, signed in to the review portal. Neither the submitter nor Agent
+ Fleet can publish. For a hosted page, publishing is refused if the page has changed since it was
+ approved - resubmit so the change is reviewed first.
+- **Visibility is controlled by a feature flag.** A new slide type gets its own flag, named
+ `slideTypeMarket-<Name>` with every word capitalised; slide types that already had a flag keep it. The
+ Publish page shows whether the flag exists and is on, or asks for it to be created.
+- **Updating a published slide type** opens a separate **update** submission. Users keep the live
+ version until the update is approved and published. Only the reviewer roles whose areas changed
+ review it again.
 
 ## 4. The review process
 
@@ -88,12 +108,12 @@ submissions and answer within the same week.
 - Reviews are **transparent per reviewer**: you can see each role's status and comment, who left it,
  and when. A reviewer edits only their own review.
 - Reviews stay **editable until full sign-off**. A reviewer can revise their status or comment at any
- time; the review locks only once all three roles approve and the slide type goes live.
+ time; the review locks once all three roles approve.
 
 ### Notifications
 
 You do not need to watch the queue. You are notified when a role requests changes or rejects, when a
-new review comment is added, and when the final approval lands and your slide type goes live.
+new review comment is added, when the final approval lands, and when your slide type goes live.
 
 - **Slack DM** - live.
 - **A reply in your original submission thread** - live.
@@ -169,6 +189,7 @@ approved it, and each approved change is recorded below.
 | 1.3 | 16 September 2026 | Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web); exposed the developer portal link for tracking progress; kept the human-readable page concise and added an FAQ to it. | Dave |
 | 1.4 | 22 September 2026 | QA reviewer assignment is now fixed per slide type internally: each slide type keeps the same QA reviewer (Lily or Amber), picked at random at first submission, across every resubmission. Kept reviewer-side and not shown to submitters. Enforced in the review portal. UI/UX and Marketing reviewers unaffected. | Dave |
 | 1.5 | 25 September 2026 | Clarified the QA AI rule: a slide type is rejected if the AhaSlides Slides Agent cannot create or edit it. It does not need AI features of its own; the earlier wording ("does not support AI features") was misread as requiring generative-AI actions in the editing panel. | Dave |
+| 1.6 | 29 September 2026 | Added the third submission type, Hosted page: give a page ID and everything else - files, catalogue entry, preview link, test-presentation links - is captured automatically; reviewers approve a frozen snapshot taken at submit time. Added "Going live": approval no longer publishes; a reviewer or admin publishes from the review portal's Publish tab (never the submitter or Agent Fleet), a hosted page is refused if it changed since approval, visibility is a `slideTypeMarket-<Name>` feature flag, and an update to a published slide type is its own submission while the live version stays. Submission package (section 2), including platform tags, is unchanged and applies to all three types. Moved run-it-yourself Agent Fleet submission to <#C0C2MDAJ38V>. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.

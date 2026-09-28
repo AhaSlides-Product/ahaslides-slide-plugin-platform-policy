@@ -137,7 +137,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <span><b>Applies to</b> AhaSliders &amp; trusted partners</span>
       <span><b>Edition</b> 1.0 (internal)</span>
       <span><b>Status</b> Draft for review</span>
-      <span><b>Last updated</b> 25 September 2026</span>
+      <span><b>Last updated</b> 29 September 2026</span>
     </div>
   </header>
 
@@ -185,10 +185,11 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <h2 class="sec"><span class="n">3.</span> How you submit</h2>
     <p>There are two ways to submit a slide type for review:</p>
     <ul>
-      <li><strong>Via Agent Fleet</strong>  -  in the slide-types channel, ask the AhaSlides agent to submit your slide type for review; it gathers the submission package and files it for you.</li>
+      <li><strong>Via Agent Fleet</strong>  -  in the slide platform agents channel, ask the AhaSlides agent to submit your slide type for review; it gathers the submission package and files it for you.</li>
       <li><strong>Via the web interface</strong>  -  sign in to the developer portal at <code>staging-slides-marketplace.ahaslides.io/developer</code> and use <strong>Submit new slide type</strong>. The form is self-explanatory.</li>
     </ul>
-    <p class="note">Either way, you choose a <strong>submission type</strong>: <strong>Upload bundle</strong> if you built the slide type outside the repo and upload its files, or <strong>First-party (reference)</strong> if you built it inside the AhaSlides repo and link its live implementation instead. The submission package in section 2 is required whichever you pick.</p>
+    <p class="note">Either way, you choose a <strong>submission type</strong>: <strong>Upload bundle</strong> if you built the slide type outside the repo and upload its files, <strong>First-party (reference)</strong> if you built it inside the AhaSlides repo and link its live implementation, or <strong>Hosted page</strong> if you built it on a hosted page  -  give its page ID and the page's files, listing and links are captured automatically as a frozen snapshot for review. The submission package in section 2 is required whichever you pick.</p>
+    <p class="note"><strong>Going live:</strong> approval does not publish. Once all three reviewers approve and there is a test presentation link, a reviewer or admin publishes it from the review portal  -  never the submitter or the agent. A hosted page that changed after approval is not published until the change is reviewed. To update a published slide type, submit an update; users keep the live version until the update is approved and published.</p>
   </section>
 
   <section id="review">
@@ -285,9 +286,11 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <h2 class="sec">FAQ</h2>
     <div class="faq">
       <p><strong>Who can submit a slide type?</strong><br>Any internal developer  -  an AhaSlider or an invited partner (section 1).</p>
-      <p><strong>How do I submit?</strong><br>Two ways: ask the AhaSlides agent in the slide-types channel, or use <strong>Submit new slide type</strong> in the developer portal (section 3).</p>
+      <p><strong>How do I submit?</strong><br>Two ways: ask the AhaSlides agent in the slide platform agents channel, or use <strong>Submit new slide type</strong> in the developer portal (section 3).</p>
       <p><strong>What must I include?</strong><br>The submission package in section 2: the slide type name, the implementation, a subheading, a long description, a preview GIF and tags (screenshots optional).</p>
-      <p><strong>Upload bundle or first-party (reference)  -  which do I pick?</strong><br>Upload bundle if you built it outside the repo and have the files; first-party (reference) if you built it inside the AhaSlides repo and link its live implementation.</p>
+      <p><strong>Upload bundle, first-party (reference), or hosted page  -  which do I pick?</strong><br>Upload bundle if you built it outside the repo and have the files; first-party (reference) if you built it inside the AhaSlides repo and link its live implementation; hosted page if you built it on a hosted page  -  give its page ID and everything else is captured automatically as a frozen snapshot for review.</p>
+      <p><strong>Does approval make my slide type live?</strong><br>No. After all three approvals, a reviewer or admin publishes it from the review portal; it is shown to users through its own feature flag (section 3).</p>
+      <p><strong>How do I change a slide type that is already live?</strong><br>Submit an update. It is reviewed on its own, and users keep the live version until the update is approved and published (section 3).</p>
       <p><strong>How long does review take?</strong><br>Submit before Monday; team Core reviews that week and answers within the same week (section 4).</p>
       <p><strong>Who approves my slide type?</strong><br>All three reviewers must approve  -  QA, UI / UX and Marketing (section 4).</p>
       <p><strong>How do I track progress and hear the outcome?</strong><br>Track status and reviewer feedback in the developer portal; you are also notified by Slack DM and a reply in your submission thread (email coming soon).</p>
@@ -311,6 +314,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
           <tr><td>1.3</td><td>16 September 2026</td><td>Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web) without web-UI detail; exposed the developer portal link for tracking progress; trimmed the human-readable page to essentials and added an FAQ.</td><td>Dave</td></tr>
           <tr><td>1.4</td><td>22 September 2026</td><td>QA reviewer assignment is now fixed per slide type internally: each slide type keeps the same QA reviewer (Lily or Amber), picked at random at first submission, across every resubmission. Kept reviewer-side and not shown to submitters. Enforced in the review portal. UI/UX and Marketing reviewers unaffected.</td><td>Dave</td></tr>
           <tr><td>1.5</td><td>25 September 2026</td><td>Clarified the QA AI rule: a slide type is rejected if the AhaSlides Slides Agent cannot create or edit it. It does not need AI features of its own.</td><td>Dave</td></tr>
+          <tr><td>1.6</td><td>29 September 2026</td><td>Added the third submission type, Hosted page: give a page ID and everything else  -  files, listing, preview and test links  -  is captured automatically; reviewers approve a frozen snapshot taken at submit time. Approval no longer publishes: a reviewer or admin publishes from the review portal (never the submitter or the agent), a hosted page that changed after approval is refused, visibility is a per-slide-type feature flag, and an update to a live slide type is its own submission while the live version stays. Submission package (section 2), including platform tags, is unchanged and applies to all three types. Moved run-it-yourself Agent Fleet submission to the slide platform agents channel.</td><td>Pending  -  Dave</td></tr>
         </tbody>
       </table>
     </div>
@@ -354,7 +358,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <path class="ahalogo-cls-1" d="M209.66,170.77c.3.12.6.23.9.33,4.63,1.56,9.71,1.95,14.55,1.33,3.83-.49,8.13-1.64,10.95-4.45.74-.73,1.35-1.59,1.71-2.57,1.69-4.61-2.7-6.88-3.85-7.3-2.56-.94-6.07-.4-8.42.72-4.04,1.93-8.63,4.98-13.24,4.92-1.77-.02-3.62-.66-4.73-2.05-2.76-3.43-.48-8.4,2.06-11.19,1.71-1.88,3.75-3.49,5.67-5.15,2.09-1.81,4.14-3.65,6.22-5.47,1.96-1.7,3.94-3.38,5.88-5.1,4.19-3.71,8.7-7.23,12.02-11.78,1.12-1.57,2.04-3.25,2.62-5.07,1.3-3.91.71-8.73-2.49-11.47-3.75-3.24-9.39-2.03-13.1.8-4.14,3.07-7,7.52-9.72,11.83-4.01,6.47-7.52,13.23-10.75,20.11-.84,1.87-1.64,3.76-2.4,5.67-2.14,5.36-4.84,11-2.8,16.8,1.49,4.25,4.7,7.43,8.92,9.1Z"/>
   </g>
 </svg>
-    <p>Slide Plugin Platform Policy · Edition 1.0 (internal) · Version 1.5 · Last updated 25 September 2026</p>
+    <p>Slide Plugin Platform Policy · Edition 1.0 (internal) · Version 1.6 · Last updated 29 September 2026</p>
   </footer>
 
 </div>
