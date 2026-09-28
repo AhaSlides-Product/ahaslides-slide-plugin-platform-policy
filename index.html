@@ -178,7 +178,8 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <li><strong>Category</strong>  -  one or more of Quiz, Gamification, Unscored, Content. A slide type can belong to several  -  it then appears in every matching category on the presenter's picker.</li>
       <li><strong>Purpose</strong>  -  one or more of Icebreaker, Knowledge check, Opinions &amp; feedback, Brainstorm &amp; collaborate, Decision making, Fun &amp; energiser, Team building, Reflection &amp; wellbeing, Present content.</li>
       <li><strong>Ideal audience size</strong>  -  one or more of Small (1-9), Medium (10-49), Large (50-199), Huge (200+).</li>
-      <li><strong>Tags</strong>  -  chosen from the platform's tag list.</li>
+      <li><strong>Best for</strong>  -  one or more of Classroom, Workplace, Events, Casual.</li>
+      <li><strong>Tags</strong>  -  search keywords chosen from the platform's tag list. Never shown to users; they only help people find your slide type when searching.</li>
       <li><strong>3–5 screenshots</strong>  -  <em>optional.</em></li>
       <li><strong>Templates</strong> demonstrating use cases  -  <em>optional.</em></li>
     </ul>
@@ -289,8 +290,9 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <div class="faq">
       <p><strong>Who can submit a slide type?</strong><br>Any internal developer  -  an AhaSlider or an invited partner (section 1).</p>
       <p><strong>How do I submit?</strong><br>Two ways: ask the AhaSlides agent in the slide-types channel, or use <strong>Submit new slide type</strong> in the developer portal (section 3).</p>
-      <p><strong>What must I include?</strong><br>The submission package in section 2: the slide type name, the implementation, a subheading, a long description, a preview GIF, category, purpose, ideal audience size and tags (screenshots optional).</p>
-      <p><strong>Can a slide type have more than one category?</strong><br>Yes  -  pick every category, purpose and audience size that fits, and pick only from each list's fixed options (section 2).</p>
+      <p><strong>What must I include?</strong><br>The submission package in section 2: the slide type name, the implementation, a subheading, a long description, a preview GIF, category, purpose, ideal audience size, best for and tags (screenshots optional).</p>
+      <p><strong>Can a slide type have more than one category?</strong><br>Yes  -  pick every category, purpose, audience size and best-for option that fits, and pick only from each list's fixed options (section 2).</p>
+      <p><strong>Are tags shown to users?</strong><br>No  -  tags are internal search keywords only. You still pick them from the platform's tag list; they just help people find your slide type when searching, not browsing (section 2).</p>
       <p><strong>Upload bundle or first-party (reference)  -  which do I pick?</strong><br>Upload bundle if you built it outside the repo and have the files; first-party (reference) if you built it inside the AhaSlides repo and link its live implementation.</p>
       <p><strong>How long does review take?</strong><br>Submit before Monday; team Core reviews that week and answers within the same week (section 4).</p>
       <p><strong>Who approves my slide type?</strong><br>All three reviewers must approve  -  QA, UI / UX and Marketing (section 4).</p>
@@ -315,7 +317,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
           <tr><td>1.3</td><td>16 September 2026</td><td>Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web) without web-UI detail; exposed the developer portal link for tracking progress; trimmed the human-readable page to essentials and added an FAQ.</td><td>Dave</td></tr>
           <tr><td>1.4</td><td>22 September 2026</td><td>QA reviewer assignment is now fixed per slide type internally: each slide type keeps the same QA reviewer (Lily or Amber), picked at random at first submission, across every resubmission. Kept reviewer-side and not shown to submitters. Enforced in the review portal. UI/UX and Marketing reviewers unaffected.</td><td>Dave</td></tr>
           <tr><td>1.5</td><td>25 September 2026</td><td>Clarified the QA AI rule: a slide type is rejected if the AhaSlides Slides Agent cannot create or edit it. It does not need AI features of its own.</td><td>Dave</td></tr>
-          <tr><td>1.6</td><td>28 September 2026</td><td>Added three explicit, stored, multi-select fields to section 2: Category (Quiz, Gamification, Unscored, Content  -  can belong to several, listed in every matching category), Purpose (Icebreaker, Knowledge check, Opinions &amp; feedback, Brainstorm &amp; collaborate, Decision making, Fun &amp; energiser, Team building, Reflection &amp; wellbeing, Present content) and Ideal audience size (Small 1-9, Medium 10-49, Large 50-199, Huge 200+). Tags unchanged.</td><td>Pending  -  Dave</td></tr>
+          <tr><td>1.6</td><td>28 September 2026</td><td>Added four explicit, stored, multi-select fields to section 2: Category (Quiz, Gamification, Unscored, Content  -  can belong to several, listed in every matching category), Purpose (Icebreaker, Knowledge check, Opinions &amp; feedback, Brainstorm &amp; collaborate, Decision making, Fun &amp; energiser, Team building, Reflection &amp; wellbeing, Present content), Ideal audience size (Small 1-9, Medium 10-49, Large 50-199, Huge 200+) and Best for (Classroom, Workplace, Events, Casual). Reworded Tags: still developer-chosen, but now internal search keywords never shown to users.</td><td>Pending  -  Dave</td></tr>
         </tbody>
       </table>
     </div>

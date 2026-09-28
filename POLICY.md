@@ -36,12 +36,14 @@ Every submission is more than the implementation. It must include:
  Present content.
 - **Ideal audience size** - one or more, chosen from: Small (1-9), Medium (10-49), Large (50-199),
  Huge (200+).
-- **Tags** - chosen from the platform's tag list.
+- **Best for** - one or more, chosen from: Classroom, Workplace, Events, Casual.
+- **Tags** - search keywords, chosen from the platform's tag list. They are never shown to users;
+ they only help people find your slide type when searching.
 - **3–5 screenshots** - *optional.*
 - **Templates** demonstrating use cases - *optional.*
 
-Category, Purpose and Ideal audience size are each stored as an explicit list, not free text - pick
-only from the option list above. More options may be added to each list later.
+Category, Purpose, Ideal audience size and Best for are each stored as an explicit list, not free
+text - pick only from the option list above. More options may be added to each list later.
 
 ## 3. How you submit
 
@@ -180,7 +182,7 @@ approved it, and each approved change is recorded below.
 | 1.3 | 16 September 2026 | Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web); exposed the developer portal link for tracking progress; kept the human-readable page concise and added an FAQ to it. | Dave |
 | 1.4 | 22 September 2026 | QA reviewer assignment is now fixed per slide type internally: each slide type keeps the same QA reviewer (Lily or Amber), picked at random at first submission, across every resubmission. Kept reviewer-side and not shown to submitters. Enforced in the review portal. UI/UX and Marketing reviewers unaffected. | Dave |
 | 1.5 | 25 September 2026 | Clarified the QA AI rule: a slide type is rejected if the AhaSlides Slides Agent cannot create or edit it. It does not need AI features of its own; the earlier wording ("does not support AI features") was misread as requiring generative-AI actions in the editing panel. | Dave |
-| 1.6 | 28 September 2026 | Added three explicit, stored, multi-select fields to section 2, "What you submit": Category (Quiz, Gamification, Unscored, Content - a slide type can belong to several, and is listed in every matching category's section of the presenter's picker), Purpose (Icebreaker, Knowledge check, Opinions & feedback, Brainstorm & collaborate, Decision making, Fun & energiser, Team building, Reflection & wellbeing, Present content) and Ideal audience size (Small 1-9, Medium 10-49, Large 50-199, Huge 200+). Tags and the rest of section 2 unchanged; Tags/Context is still undecided. | Pending - Dave |
+| 1.6 | 28 September 2026 | Added four explicit, stored, multi-select fields to section 2, "What you submit": Category (Quiz, Gamification, Unscored, Content - a slide type can belong to several, and is listed in every matching category's section of the presenter's picker), Purpose (Icebreaker, Knowledge check, Opinions & feedback, Brainstorm & collaborate, Decision making, Fun & energiser, Team building, Reflection & wellbeing, Present content), Ideal audience size (Small 1-9, Medium 10-49, Large 50-199, Huge 200+) and Best for (Classroom, Workplace, Events, Casual). Reworded Tags: still developer-chosen, but now internal search keywords never shown to users. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
