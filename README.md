@@ -9,6 +9,7 @@ developers follow to build, submit, review and publish slide types.
 | --- | --- | --- |
 | **Agent-readable** | [`POLICY.md`](./POLICY.md) | Agents and tools — the canonical, parseable source of truth; carries the full detail. |
 | **Human-readable** | [`index.html`](./index.html) | People — a styled, web-viewable page kept **concise**: only what every slide developer must know, plus an FAQ. |
+| **Live fields** | [`fields.html`](./fields.html) | Everyone — a page that fetches the Slide Lab catalogue on every load and lists each slide type field, its options and usage counts. Live URL: <https://ahaslides-product.github.io/ahaslides-slide-plugin-platform-policy/fields.html>. |
 
 The web-viewable version is published for humans; the latest link lives in the Confluence article
 for this policy. `POLICY.md` is canonical: the human page is a concise summary of it, so the two can

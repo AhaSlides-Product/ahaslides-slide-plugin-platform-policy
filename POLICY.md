@@ -20,6 +20,8 @@ stricter, more explicit clauses. Design your slide type as if that scrutiny is c
 
 ## 2. What you submit
 
+The live list of every field, its options and current usage is at <https://ahaslides-product.github.io/ahaslides-slide-plugin-platform-policy/fields.html>.
+
 Every submission is more than the implementation. It must include:
 
 - **Slide type name** - what the slide type is called. *Mandatory.*
