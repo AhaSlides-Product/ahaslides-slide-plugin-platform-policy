@@ -167,7 +167,7 @@ approved it, and each approved change is recorded below.
 | 1.3 | 16 September 2026 | Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web); exposed the developer portal link for tracking progress; kept the human-readable page concise and added an FAQ to it. | Dave |
 | 1.4 | 22 September 2026 | QA reviewer assignment is now fixed per slide type internally: each slide type keeps the same QA reviewer (Lily or Amber), picked at random at first submission, across every resubmission. Kept reviewer-side and not shown to submitters. Enforced in the review portal. UI/UX and Marketing reviewers unaffected. | Dave |
 | 1.5 | 25 September 2026 | Clarified the QA AI rule: a slide type is rejected if the AhaSlides Slides Agent cannot create or edit it. It does not need AI features of its own; the earlier wording ("does not support AI features") was misread as requiring generative-AI actions in the editing panel. | Dave |
-| 1.6 | 28 September 2026 | Tightened the wording of the QA AI rule. Meaning unchanged. | Pending - Dave |
+| 1.6 | 28 September 2026 | Tightened the wording of the QA AI rule. Meaning unchanged. | Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
