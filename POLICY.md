@@ -3,7 +3,6 @@
 - **Edition:** 1.0 (internal)
 - **Version:** 1.7
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
-- **Status:** Draft for review
 - **Last updated:** 29 September 2026
 - **Sole approver of changes:** Dave
 
