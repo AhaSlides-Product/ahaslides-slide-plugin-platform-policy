@@ -108,6 +108,25 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
 .back{font-size:14px;margin:0 0 12px;}
 .back a,.sub a{color:var(--accent);font-weight:600;}
 .tablewrap table{min-width:640px;}
+section.wide{width:min(1180px,calc(100vw - 32px));margin-left:calc(50% - min(590px,calc(50vw - 16px)));}
+.filterbar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin:0 0 12px;}
+.filterbar input{font:inherit;font-size:14px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;min-width:260px;flex:1;max-width:420px;background:var(--bg);color:var(--ink);}
+.filterbar input:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+.filterbar .count{font-size:13px;color:var(--muted);}
+.typetable{max-height:78vh;overflow:auto;}
+.typetable table{min-width:980px;font-size:13px;}
+.typetable th{position:sticky;top:0;z-index:2;}
+.typetable th small{display:block;font-weight:500;color:var(--muted);font-size:11.5px;}
+.typetable td,.typetable th{padding:9px 12px;}
+.typetable td:first-child,.typetable th:first-child{position:sticky;left:0;background:var(--bg);font-weight:650;min-width:150px;box-shadow:1px 0 0 var(--line);}
+.typetable th:first-child{z-index:3;background:var(--soft);}
+.typetable tbody tr:nth-child(even) td{background:#fbfbfd;}
+.typetable tbody tr:hover td{background:var(--accent-soft);}
+.vals{display:flex;flex-wrap:wrap;gap:4px;}
+.v{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;white-space:nowrap;}
+.v.c0{color:#6a1ebb;background:#f4ecfd;}.v.c1{color:#1d5fa8;background:#e8f1fc;}.v.c2{color:#0b7a6e;background:#e4f5f2;}.v.c3{color:#9a5b10;background:#fbf1e2;}.v.c4{color:#a1285b;background:#fcebf2;}.v.c5{color:#4a5160;background:#eef0f4;}
+.v.yes{color:var(--ok);background:var(--ok-soft);}.v.no,.v.standard{color:var(--muted);background:#eef0f4;}.v.immersive{color:#fff;background:var(--accent);}
+.empty{color:var(--muted);}
 </style>
 </head>
 <body>
@@ -165,7 +184,6 @@ const out=document.getElementById('out');
 function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
 function section(num,title,intro){const s=el('section');const h=el('h2','sec');h.append(el('span','n',num+'.'),' '+title);s.append(h);if(intro)s.append(el('p','lead',intro));return s;}
 function valuesOf(entry,field){const v=entry[field.field];if(v==null||v==='')return[];return Array.isArray(v)?v:[v];}
-function labelsOf(entry,field){const byId=new Map(field.options.map(o=>[o.id,o.label]));return valuesOf(entry,field).map(id=>byId.get(id)||id);}
 function card(field,types,primary){
   const c=el('div','fcard'+(primary?' primary':''));c.append(el('h3',null,field.label+(primary?' (main filter)':'')));
   c.append(el('p',null,field.multiple?'Pick every option that fits.':'Exactly one. Required.'));
@@ -174,6 +192,25 @@ function card(field,types,primary){
 function grid(fields,types,primaryField){const g=el('div','grid');fields.forEach(f=>g.append(card(f,types,f.field===primaryField)));return g;}
 function tableOf(head,rows){const w=el('div','tablewrap');const t=el('table');const thead=el('thead');const hr=el('tr');head.forEach(h=>hr.append(el('th',null,h)));thead.append(hr);t.append(thead);const tb=el('tbody');rows.forEach(r=>{const tr=el('tr');r.forEach(c=>tr.append(el('td',null,c)));tb.append(tr);});t.append(tb);w.append(t);return w;}
 const CONTENT_FIELDS=[['Slide type name','Yes','Display name.'],['Subheading','Yes','One-line summary.'],['Long description','Yes','Use cases and instructions.'],['Preview GIF','Yes','Shows it in action.'],['Screenshots','Optional','3 to 5.'],['Templates','Optional','Example presentations that show use cases.'],['Search keywords (tags)','Optional','Used by search only, never shown to users.'],['Card label','No','The old free-text category (e.g. Game, Vote, Quiz). Only a label on the card; Format replaces it for browsing.']];
+const RANGE=/\s*\(([^)]*)\)\s*$/;
+function shortLabel(label){return label.replace(RANGE,'');}
+function rangeOf(label){const m=label.match(RANGE);return m?m[1]:null;}
+function slideTypeTable(fields,types){
+  const wrap=el('div');const bar=el('div','filterbar');const input=el('input');input.type='search';input.placeholder='Filter by slide type or value, e.g. Quiz, Immersive';input.setAttribute('aria-label','Filter slide types');
+  const count=el('span','count');bar.append(input,count);wrap.append(bar);
+  const box=el('div','tablewrap typetable');const t=el('table');const thead=el('thead');const hr=el('tr');hr.append(el('th',null,'Slide type'));
+  fields.forEach(f=>{const th=el('th',null,f.label);const ranges=f.options.map(o=>rangeOf(o.label)?shortLabel(o.label)+' '+rangeOf(o.label):null).filter(Boolean);if(ranges.length)th.append(el('small',null,ranges.join(' · ')));hr.append(th);});
+  thead.append(hr);t.append(thead);const tb=el('tbody');
+  const rows=[...types].sort((a,b)=>a.name.localeCompare(b.name,'en',{sensitivity:'base'})).map(type=>{
+    const tr=el('tr');tr.append(el('td',null,type.name));const words=[type.name];
+    fields.forEach((f,i)=>{const td=el('td');const byId=new Map(f.options.map(o=>[o.id,o.label]));const ids=valuesOf(type,f);
+      if(!ids.length)td.append(el('span','empty','-'));
+      else{const vals=el('div','vals');ids.forEach(id=>{const label=byId.get(id)||id;words.push(label);vals.append(el('span','v '+(f.multiple?'c'+(i%6):'c5 '+String(id).toLowerCase()),shortLabel(label)));});td.append(vals);}
+      tr.append(td);});
+    tb.append(tr);return {tr,text:words.join(' ').toLowerCase()};});
+  t.append(tb);box.append(t);wrap.append(box);
+  const update=()=>{const q=input.value.trim().toLowerCase();let shown=0;rows.forEach(r=>{const hit=!q||q.split(/\s+/).every(w=>r.text.includes(w));r.tr.hidden=!hit;if(hit)shown++;});count.textContent=q?shown+' of '+rows.length+' shown':rows.length+' slide types, A to Z';};
+  input.addEventListener('input',update);update();return wrap;}
 function render(meta,all){
   const fields=meta.fields;const classified=all.filter(t=>Array.isArray(t.formats)&&t.formats.length);
   const unclassified=all.filter(t=>!(Array.isArray(t.formats)&&t.formats.length)).map(t=>t.name);
@@ -187,8 +224,8 @@ function render(meta,all){
   const counts=new Map();classified.forEach(t=>(t.tags||[]).forEach(g=>counts.set(g,(counts.get(g)||0)+1)));
   const s4=section(n++,'Search keywords in use today','Hidden from users, only used by search. There is no official list yet.');
   const box=el('div','tagbox');[...counts].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).forEach(([g,c])=>box.append(el('span','pill',g+' · '+c)));s4.append(box);out.append(s4);
-  const s5=section(n++,'Every slide type with its values ('+classified.length+')');
-  s5.append(tableOf(['Slide type',...fields.map(f=>f.label)],classified.map(t=>[t.name,...fields.map(f=>labelsOf(t,f).join(', ')||'-')])));
+  const s5=section(n++,'Every slide type with its values ('+classified.length+')');s5.classList.add('wide');
+  s5.append(slideTypeTable(fields,classified));
   if(unclassified.length){const p=el('p','sub','Not classified (test or internal slide types): '+unclassified.join(', ')+'.');p.style.marginTop='14px';s5.append(p);}
   out.append(s5);}
 async function getJson(path){const r=await fetch(API+path);if(!r.ok)throw new Error(path+' returned '+r.status);return r.json();}
