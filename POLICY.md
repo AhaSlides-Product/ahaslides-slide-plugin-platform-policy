@@ -1,10 +1,10 @@
 # AhaSlides Slide Plugin Platform Policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.6
+- **Version:** 1.7
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
 - **Status:** Draft for review
-- **Last updated:** 28 September 2026
+- **Last updated:** 29 September 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -28,9 +28,27 @@ Every submission is more than the implementation. It must include:
 - **Subheading** - the one-line summary.
 - **Long description** - spelling out its **use cases** and **instructions**.
 - **Preview GIF** - showing it in action.
-- **Tags** - chosen from the platform's tag list.
+- **Format** - one or more, chosen from: Quiz, Game, Audience input, Content. A slide type can belong
+ to several formats; picking more than one lists it in every matching format's section of the
+ presenter's picker.
+- **Purpose** - one or more, chosen from: Icebreaker, Knowledge check, Opinions & feedback,
+ Brainstorm & collaborate, Decision making, Fun & energiser, Team building, Reflection & wellbeing,
+ Present content.
+- **Audience size** - one or more, chosen from: Small (1-9), Medium (10-39), Large (40-199),
+ Huge (200+).
+- **Setting** - one or more, chosen from: Classroom, Workplace, Events, Casual.
+- **UI style** - *required*, exactly one of: Standard or Immersive. It describes the presenter
+ (big-screen) view, and it cannot be both. See section 6 for what each style means.
+- **Leaderboard points** - *required*, Yes or No: does the slide type add points to the
+ presentation's leaderboard (as Pick Answer does)? A game that keeps its own internal score but does
+ not add it to the leaderboard is No.
+- **Search keywords (tags)** - chosen from the platform's tag list. They are never shown to users;
+ they only help people find your slide type when searching.
 - **3–5 screenshots** - *optional.*
 - **Templates** demonstrating use cases - *optional.*
+
+Format, Purpose, Audience size, Setting, UI style and Leaderboard points are each stored as an
+explicit value, not free text - pick only from the option list above. More options may be added to each list later.
 
 ## 3. How you submit
 
@@ -168,6 +186,7 @@ approved it, and each approved change is recorded below.
 | 1.4 | 22 September 2026 | QA reviewer assignment is now fixed per slide type internally: each slide type keeps the same QA reviewer (Lily or Amber), picked at random at first submission, across every resubmission. Kept reviewer-side and not shown to submitters. Enforced in the review portal. UI/UX and Marketing reviewers unaffected. | Dave |
 | 1.5 | 25 September 2026 | Clarified the QA AI rule: a slide type is rejected if the AhaSlides Slides Agent cannot create or edit it. It does not need AI features of its own; the earlier wording ("does not support AI features") was misread as requiring generative-AI actions in the editing panel. | Dave |
 | 1.6 | 28 September 2026 | Tightened the wording of the QA AI rule. Meaning unchanged. | Dave |
+| 1.7 | 29 September 2026 | Reworked the slide type attribute fields in section 2, "What you submit": Category is now Format (Quiz, Game, Audience input, Content); Ideal audience size is now Audience size, with Medium 10-39 and Large 40-199; Best for is now Setting; UI style is a required field, exactly one of Standard or Immersive (the presenter big-screen view); new required Leaderboard points field (Yes or No: does the slide add points to the presentation's leaderboard). Purpose is unchanged. Tags are described as Search keywords, hidden from users. | Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
