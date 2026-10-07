@@ -195,7 +195,7 @@ The marketing reviewer checks every submission against the rules below.
 
 - **1-3 words, 24 characters max.**
 - **Says what it does.** Use the common name people already search for: Word Cloud, Spinner Wheel, Mind Map.
-- **Never a trademarked name**, even a well-known one. Use Word Guess, not Wordle; Quiz Board, not Jeopardy. Copy the type of name, never another product's look or UI.
+- **Never a trademarked name**, even a well-known one, except the platform a slide type genuinely works with (section 7.1). Use Word Guess, not Wordle; Quiz Board, not Jeopardy. Copy the type of name, never another product's look or UI.
 - **No "AhaSlides" in the name.**
 - **Banned filler words.** No "plugin", "add-on", "app", "slide type", "beta", "v2", "Pro" or "Ultimate".
 - **No category padding.** Don't add "Quiz" or "Game" just for search; the Format field does that. The word is fine when it is part of the common name. Quiz Board and Word Guess are fine; Spinner Wheel Quiz Game is not.
@@ -205,7 +205,7 @@ The marketing reviewer checks every submission against the rules below.
 ### 7.3 Subheading (tagline)
 
 - **One sentence, 60-120 characters.**
-- **What the audience does and what they get.** For example: Rate statements and watch a live spider chart take shape.
+- **What the audience does and what they get.** For example: Rate statements together and watch a live spider chart take shape.
 - **Adds something.** Don't just repeat the name, and skip filler like "fun", "engaging" or "interactive" unless it adds meaning.
 - **Plain words.** No acronyms, slang or jokes, because they don't translate.
 
