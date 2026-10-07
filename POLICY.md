@@ -1,9 +1,9 @@
 # AhaSlides Slide Plugin Platform Policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.7
+- **Version:** 1.8
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
-- **Last updated:** 29 September 2026
+- **Last updated:** 7 October 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -34,7 +34,7 @@ Every submission is more than the implementation. It must include:
  presenter's picker.
 - **Purpose** - one or more, chosen from: Icebreaker, Knowledge check, Opinions & feedback,
  Brainstorm & collaborate, Decision making, Fun & energiser, Team building, Reflection & wellbeing,
- Present content.
+ Present content, Random pick (lucky draws, raffles, random teams or mission assignment).
 - **Audience size** - one or more, chosen from: Small (1-9), Medium (10-39), Large (40-199),
  Huge (200+).
 - **Setting** - one or more, chosen from: Classroom, Workplace, Events, Casual.
@@ -188,6 +188,7 @@ approved it, and each approved change is recorded below.
 | 1.5 | 25 September 2026 | Clarified the QA AI rule: a slide type is rejected if the AhaSlides Slides Agent cannot create or edit it. It does not need AI features of its own; the earlier wording ("does not support AI features") was misread as requiring generative-AI actions in the editing panel. | Dave |
 | 1.6 | 28 September 2026 | Tightened the wording of the QA AI rule. Meaning unchanged. | Dave |
 | 1.7 | 29 September 2026 | Reworked the slide type attribute fields in section 2, "What you submit": Category is now Format (Quiz, Game, Audience input, Content); Ideal audience size is now Audience size, with Medium 10-39 and Large 40-199; Best for is now Setting; UI style is a required field, exactly one of Standard or Immersive (the presenter big-screen view); new required Leaderboard points field (Yes or No: does the slide add points to the presentation's leaderboard). Purpose is unchanged. Tags are described as Search keywords, hidden from users. | Dave |
+| 1.8 | 7 October 2026 | Added "Random pick" to the Purpose options in section 2, "What you submit" (lucky draws, raffles, random teams or mission assignment). | Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
