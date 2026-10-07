@@ -1,7 +1,7 @@
 # AhaSlides Slide Plugin Platform Policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.8
+- **Version:** 1.9
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
 - **Last updated:** 7 October 2026
 - **Sole approver of changes:** Dave
@@ -173,6 +173,71 @@ The slide must follow the presentation's audio setting.
 The marketing reviewer reserves the right to alter the slide type's **name, metadata, and
 tagging / categorisation** for marketing and strategic reasons.
 
+The marketing reviewer checks every submission against the rules below.
+
+### 7.1 Rules for all copy: name, subheading and description
+
+- **Ethical.** No violence, sexual or offensive language, racism or swear words, including slang and puns.
+- **No other brands.** No product or company names, especially well-known SaaS brands, unless the word is also an everyday one. Exception: a slide type that genuinely works with a platform may name it, spelt exactly as the brand does (YouTube Quiz). Section 7.6 covers its visuals.
+- **No implied endorsement.** The name and copy must not suggest another company made or approved the slide type. Once third-party developers join, they must not imply AhaSlides made theirs.
+- **Clear English.** Natural English that a non-native speaker understands. US or British spelling are both fine, but use one consistently within a listing.
+- **Related to how it works.** The copy must reflect how the slide type works or what it is used for. If it doesn't, the copy is fixed or rejected as set out in section 7.7.
+- **Unique.** Not identical or confusingly close to an existing slide type, built-in or third-party.
+- **True.** It claims only what the slide does today. No "AI", "live" or "unlimited" unless that is true. Privacy claims too: say "anonymous" or "GDPR compliant" only if the slide really works that way.
+- **Safe for school.** Many presenters are teachers. No gambling words, and nothing unsuitable for under-13s. Not "Casino", "Slot Machine" or "Bet".
+- **No links or contact details.** No URLs, email addresses or social media handles in the name, subheading or description.
+- **No promo or ranking words.** No "best", "#1", "top", "new" or "ultimate".
+- **No price or plan words.** No "free", "sale" or "Pro only" in the name or subheading. Plan limits belong on the paywall, not in the listing.
+- **Clean formatting.** No emoji, ALL CAPS or repeated symbols ("!!!", "***").
+- **Capitalisation.** The name is in Title Case, like a product name: Duck Race, Spinner Wheel, YouTube Quiz. The subheading and description use normal sentence capitalisation.
+
+### 7.2 Name
+
+- **1-3 words, 24 characters max.**
+- **Says what it does.** Use the common name people already search for: Word Cloud, Spinner Wheel, Mind Map.
+- **Never a trademarked name**, even a well-known one, except the platform a slide type genuinely works with (section 7.1). Use Word Guess, not Wordle; Quiz Board, not Jeopardy. Copy the type of name, never another product's look or UI.
+- **No "AhaSlides" in the name.**
+- **Banned filler words.** No "plugin", "add-on", "app", "slide type", "beta", "v2", "Pro" or "Ultimate".
+- **No category padding.** Don't add "Quiz" or "Game" just for search; the Format field does that. The word is fine when it is part of the common name. Quiz Board and Word Guess are fine; Spinner Wheel Quiz Game is not.
+- **No workaround respellings.** A rejected name can't come back as a near-copy, such as Wurdle after Wordle.
+- **No renaming after launch.** Once a slide type is live, its name is fixed. If a change is truly needed, the owner must resubmit it for Marketing review. Changing the name never takes effect without approval.
+
+### 7.3 Subheading (tagline)
+
+- **One sentence, 60-120 characters.**
+- **What the audience does and what they get.** For example: Rate statements together and watch a live spider chart take shape.
+- **Adds something.** Don't just repeat the name, and skip filler like "fun", "engaging" or "interactive" unless it adds meaning.
+- **Plain words.** No acronyms, slang or jokes, because they don't translate.
+
+### 7.4 Long description
+
+- **300-700 characters, in 2-3 short paragraphs.** It is required before approval.
+- **Fixed structure:** (1) what it is and how it works; (2) 2-3 concrete use cases with their context, such as a classroom, workshop or event; (3) how to set it up, in up to 3 steps.
+- **Speaks to the presenter** as "you", in plain words and short sentences, with no developer jargon.
+- **No keyword stuffing.** The same keyword appears at most 5 times. No lists of brands, places or events added for search.
+- **No testimonials, ratings or user counts.** We can't verify them.
+- **No unprovable claims**, such as "most popular" or "loved by millions".
+
+### 7.5 Categories and search keywords
+
+- **At most 2 Formats and 3 Purposes**, so a slide type doesn't appear in every section of the picker.
+- **Tags must match what the slide really does.** No keyword stuffing.
+
+### 7.6 Visuals
+
+- **The preview GIF shows real use within 10 seconds**, and matches what the copy promises.
+- **No misleading results.** Demo data is fine, but the GIF and screenshots show only results the slide can really produce. No made-up "10,000 votes".
+- **No competitor logos or third-party brands** in the GIF or screenshots. Exception: a slide type that genuinely works with a platform may show that platform's content in use (a YouTube video in YouTube Quiz), but never its logo as the icon.
+- **No fast flashing.** Nothing in the GIF flashes more than 3 times a second, as that can trigger seizures (WCAG 2.3.1).
+- **The icon, GIF and screenshots don't clash with AhaSlides branding**, and the developer holds the rights to every asset.
+
+### 7.7 Pass/fail checks for the Marketing reviewer
+
+- A new user can explain how the slide works from the name and subheading alone.
+- The preview GIF matches what the copy promises.
+- The copy passes a spell-check and a banned-word filter.
+- Every rule in sections 7.1-7.6 passes. For a small issue (capitalisation, length, spelling), Marketing fixes the copy itself and notes the change. A serious one (trademark, ethics, safe for school, a misleading claim) means rejection, with the rule number in the review comment.
+
 ## 8. Approval & change history
 
 **Dave is the sole approver of changes to this policy.** No change takes effect until Dave has
@@ -189,6 +254,7 @@ approved it, and each approved change is recorded below.
 | 1.6 | 28 September 2026 | Tightened the wording of the QA AI rule. Meaning unchanged. | Dave |
 | 1.7 | 29 September 2026 | Reworked the slide type attribute fields in section 2, "What you submit": Category is now Format (Quiz, Game, Audience input, Content); Ideal audience size is now Audience size, with Medium 10-39 and Large 40-199; Best for is now Setting; UI style is a required field, exactly one of Standard or Immersive (the presenter big-screen view); new required Leaderboard points field (Yes or No: does the slide add points to the presentation's leaderboard). Purpose is unchanged. Tags are described as Search keywords, hidden from users. | Dave |
 | 1.8 | 7 October 2026 | Added "Random pick" to the Purpose options in section 2, "What you submit" (lucky draws, raffles, random teams or mission assignment). | Dave |
+| 1.9 | 7 October 2026 | Added the marketing guideline to section 7 (Marketing review): rules for the name, subheading, long description, categories and visuals, plus the Marketing reviewer's pass/fail checks and the fix-or-reject rule. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
