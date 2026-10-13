@@ -1,9 +1,9 @@
 # AhaSlides Slide Plugin Platform Policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.8
+- **Version:** 1.9
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
-- **Last updated:** 7 October 2026
+- **Last updated:** 13 October 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -131,6 +131,32 @@ A submission is **rejected** if any of these is true:
 - It misuses or does not comply with the **SDK**.
 - It does not handle **edge cases** gracefully.
 - Data - **real-time and persistent** - is not recorded correctly.
+- It reads other slides' data without declaring `deckRead`, or breaks the rules for it (below).
+
+### Reading other slides' data (`deckRead`)
+
+A slide type may read results from **other slides in the same presentation** - for example a summary
+slide that shows what the audience answered earlier. This is off by default and allowed only on
+these terms. The SDK calls are in `docs/light-html-slide-sdk.md` in `slide-type-creator`.
+
+- **Opt in.** Declare the `deckRead` permission in the manifest (`"permissions": ["deckRead"]`). QA
+  checks it at review; a slide type that does not declare it gets no access.
+- **Same presentation only.** Read only slides in the presentation the slide type is placed in. The
+  source slide is a plain config field your slide type stores (the Slides Agent can set it).
+- **Read-only, gen-4 sources only.** You can read but never change another slide. For now the
+  source must itself be a gen-4 (hosted-page / slide plugin) slide; native slide types are not
+  readable.
+- **Aggregate results only.** You get aggregate results, including response text, for the current
+  round. You never get participant names, ids, emails or avatars, and you must not try to work out
+  who said what.
+- **Presenter and results / report views only.** Never show or expose the data on audience devices.
+- **Honour the source slide.** If the source hides, moderates or resets its results, your slide
+  type must show exactly that - nothing hidden, unmoderated or from before a reset.
+- **No copying out.** Do not store the data, send it off the page, or pass it to any service,
+  including AI services. Show it on the page and nothing more.
+
+A submission is **rejected** if it reads other slides without declaring `deckRead`, or breaks any
+rule above.
 
 ## 6. UI / UX review - Lan
 
@@ -189,6 +215,7 @@ approved it, and each approved change is recorded below.
 | 1.6 | 28 September 2026 | Tightened the wording of the QA AI rule. Meaning unchanged. | Dave |
 | 1.7 | 29 September 2026 | Reworked the slide type attribute fields in section 2, "What you submit": Category is now Format (Quiz, Game, Audience input, Content); Ideal audience size is now Audience size, with Medium 10-39 and Large 40-199; Best for is now Setting; UI style is a required field, exactly one of Standard or Immersive (the presenter big-screen view); new required Leaderboard points field (Yes or No: does the slide add points to the presentation's leaderboard). Purpose is unchanged. Tags are described as Search keywords, hidden from users. | Dave |
 | 1.8 | 7 October 2026 | Added "Random pick" to the Purpose options in section 2, "What you submit" (lucky draws, raffles, random teams or mission assignment). | Dave |
+| 1.9 | 13 October 2026 | Added "Reading other slides' data (`deckRead`)" to section 5: opt-in via the `deckRead` manifest permission checked at review; same presentation only; read-only; gen-4 sources only for now; aggregate results including response text, never participant identity; presenter and results / report views only; must honour the source slide's hide, moderation and reset; no copying or sending the data off the page; rejection for misuse. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
