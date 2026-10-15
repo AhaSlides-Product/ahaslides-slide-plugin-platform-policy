@@ -179,7 +179,7 @@ visuals** fail a rule, the fleet fixes them itself and tells the owner what it c
 - **No other brands.** No product or company names, especially well-known SaaS brands, unless the word is also an everyday one. Exception: a slide type that genuinely works with a platform may name it, spelt exactly as the brand does (YouTube Quiz). Section 7.6 covers its visuals.
 - **No implied endorsement.** The name and copy must not suggest another company made or approved the slide type. Once third-party developers join, they must not imply AhaSlides made theirs.
 - **Clear English.** Natural English that a non-native speaker understands. US or British spelling are both fine, but use one consistently within a listing.
-- **Related to how it works.** The copy must reflect how the slide type works or what it is used for. If it doesn't, the copy is fixed or rejected as set out in section 7.7.
+- **Related to how it works.** The copy must reflect how the slide type works or what it is used for. If it doesn't, the fleet fixes the copy as set out in section 7.7.
 - **Unique.** Not identical or confusingly close to an existing slide type, built-in or third-party.
 - **True.** It claims only what the slide does today. No "AI", "live" or "unlimited" unless that is true. Privacy claims too: say "anonymous" or "GDPR compliant" only if the slide really works that way.
 - **Safe for school.** Many presenters are teachers. No gambling words, and nothing unsuitable for under-13s. Not "Casino", "Slot Machine" or "Bet".
