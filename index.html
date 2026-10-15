@@ -186,7 +186,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <details class="fold">
       <summary>What the slide type fields mean</summary>
       <ul>
-        <li><strong>Format, Purpose, Audience size, Setting</strong>  -  what it is, what it is for, how many people it suits, and where it is used. Pick every option that fits; the form shows the current options. Purpose includes <strong>Random pick</strong> (lucky draws, raffles, random teams or mission assignment).</li>
+        <li><strong>Format, Purpose, Audience size, Setting</strong>  -  what it is, what it is for, how many people it suits, and where it is used. Pick every option that fits, up to 2 Formats and 3 Purposes; the form shows the current options. Purpose includes <strong>Random pick</strong> (lucky draws, raffles, random teams or mission assignment).</li>
         <li><strong>UI style</strong>  -  <em>required</em>, exactly one: Standard or Immersive (the presenter big-screen view). See section 6.</li>
         <li><strong>Leaderboard points</strong>  -  <em>required</em>, Yes or No: does it add points to the presentation's leaderboard? A game with its own score that is not added to the leaderboard is No.</li>
         <li><strong>Search keywords (tags)</strong>  -  never shown to users; they only help people find your slide type in search.</li>
@@ -232,7 +232,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       </table>
     </div>
     <p class="note"><strong>Work with your reviewers.</strong> You are welcome to reach out and work with
-      them  -  but reviewers will not fix the issues for you. The fixes are yours to make.</p>
+      them  -  but reviewers will not fix the issues for you. The fixes are yours to make. The one exception is marketing copy: the fleet fixes any copy that breaks a section 7 rule and notes the change.</p>
     <p class="note"><strong>Track your submission.</strong> The review queue is open  -  check your submission's status and reviewer feedback any time in the developer portal at <code>staging-slides-marketplace.ahaslides.io/developer</code>.</p>
     <p class="note"><strong>You are notified</strong> when a review needs you or your slide type goes live  -  by Slack DM and a reply in your original submission thread (email coming soon).</p>
   </section>
@@ -297,7 +297,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <li><strong>Long description:</strong> required, 300&ndash;700 characters in 2&ndash;3 short paragraphs: what it is, 2&ndash;3 use cases, and up to 3 setup steps. Written to the presenter as &ldquo;you&rdquo;, with no keyword stuffing, testimonials or unprovable claims.</li>
       <li><strong>Categories:</strong> at most 2 Formats and 3 Purposes, matching what the slide really does.</li>
       <li><strong>Visuals:</strong> the preview GIF shows real use within 10 seconds, only results the slide can produce, no third-party logos, and nothing flashing more than 3 times a second.</li>
-      <li><strong>Outcome:</strong> anything that fails (capitalisation, length, spelling, trademark, ethics, safe for school, a misleading claim) is fixed by the fleet, which notes the change and the rule number for you.</li>
+      <li><strong>Outcome:</strong> anything that fails (capitalisation, length, spelling, trademark, ethics, safe for school, a misleading claim) is fixed by the fleet, which notes the change and the subsection number (such as 7.2 in POLICY.md) for you.</li>
     </ul>
     <p>The full rule set is in the canonical <code>POLICY.md</code>, section 7.</p>
   </section>
@@ -308,7 +308,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <details class="fold"><summary>Who can submit a slide type?</summary><p>Any internal developer  -  an AhaSlider or an invited partner (section 1).</p></details>
       <details class="fold"><summary>How do I submit?</summary><p>Two ways: ask the AhaSlides agent in the slide-types channel, or use <strong>Submit new slide type</strong> in the developer portal (section 3).</p></details>
       <details class="fold"><summary>What must I include?</summary><p>The submission package in section 2: the slide type name, the implementation, a subheading, a long description, a preview GIF and the slide type fields (screenshots and templates optional).</p></details>
-      <details class="fold"><summary>Can a slide type have more than one format?</summary><p>Yes  -  pick every format, purpose, audience size and setting that fits, and pick only from each list's fixed options (section 2). UI style and Leaderboard points are the exception: pick exactly one each.</p></details>
+      <details class="fold"><summary>Can a slide type have more than one format?</summary><p>Yes, up to two. Pick every format, purpose, audience size and setting that fits, but at most 2 Formats and 3 Purposes (POLICY.md section 7.5), and only from each list's fixed options (section 2). UI style and Leaderboard points are the exception: pick exactly one each.</p></details>
       <details class="fold"><summary>My slide type picks someone or something at random  -  which Purpose?</summary><p>Choose <strong>Random pick</strong> (lucky draws, raffles, random teams or mission assignment). You can add other purposes too if they fit.</p></details>
       <details class="fold"><summary>What does Leaderboard points mean?</summary><p>Yes if your slide type adds points to the presentation's leaderboard (like Pick Answer). No if it does not, even when a game keeps its own internal score. Most audience-input slides are No (section 2).</p></details>
       <details class="fold"><summary>Are search keywords (tags) shown to users?</summary><p>No  -  they are internal search keywords only. You still pick them from the platform's tag list; they just help people find your slide type when searching, not browsing (section 2).</p></details>
@@ -336,7 +336,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <table>
         <thead><tr><th>Version</th><th>Date</th><th>Change</th><th>Approved by</th></tr></thead>
         <tbody>
-          <tr><td>1.10</td><td>15 October 2026</td><td>Removed the Marketing approval gate: submissions now need two approvals (QA and UI / UX). Section 7 stays as the marketing standard, but the fleet checks every submission against it and fixes any failing copy itself, notifying the owner.</td><td>Pending  -  Dave</td></tr>
+          <tr><td>1.10</td><td>15 October 2026</td><td>Removed the Marketing approval gate: submissions now need two approvals (QA and UI / UX). Section 7 stays as the marketing standard, but the fleet checks every submission against it and fixes any failing copy itself, notifying the owner. Also: Format and Purpose state the cap (at most 2 Formats and 3 Purposes); marketing copy is the one exception to &ldquo;reviewers will not fix&rdquo;; fixes cite the subsection number; visuals hand branding and asset rights to UI/UX section 6.</td><td>Pending  -  Dave</td></tr>
           <tr><td>1.9</td><td>7 October 2026</td><td>Added the marketing guideline to section 7 (Marketing review): rules for the name, subheading, long description, categories and visuals, plus the Marketing reviewer&rsquo;s pass/fail checks and the fix-or-reject rule.</td><td>Dave</td></tr>
           <tr><td>1.8</td><td>7 October 2026</td><td>Added &ldquo;Random pick&rdquo; to the Purpose options in section 2 (lucky draws, raffles, random teams or mission assignment).</td><td>Dave</td></tr>
           <tr><td>1.7</td><td>29 September 2026</td><td>Reworked the slide type attribute fields in section 2: Category is now Format (Quiz, Game, Audience input, Content); Ideal audience size is now Audience size, with Medium 10-39 and Large 40-199; Best for is now Setting; UI style is a required field, exactly one of Standard or Immersive (the presenter big-screen view); new required Leaderboard points field (Yes or No). Purpose is unchanged. Tags are described as Search keywords, hidden from users.</td><td>Dave</td></tr>
