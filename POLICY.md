@@ -172,7 +172,7 @@ The slide must follow the presentation's audio setting.
 
 There is no separate Marketing reviewer. AhaSlides' agents (the fleet) check every submission against
 the rules below, before and during review. If the **name, subheading, description, categories or
-visuals** fail a rule, the fleet fixes them itself and tells the owner what it changed.
+visuals** fail a rule, the fleet fixes them itself and tells the owner what it changed. Branding and asset rights for visuals are checked by UI/UX under section 6.
 
 ### 7.1 Rules for all copy: name, subheading and description
 
