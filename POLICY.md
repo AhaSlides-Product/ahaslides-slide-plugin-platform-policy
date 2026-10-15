@@ -1,9 +1,9 @@
 # AhaSlides Slide Plugin Platform Policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.9
+- **Version:** 1.10
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
-- **Last updated:** 7 October 2026
+- **Last updated:** 15 October 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -29,10 +29,10 @@ Every submission is more than the implementation. It must include:
 - **Subheading** - the one-line summary.
 - **Long description** - spelling out its **use cases** and **instructions**.
 - **Preview GIF** - showing it in action.
-- **Format** - one or more, chosen from: Quiz, Game, Audience input, Content. A slide type can belong
- to several formats; picking more than one lists it in every matching format's section of the
- presenter's picker.
-- **Purpose** - one or more, chosen from: Icebreaker, Knowledge check, Opinions & feedback,
+- **Format** - one or two, chosen from: Quiz, Game, Audience input, Content. A slide type can belong
+ to two formats; picking both lists it in each matching format's section of the presenter's picker.
+ At most 2 Formats (section 7.5).
+- **Purpose** - one to three, chosen from: Icebreaker, Knowledge check, Opinions & feedback,
  Brainstorm & collaborate, Decision making, Fun & energiser, Team building, Reflection & wellbeing,
  Present content, Random pick (lucky draws, raffles, random teams or mission assignment).
 - **Audience size** - one or more, chosen from: Small (1-9), Medium (10-39), Large (40-199),
@@ -96,7 +96,8 @@ submissions and answer within the same week.
 | Marketing | Trent | Name, metadata, tagging & categorisation (section 7) |
 
 - **Work with your reviewers.** You are welcome to reach out and work with them - but reviewers will
- not fix the issues for you. The fixes are yours to make.
+ not fix the issues for you. The fixes are yours to make. The one exception: Marketing may correct
+ small copy issues (capitalisation, length, spelling) itself and note the change (section 7.7).
 - **Track your submission.** The review queue is open - check your submission's status and reviewer
  feedback any time in the developer portal at `staging-slides-marketplace.ahaslides.io/developer`.
 
@@ -229,14 +230,14 @@ The marketing reviewer checks every submission against the rules below.
 - **No misleading results.** Demo data is fine, but the GIF and screenshots show only results the slide can really produce. No made-up "10,000 votes".
 - **No competitor logos or third-party brands** in the GIF or screenshots. Exception: a slide type that genuinely works with a platform may show that platform's content in use (a YouTube video in YouTube Quiz), but never its logo as the icon.
 - **No fast flashing.** Nothing in the GIF flashes more than 3 times a second, as that can trigger seizures (WCAG 2.3.1).
-- **The icon, GIF and screenshots don't clash with AhaSlides branding**, and the developer holds the rights to every asset.
+- **Branding and asset rights** for the icon, GIF and screenshots are checked by UI/UX under section 6, Media assets.
 
 ### 7.7 Pass/fail checks for the Marketing reviewer
 
 - A new user can explain how the slide works from the name and subheading alone.
 - The preview GIF matches what the copy promises.
 - The copy passes a spell-check and a banned-word filter.
-- Every rule in sections 7.1-7.6 passes. For a small issue (capitalisation, length, spelling), Marketing fixes the copy itself and notes the change. A serious one (trademark, ethics, safe for school, a misleading claim) means rejection, with the rule number in the review comment.
+- Every rule in sections 7.1-7.6 passes. For a small issue (capitalisation, length, spelling), Marketing fixes the copy itself and notes the change. A serious one (trademark, ethics, safe for school, a misleading claim) means rejection, with the subsection number (such as 7.2) in the review comment.
 
 ## 8. Approval & change history
 
@@ -254,6 +255,7 @@ approved it, and each approved change is recorded below.
 | 1.6 | 28 September 2026 | Tightened the wording of the QA AI rule. Meaning unchanged. | Dave |
 | 1.7 | 29 September 2026 | Reworked the slide type attribute fields in section 2, "What you submit": Category is now Format (Quiz, Game, Audience input, Content); Ideal audience size is now Audience size, with Medium 10-39 and Large 40-199; Best for is now Setting; UI style is a required field, exactly one of Standard or Immersive (the presenter big-screen view); new required Leaderboard points field (Yes or No: does the slide add points to the presentation's leaderboard). Purpose is unchanged. Tags are described as Search keywords, hidden from users. | Dave |
 | 1.8 | 7 October 2026 | Added "Random pick" to the Purpose options in section 2, "What you submit" (lucky draws, raffles, random teams or mission assignment). | Dave |
+| 1.10 | 15 October 2026 | Resolved four conflicts in the v1.9 marketing guideline: Format and Purpose in section 2 now state the 7.5 cap (at most 2 Formats and 3 Purposes); section 4 notes Marketing's one exception to "reviewers will not fix", small copy fixes (7.7); rejections cite the subsection number (such as 7.2), as the rules are unnumbered; 7.6 hands branding and asset rights to UI/UX section 6 instead of repeating them. | Pending - Dave |
 | 1.9 | 7 October 2026 | Added the marketing guideline to section 7 (Marketing review): rules for the name, subheading, long description, categories and visuals, plus the Marketing reviewer's pass/fail checks and the fix-or-reject rule. | Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
