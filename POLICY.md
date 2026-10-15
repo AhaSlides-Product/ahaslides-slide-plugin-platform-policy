@@ -235,7 +235,7 @@ visuals** fail a rule, the fleet fixes them itself and tells the owner what it c
 - A new user can explain how the slide works from the name and subheading alone.
 - The preview GIF matches what the copy promises.
 - The copy passes a spell-check and a banned-word filter.
-- Every rule in sections 7.1-7.6 passes. Anything that fails (capitalisation, length, spelling, trademark, ethics, safe for school, a misleading claim) is fixed by the fleet, which notes the change and the subsection number (such as 7.2) for the owner.
+- Every rule in sections 7.1-7.6 passes, except branding and asset rights (section 6). Anything that fails (capitalisation, length, spelling, trademark, ethics, safe for school, a misleading claim) is fixed by the fleet, which notes the change and the subsection number (such as 7.2) for the owner.
 
 ## 8. Approval & change history
 
