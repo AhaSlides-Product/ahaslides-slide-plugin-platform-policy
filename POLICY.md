@@ -180,7 +180,7 @@ visuals** fail a rule, the fleet fixes them itself where it can and tells the ow
 - **No other brands.** No product or company names, especially well-known SaaS brands, unless the word is also an everyday one. Exception: a slide type that genuinely works with a platform may name it, spelt exactly as the brand does (YouTube Quiz). Section 7.6 covers its visuals.
 - **No implied endorsement.** The name and copy must not suggest another company made or approved the slide type. Once third-party developers join, they must not imply AhaSlides made theirs.
 - **Clear English.** Natural English that a non-native speaker understands. US or British spelling are both fine, but use one consistently within a listing.
-- **Related to how it works.** The copy must reflect how the slide type works or what it is used for. If it doesn't, the fleet fixes the copy as set out in section 7.7.
+- **Related to how it works.** The copy must reflect how the slide type works or what it is used for. If it doesn't, the fleet fixes the copy where it can, as set out in section 7.7.
 - **Unique.** Not identical or confusingly close to an existing slide type, built-in or third-party.
 - **True.** It claims only what the slide does today. No "AI", "live" or "unlimited" unless that is true. Privacy claims too: say "anonymous" or "GDPR compliant" only if the slide really works that way.
 - **Safe for school.** Many presenters are teachers. No gambling words, and nothing unsuitable for under-13s. Not "Casino", "Slot Machine" or "Bet".
@@ -235,7 +235,7 @@ visuals** fail a rule, the fleet fixes them itself where it can and tells the ow
 - A new user can explain how the slide works from the name and subheading alone.
 - The preview GIF matches what the copy promises.
 - The copy passes a spell-check and a banned-word filter.
-- Every rule in sections 7.1-7.6 passes, except branding and asset rights (section 6). Anything that fails (capitalisation, length, spelling, trademark, ethics, safe for school, a misleading claim) is fixed by the fleet, which notes the change and the subsection number (such as 7.2) for the owner.
+- Every rule in sections 7.1-7.6 passes, except branding and asset rights (section 6). Anything that fails (capitalisation, length, spelling, trademark, ethics, safe for school, a misleading claim) is fixed by the fleet where it can, which notes the change and the subsection number (such as 7.2) for the owner.
 
 **How the checks are enforced:**
 
