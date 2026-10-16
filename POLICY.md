@@ -1,9 +1,9 @@
 # AhaSlides Slide Plugin Platform Policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.10
+- **Version:** 1.11
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
-- **Last updated:** 15 October 2026
+- **Last updated:** 16 October 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -87,7 +87,7 @@ submissions and answer within the same week.
 - **Pass** - approved to go live.
 - **Rejection** - always with comments on **why** and **what to change**.
 
-**Two reviewers - a submission passes only if both approve:**
+**Two reviewers - a submission passes only if both approve and the fleet's copy check (section 7.7) passes:**
 
 | Role | Reviewer | Owns |
 | --- | --- | --- |
@@ -96,7 +96,7 @@ submissions and answer within the same week.
 
 - **Work with your reviewers.** You are welcome to reach out and work with them - but reviewers will
  not fix the issues for you. The fixes are yours to make. The one exception is marketing copy: the
- fleet fixes any copy that fails section 7 itself and notes the change (section 7.7).
+ fleet fixes any copy that fails section 7 itself where it can, and notes the change (section 7.7).
 - **Track your submission.** The review queue is open - check your submission's status and reviewer
  feedback any time in the developer portal at `staging-slides-marketplace.ahaslides.io/developer`.
 
@@ -107,7 +107,7 @@ submissions and answer within the same week.
 - Reviews are **transparent per reviewer**: you can see each role's status and comment, who left it,
  and when. A reviewer edits only their own review.
 - Reviews stay **editable until full sign-off**. A reviewer can revise their status or comment at any
- time; the review locks only once both roles approve and the slide type goes live.
+ time; the review locks only once both roles approve, the copy check passes and the slide type goes live.
 
 ### Notifications
 
@@ -172,7 +172,7 @@ The slide must follow the presentation's audio setting.
 
 There is no separate Marketing reviewer. AhaSlides' agents (the fleet) check every submission against
 the rules below, before and during review. If the **name, subheading, description, categories or
-visuals** fail a rule, the fleet fixes them itself and tells the owner what it changed. Branding and asset rights for visuals are checked by UI/UX under section 6.
+visuals** fail a rule, the fleet fixes them itself where it can and tells the owner what it changed. Branding and asset rights for visuals are checked by UI/UX under section 6.
 
 ### 7.1 Rules for all copy: name, subheading and description
 
@@ -199,7 +199,7 @@ visuals** fail a rule, the fleet fixes them itself and tells the owner what it c
 - **Banned filler words.** No "plugin", "add-on", "app", "slide type", "beta", "v2", "Pro" or "Ultimate".
 - **No category padding.** Don't add "Quiz" or "Game" just for search; the Format field does that. The word is fine when it is part of the common name. Quiz Board and Word Guess are fine; Spinner Wheel Quiz Game is not.
 - **No workaround respellings.** A rejected name can't come back as a near-copy, such as Wurdle after Wordle.
-- **No renaming after launch.** Once a slide type is live, its name is fixed. If a change is truly needed, the fleet re-checks the new name against this section before it takes effect.
+- **No renaming after launch.** Once a slide type is approved or live, its name is fixed. If a change is truly needed, only an AhaSlides admin can make it, and the new name is still checked against this section.
 
 ### 7.3 Subheading (tagline)
 
@@ -237,6 +237,12 @@ visuals** fail a rule, the fleet fixes them itself and tells the owner what it c
 - The copy passes a spell-check and a banned-word filter.
 - Every rule in sections 7.1-7.6 passes, except branding and asset rights (section 6). Anything that fails (capitalisation, length, spelling, trademark, ethics, safe for school, a misleading claim) is fixed by the fleet, which notes the change and the subsection number (such as 7.2) for the owner.
 
+**How the checks are enforced:**
+
+- **Automatic rules at submission.** The rules a machine can check (lengths, word counts, Title Case, banned and filler words, links, emoji, ALL CAPS, repeated symbols, the Format and Purpose caps) are checked when a slide type is first submitted. A submission that breaks one is refused with a list of the failing rules and their subsection numbers. Later edits to the name, subheading, description or categories are checked the same way, on the fields that change.
+- **The fleet copy check is part of approval.** Every submission and resubmission waits for the fleet's copy check. Until it is recorded, the submission stays in review even after QA and UI / UX approve. A pass completes the approval. If a fix needs the owner (the fleet cannot fix it alone), the check fails, the submission reads as rejected with notes on what to change and the subsection number, and the owner fixes it and resubmits. Editing the copy during review resets the check.
+- **Earlier slide types are grandfathered.** Slide types first submitted before version 1.11 are not held to the automatic rules or the copy check, on edits or resubmissions. A draft never submitted before then follows them from its first submission.
+
 ## 8. Approval & change history
 
 **Dave is the sole approver of changes to this policy.** No change takes effect until Dave has
@@ -255,6 +261,7 @@ approved it, and each approved change is recorded below.
 | 1.8 | 7 October 2026 | Added "Random pick" to the Purpose options in section 2, "What you submit" (lucky draws, raffles, random teams or mission assignment). | Dave |
 | 1.9 | 7 October 2026 | Added the marketing guideline to section 7 (Marketing review): rules for the name, subheading, long description, categories and visuals, plus the Marketing reviewer's pass/fail checks and the fix-or-reject rule. | Dave |
 | 1.10 | 15 October 2026 | Removed the Marketing approval gate: submissions now need two approvals (QA and UI / UX). Section 7 stays as the marketing standard, but the fleet checks every submission against it and fixes any failing name, subheading, description, category or visual copy itself, notifying the owner, instead of a Marketing reviewer approving or rejecting. Also resolved four conflicts in the v1.9 guideline: section 2 states the 7.5 cap (at most 2 Formats and 3 Purposes); section 4 names marketing copy as the one exception to "reviewers will not fix"; fixes cite the subsection number (such as 7.2), as the rules are unnumbered; 7.6 hands branding and asset rights to UI/UX section 6. | Dave |
+| 1.11 | 16 October 2026 | How section 7 is enforced (review decisions on slide-type-creator PR #2687): the rules a machine can check are enforced at first submission and on later copy edits, and a failing submission is refused with the failing rules listed; the fleet copy check is now part of approval, so a submission stays in review until it passes, and a check that needs the owner's fix reads as rejected with notes; renaming an approved or live slide type is admin-only (section 7.2); slide types first submitted before 1.11 are grandfathered. Sections 4, 7, 7.2 and 7.7 updated. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
