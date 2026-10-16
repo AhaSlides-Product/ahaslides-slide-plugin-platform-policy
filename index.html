@@ -50,6 +50,7 @@ ul{margin:0 0 var(--aha-space-4);padding-left:var(--aha-space-20);}
 li{margin:var(--aha-space-8) 0;}
 .lead{color:var(--aha-text-secondary);}
 aha-collapse{display:block;margin:var(--aha-space-8) 0;}
+aha-collapse [slot=header]{white-space:normal;}
 aha-collapse > :not([slot]){margin-top:0;margin-bottom:var(--aha-space-12);}
 aha-collapse > :not([slot]):last-child{margin-bottom:0;}
 .note{background:var(--aha-bg-container-secondary);border-radius:var(--aha-radius-default);
@@ -207,13 +208,13 @@ footer.doc p{margin:0;color:var(--aha-text-secondary);font-size:var(--aha-size-d
     <h3>The Presenting View &amp; the Participant View</h3>
     <p>The developer must <strong>clearly declare</strong> one of two UI styles:</p>
     <div class="cards">
-      <div class="card std">
+      <div class="card">
         <span class="tag">Standard · default</span>
         <h3>Native to AhaSlides</h3>
         <p class="lead flush">Both views <strong>must comply</strong> with the design system
           and respect the presentation's theme settings.</p>
       </div>
-      <div class="card imm">
+      <div class="card">
         <span class="tag">Immersive</span>
         <h3>Its own world</h3>
         <p class="lead flush">Both views need <strong>not</strong> comply with the design
@@ -256,7 +257,6 @@ footer.doc p{margin:0;color:var(--aha-text-secondary);font-size:var(--aha-size-d
 
   <aha-card id="faq">
     <h2 class="sec">FAQ</h2>
-    <div class="faq">
       <aha-collapse><span slot="header">Who can submit a slide type?</span><p>Any internal developer  -  an AhaSlider or an invited partner (section 1).</p></aha-collapse>
       <aha-collapse><span slot="header">How do I submit?</span><p>Two ways: ask the AhaSlides agent in the slide-types channel, or use <strong>Submit new slide type</strong> in the developer portal (section 3).</p></aha-collapse>
       <aha-collapse><span slot="header">What must I include?</span><p>The submission package in section 2: the slide type name, the implementation, a subheading, a long description, a preview GIF and the slide type fields (screenshots and templates optional).</p></aha-collapse>
@@ -277,7 +277,6 @@ footer.doc p{margin:0;color:var(--aha-text-secondary);font-size:var(--aha-size-d
       <aha-collapse><span slot="header">Must my slide type include AI features?</span><p>No. Making sure the Slides Agent (AhaSlides' in-product AI) can create and edit your slide type is the fleet's job, not yours, and you don't need to add AI actions to its editing panel (section 5).</p></aha-collapse>
       <aha-collapse><span slot="header">Do I need to build Report / Export, SDK compliance or data recording myself?</span><p>No. The fleet ensures these, and they are not grounds for rejection. QA rejects only on edge cases you don't handle gracefully (section 5).</p></aha-collapse>
       <aha-collapse><span slot="header">Can I use my own styling?</span><p>Yes  -  declare <strong>Standard</strong> (design-system compliant) or <strong>Immersive</strong> (its own look, with a good reason) (section 6).</p></aha-collapse>
-    </div>
   </aha-card>
 
   <aha-card id="history">
