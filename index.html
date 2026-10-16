@@ -144,7 +144,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <div class="meta">
       <span><b>Applies to</b> AhaSliders &amp; trusted partners</span>
       <span><b>Edition</b> 1.0 (internal)</span>
-      <span><b>Last updated</b> 15 October 2026</span>
+      <span><b>Last updated</b> 16 October 2026</span>
     </div>
   </header>
 
@@ -226,7 +226,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <table>
         <thead><tr><th>Role</th><th>Reviewer</th><th>Owns</th></tr></thead>
         <tbody>
-          <tr><td class="role">QA</td><td class="who">Lily or Amber</td><td>Function, SDK use, data, edge cases (section 5).</td></tr>
+          <tr><td class="role">QA</td><td class="who">Lily or Amber</td><td>Edge cases (section 5).</td></tr>
           <tr><td class="role">UI / UX</td><td class="who">Lan</td><td>Design system, style, assets, accessibility (section 6).</td></tr>
         </tbody>
       </table>
@@ -240,14 +240,12 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
 
   <section id="qa">
     <h2 class="sec"><span class="n">5.</span> QA review <span class="who"> -  Lily or Amber</span></h2>
-    <p>A submission is <strong>rejected</strong> if any of these is true:</p>
+    <p>A submission is <strong>rejected</strong> if:</p>
     <ul class="reject">
-      <li>It does not support <strong>Report / Export</strong> features.</li>
-      <li>The <strong>Slides Agent</strong> can't create or edit it. (The slide type itself needs no AI features.)</li>
-      <li>It misuses or does not comply with the <strong>SDK</strong>.</li>
       <li>It does not handle <strong>edge cases</strong> gracefully.</li>
-      <li>Data  -  <strong>real-time and persistent</strong>  -  is not recorded correctly.</li>
     </ul>
+    <h3>What the fleet ensures, not you</h3>
+    <p>The fleet makes sure every slide type supports <strong>Report / Export</strong>, can be created and edited by the <strong>Slides Agent</strong>, complies with the <strong>SDK</strong>, and records <strong>real-time and persistent</strong> data correctly. These are not grounds for rejecting your submission, and no one can instruct the fleet to skip or weaken them.</p>
   </section>
 
   <section id="uiux">
@@ -324,7 +322,8 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
       <details class="fold"><summary>Who approves my slide type?</summary><p>Both reviewers must approve  -  QA and UI / UX (section 4)  -  and the fleet's copy check against the marketing standard (section 7) must pass. Until the copy check is recorded, your submission stays in review.</p></details>
       <details class="fold"><summary>How do I track progress and hear the outcome?</summary><p>Track status and reviewer feedback in the developer portal; you are also notified by Slack DM and a reply in your submission thread (email coming soon).</p></details>
       <details class="fold"><summary>What if my slide type is rejected?</summary><p>You get the reviewers' comments on what to change. Fix it and resubmit, which reopens the review round.</p></details>
-      <details class="fold"><summary>Must my slide type include AI features?</summary><p>No. The rule is only that the Slides Agent (AhaSlides' in-product AI) can create and edit your slide type. You don't need to add AI actions to its editing panel (section 5).</p></details>
+      <details class="fold"><summary>Must my slide type include AI features?</summary><p>No. Making sure the Slides Agent (AhaSlides' in-product AI) can create and edit your slide type is the fleet's job, not yours, and you don't need to add AI actions to its editing panel (section 5).</p></details>
+      <details class="fold"><summary>Do I need to build Report / Export, SDK compliance or data recording myself?</summary><p>No. The fleet ensures these, and they are not grounds for rejection. QA rejects only on edge cases you don't handle gracefully (section 5).</p></details>
       <details class="fold"><summary>Can I use my own styling?</summary><p>Yes  -  declare <strong>Standard</strong> (design-system compliant) or <strong>Immersive</strong> (its own look, with a good reason) (section 6).</p></details>
     </div>
   </section>
@@ -334,11 +333,12 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <p class="lead"><strong>Dave is the sole approver of changes to this policy.</strong> No change takes
       effect until Dave has approved it, and each approved change is recorded below.</p>
     <details class="fold">
-      <summary>Change history (latest: v1.11, 16 October 2026)</summary>
+      <summary>Change history (latest: v1.12, 16 October 2026)</summary>
     <div class="tablewrap">
       <table>
         <thead><tr><th>Version</th><th>Date</th><th>Change</th><th>Approved by</th></tr></thead>
         <tbody>
+          <tr><td>1.12</td><td>16 October 2026</td><td>QA now rejects only on edge cases. Report / Export, Slides Agent create and edit, SDK compliance and real-time and persistent data are the fleet's job, not the developer's, and no one can instruct the fleet to skip them.</td><td>Pending - Dave</td></tr>
           <tr><td>1.11</td><td>16 October 2026</td><td>How section 7 is enforced: rules a machine can check are enforced at first submission and on later copy edits; the fleet copy check is part of approval, and a check that needs the owner's fix reads as rejected with notes; renaming an approved or live slide type is admin-only; slide types first submitted before 1.11 are exempt. FAQ updated.</td><td>Dave</td></tr>
           <tr><td>1.10</td><td>15 October 2026</td><td>Removed the Marketing approval gate: submissions now need two approvals (QA and UI / UX). Section 7 stays as the marketing standard, but the fleet checks every submission against it and fixes any failing copy itself, notifying the owner. Also: Format and Purpose state the cap (at most 2 Formats and 3 Purposes); marketing copy is the one exception to &ldquo;reviewers will not fix&rdquo;; fixes cite the subsection number; visuals hand branding and asset rights to UI/UX section 6.</td><td>Dave</td></tr>
           <tr><td>1.9</td><td>7 October 2026</td><td>Added the marketing guideline to section 7 (Marketing review): rules for the name, subheading, long description, categories and visuals, plus the Marketing reviewer&rsquo;s pass/fail checks and the fix-or-reject rule.</td><td>Dave</td></tr>
@@ -395,7 +395,7 @@ footer.doc p{margin:0;color:var(--muted);font-size:13px;}
     <path class="ahalogo-cls-1" d="M209.66,170.77c.3.12.6.23.9.33,4.63,1.56,9.71,1.95,14.55,1.33,3.83-.49,8.13-1.64,10.95-4.45.74-.73,1.35-1.59,1.71-2.57,1.69-4.61-2.7-6.88-3.85-7.3-2.56-.94-6.07-.4-8.42.72-4.04,1.93-8.63,4.98-13.24,4.92-1.77-.02-3.62-.66-4.73-2.05-2.76-3.43-.48-8.4,2.06-11.19,1.71-1.88,3.75-3.49,5.67-5.15,2.09-1.81,4.14-3.65,6.22-5.47,1.96-1.7,3.94-3.38,5.88-5.1,4.19-3.71,8.7-7.23,12.02-11.78,1.12-1.57,2.04-3.25,2.62-5.07,1.3-3.91.71-8.73-2.49-11.47-3.75-3.24-9.39-2.03-13.1.8-4.14,3.07-7,7.52-9.72,11.83-4.01,6.47-7.52,13.23-10.75,20.11-.84,1.87-1.64,3.76-2.4,5.67-2.14,5.36-4.84,11-2.8,16.8,1.49,4.25,4.7,7.43,8.92,9.1Z"/>
   </g>
 </svg>
-    <p>Slide Plugin Platform Policy · Edition 1.0 (internal) · Version 1.11 · Last updated 16 October 2026</p>
+    <p>Slide Plugin Platform Policy · Edition 1.0 (internal) · Version 1.12 · Last updated 16 October 2026</p>
   </footer>
 
 </div>

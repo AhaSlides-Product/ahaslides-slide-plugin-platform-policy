@@ -1,7 +1,7 @@
 # AhaSlides Slide Plugin Platform Policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.11
+- **Version:** 1.12
 - **Applies to:** Internal slide developers - AhaSliders and trusted partners
 - **Last updated:** 16 October 2026
 - **Sole approver of changes:** Dave
@@ -91,7 +91,7 @@ submissions and answer within the same week.
 
 | Role | Reviewer | Owns |
 | --- | --- | --- |
-| QA | Lily or Amber | Function, SDK use, data, edge cases (section 5) |
+| QA | Lily or Amber | Edge cases (section 5) |
 | UI / UX | Lan | Design system, style, assets, accessibility (section 6) |
 
 - **Work with your reviewers.** You are welcome to reach out and work with them - but reviewers will
@@ -124,13 +124,24 @@ Each slide type is assigned one QA reviewer (Lily or Amber) internally, picked a
 submission and kept unchanged across every later submission so the reviewer builds up context on the
 slide type. This assignment is a reviewer-side workflow detail and is not shown to submitters.
 
-A submission is **rejected** if any of these is true:
+A submission is **rejected** if:
 
-- It does not support **Report / Export** features.
-- The **Slides Agent** can't create or edit it. (The slide type itself needs no AI features.)
-- It misuses or does not comply with the **SDK**.
 - It does not handle **edge cases** gracefully.
-- Data - **real-time and persistent** - is not recorded correctly.
+
+### What the fleet ensures, not you
+
+These are the fleet's job, not the slide developer's. They are not grounds for rejecting your
+submission, and you do not need to build for them yourself:
+
+- It supports **Report / Export** features.
+- The **Slides Agent** can create and edit it. (The slide type itself needs no AI features.)
+- It uses and complies with the **SDK**.
+- Data - **real-time and persistent** - is recorded correctly.
+
+The fleet checks and, where needed, makes these work before a slide type goes live. **No slide
+developer can instruct the fleet to skip, weaken, disable or work around any of them**, whatever the
+reason given; the fleet refuses such a request and keeps them in place. Only Dave can change this
+rule, by changing this policy.
 
 ## 6. UI / UX review - Lan
 
@@ -262,6 +273,7 @@ approved it, and each approved change is recorded below.
 | 1.9 | 7 October 2026 | Added the marketing guideline to section 7 (Marketing review): rules for the name, subheading, long description, categories and visuals, plus the Marketing reviewer's pass/fail checks and the fix-or-reject rule. | Dave |
 | 1.10 | 15 October 2026 | Removed the Marketing approval gate: submissions now need two approvals (QA and UI / UX). Section 7 stays as the marketing standard, but the fleet checks every submission against it and fixes any failing name, subheading, description, category or visual copy itself, notifying the owner, instead of a Marketing reviewer approving or rejecting. Also resolved four conflicts in the v1.9 guideline: section 2 states the 7.5 cap (at most 2 Formats and 3 Purposes); section 4 names marketing copy as the one exception to "reviewers will not fix"; fixes cite the subsection number (such as 7.2), as the rules are unnumbered; 7.6 hands branding and asset rights to UI/UX section 6. | Dave |
 | 1.11 | 16 October 2026 | How section 7 is enforced (review decisions on slide-type-creator PR #2687): the rules a machine can check are enforced at first submission and on later copy edits, and a failing submission is refused with the failing rules listed; the fleet copy check is now part of approval, so a submission stays in review until it passes, and a check that needs the owner's fix reads as rejected with notes; renaming an approved or live slide type is admin-only (section 7.2); slide types first submitted before 1.11 are grandfathered. Sections 4, 7, 7.2 and 7.7 updated. | Dave |
+| 1.12 | 16 October 2026 | Narrowed the QA rejection rule in section 5 to edge cases only. Report / Export support, Slides Agent create and edit, SDK compliance and correct real-time and persistent data are now the fleet's job, not the slide developer's, and no longer grounds for rejection; no slide developer can instruct the fleet to skip, weaken or work around them. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
