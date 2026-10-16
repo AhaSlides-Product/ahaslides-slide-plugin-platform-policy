@@ -7,7 +7,7 @@ const h = React.createElement;
 
 function Cell({ value }) {
   if (value instanceof Node) {
-    return h(value.localName === 'span' ? 'span' : 'div', { ref: (host) => { if (host && !host.firstChild) host.append(value.cloneNode(true)); } });
+    return h(value.localName === 'span' ? 'span' : 'div', { ref: (host) => { if (host) host.replaceChildren(value.cloneNode(true)); } });
   }
   if (value && typeof value === 'object' && 'html' in value) {
     return h('span', { dangerouslySetInnerHTML: { __html: value.html } });
