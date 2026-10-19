@@ -1,9 +1,9 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.13
+- **Version:** 1.14
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
-- **Last updated:** 16 October 2026
+- **Last updated:** 19 October 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -203,7 +203,7 @@ visuals** fail a rule, the fleet fixes them itself where it can and tells the ow
 
 ### 7.2 Name
 
-- **1-3 words, 24 characters max.**
+- **30 characters max.** No limit on the number of words.
 - **Says what it does.** Use the common name people already search for: Word Cloud, Spinner Wheel, Mind Map.
 - **Never a trademarked name**, even a well-known one, except the platform a slide type genuinely works with (section 7.1). Use Word Guess, not Wordle; Quiz Board, not Jeopardy. Copy the type of name, never another product's look or UI.
 - **No "AhaSlides" in the name.**
@@ -250,7 +250,7 @@ visuals** fail a rule, the fleet fixes them itself where it can and tells the ow
 
 **How the checks are enforced:**
 
-- **Automatic rules at submission.** The rules a machine can check (lengths, word counts, Title Case, banned and filler words, links, emoji, ALL CAPS, repeated symbols, the Format and Purpose caps) are checked when a slide type is first submitted. A submission that breaks one is refused with a list of the failing rules and their subsection numbers. Later edits to the name, subheading, description or categories are checked the same way, on the fields that change.
+- **Automatic rules at submission.** The rules a machine can check (lengths, Title Case, banned and filler words, links, emoji, ALL CAPS, repeated symbols, the Format and Purpose caps) are checked when a slide type is first submitted. A submission that breaks one is refused with a list of the failing rules and their subsection numbers. Later edits to the name, subheading, description or categories are checked the same way, on the fields that change.
 - **The fleet copy check is part of approval.** Every submission and resubmission waits for the fleet's copy check. Until it is recorded, the submission stays in review even after QA and UI / UX approve. A pass completes the approval. If a fix needs the owner (the fleet cannot fix it alone), the check fails, the submission reads as rejected with notes on what to change and the subsection number, and the owner fixes it and resubmits. Editing the copy during review resets the check.
 - **Earlier slide types are grandfathered.** Slide types first submitted before version 1.11 are not held to the automatic rules or the copy check, on edits or resubmissions. A draft never submitted before then follows them from its first submission.
 
@@ -275,6 +275,7 @@ approved it, and each approved change is recorded below.
 | 1.11 | 16 October 2026 | How section 7 is enforced (review decisions on slide-type-creator PR #2687): the rules a machine can check are enforced at first submission and on later copy edits, and a failing submission is refused with the failing rules listed; the fleet copy check is now part of approval, so a submission stays in review until it passes, and a check that needs the owner's fix reads as rejected with notes; renaming an approved or live slide type is admin-only (section 7.2); slide types first submitted before 1.11 are grandfathered. Sections 4, 7, 7.2 and 7.7 updated. | Dave |
 | 1.12 | 16 October 2026 | Narrowed the QA rejection rule in section 5 to edge cases only. Report / Export support, Slides Agent create and edit, SDK compliance and correct real-time and persistent data are now the fleet's job, not the slide developer's, and no longer grounds for rejection; no slide developer can instruct the fleet to skip, weaken or work around them. | Dave |
 | 1.13 | 16 October 2026 | Style-only: sentence case and punctuation in line with the AhaSlides design system; no change in meaning. | Dave |
+| 1.14 | 19 October 2026 | Section 7.2 Name: removed the 3-word cap and raised the character cap from 24 to 30. The automatic check at submission follows the same rule. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
