@@ -1,9 +1,9 @@
-# AhaSlides Slide Plugin Platform Policy
+# AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.9
-- **Applies to:** Internal slide developers - AhaSliders and trusted partners
-- **Last updated:** 13 October 2026
+- **Version:** 1.14
+- **Applies to:** Internal slide developers: AhaSliders and trusted partners
+- **Last updated:** 17 October 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -11,7 +11,7 @@
 
 ## 1. Who this is for
 
-This first edition covers **internal slide developers** only - AhaSliders and trusted partners we
+This first edition covers **internal slide developers** only: AhaSliders and trusted partners we
 have invited. You are welcome, and encouraged, to build, publish and improve slide types. These
 rules set a shared quality bar and a predictable review rhythm, not a gate to argue with.
 
@@ -24,40 +24,40 @@ The live list of every field, its options and current usage is at <https://ahasl
 
 Every submission is more than the implementation. It must include:
 
-- **Slide type name** - what the slide type is called. *Mandatory.*
-- **The implementation** - the working slide type.
-- **Subheading** - the one-line summary.
-- **Long description** - spelling out its **use cases** and **instructions**.
-- **Preview GIF** - showing it in action.
-- **Format** - one or more, chosen from: Quiz, Game, Audience input, Content. A slide type can belong
- to several formats; picking more than one lists it in every matching format's section of the
- presenter's picker.
-- **Purpose** - one or more, chosen from: Icebreaker, Knowledge check, Opinions & feedback,
+- **Slide type name**: what the slide type is called. *Mandatory.*
+- **The implementation**: the working slide type.
+- **Subheading**: the one-line summary.
+- **Long description**: spelling out its **use cases** and **instructions**.
+- **Preview GIF**: showing it in action.
+- **Format**: one or two, chosen from: Quiz, Game, Audience input, Content. A slide type can belong
+ to two formats; picking both lists it in each matching format's section of the presenter's picker.
+ At most 2 Formats (section 7.5).
+- **Purpose**: one to three, chosen from: Icebreaker, Knowledge check, Opinions & feedback,
  Brainstorm & collaborate, Decision making, Fun & energiser, Team building, Reflection & wellbeing,
  Present content, Random pick (lucky draws, raffles, random teams or mission assignment).
-- **Audience size** - one or more, chosen from: Small (1-9), Medium (10-39), Large (40-199),
+- **Audience size**: one or more, chosen from: Small (1-9), Medium (10-39), Large (40-199),
  Huge (200+).
-- **Setting** - one or more, chosen from: Classroom, Workplace, Events, Casual.
-- **UI style** - *required*, exactly one of: Standard or Immersive. It describes the presenter
+- **Setting**: one or more, chosen from: Classroom, Workplace, Events, Casual.
+- **UI style**: *required*, exactly one of: Standard or Immersive. It describes the presenter
  (big-screen) view, and it cannot be both. See section 6 for what each style means.
-- **Leaderboard points** - *required*, Yes or No: does the slide type add points to the
- presentation's leaderboard (as Pick Answer does)? A game that keeps its own internal score but does
+- **Leaderboard points**: *required*, Yes or No: does the slide type add points to the
+ presentation's leaderboard (as Pick answer does)? A game that keeps its own internal score but does
  not add it to the leaderboard is No.
-- **Search keywords (tags)** - chosen from the platform's tag list. They are never shown to users;
+- **Search keywords (tags)**: chosen from the platform's tag list. They are never shown to users;
  they only help people find your slide type when searching.
-- **3–5 screenshots** - *optional.*
-- **Templates** demonstrating use cases - *optional.*
+- **3 to 5 screenshots** (*optional*)
+- **Templates** demonstrating use cases (*optional*)
 
 Format, Purpose, Audience size, Setting, UI style and Leaderboard points are each stored as an
-explicit value, not free text - pick only from the option list above. More options may be added to each list later.
+explicit value, not free text: pick only from the option list above. More options may be added to each list later.
 
 ## 3. How you submit
 
 There are two ways to submit a slide type for review:
 
-- **Via Agent Fleet** - in the slide-types channel, ask the AhaSlides agent to submit your slide
+- **Via Agent Fleet**: in the slide-types channel, ask the AhaSlides agent to submit your slide
  type for review; it gathers the submission package and files it for you.
-- **Via the web interface** - sign in to the developer portal at
+- **Via the web interface**: sign in to the developer portal at
  `staging-slides-marketplace.ahaslides.io/developer` and use **Submit new slide type**. The form is
  self-explanatory (and may change).
 
@@ -65,14 +65,14 @@ There are two ways to submit a slide type for review:
 
 Whichever method you use, you choose a submission type:
 
-- **Upload bundle** - pick this if you built the slide type **outside** the repo and already have its
+- **Upload bundle**: pick this if you built the slide type **outside** the repo and already have its
  HTML files (`presenter.html`, `audience.html`, `settings.html`) ready to upload. You attach the
  bundle files directly.
-- **First-party (reference)** - pick this if you built it **inside** the AhaSlides repo. Instead of
+- **First-party (reference)**: pick this if you built it **inside** the AhaSlides repo. Instead of
  uploading files you link its live implementation, and a **Pick from the repo** dropdown can auto-fill
- the fields. It goes live via its repo PR merge - approval here is the review sign-off.
+ the fields. It goes live via its repo PR merge. Approval here is the review sign-off.
 
-The difference is only in *how the implementation reaches us* - upload the files, or reference a live
+The difference is only in *how the implementation reaches us*: upload the files, or reference a live
 in-repo build. The submission package in section 2 is required either way.
 
 ## 4. The review process
@@ -84,87 +84,101 @@ submissions and answer within the same week.
 
 **The answer is one of:**
 
-- **Pass** - approved to go live.
-- **Rejection** - always with comments on **why** and **what to change**.
+- **Pass**: approved to go live.
+- **Rejection**: always with comments on **why** and **what to change**.
 
-**Three reviewers - a submission passes only if all three approve:**
+**Two reviewers: a submission passes only if both approve and the fleet's copy check (section 7.7) passes:**
 
 | Role | Reviewer | Owns |
 | --- | --- | --- |
-| QA | Lily or Amber | Function, SDK use, data, edge cases (section 5) |
+| QA | Lily or Amber | Edge cases (section 5) |
 | UI / UX | Lan | Design system, style, assets, accessibility (section 6) |
-| Marketing | Trent | Name, metadata, tagging & categorisation (section 7) |
 
-- **Work with your reviewers.** You are welcome to reach out and work with them - but reviewers will
- not fix the issues for you. The fixes are yours to make.
-- **Track your submission.** The review queue is open - check your submission's status and reviewer
+- **Work with your reviewers.** You are welcome to reach out and work with them, but reviewers will
+ not fix the issues for you. The fixes are yours to make. The one exception is marketing copy: the
+ fleet fixes any copy that fails section 7 itself where it can, and notes the change (section 7.7).
+- **Track your submission.** The review queue is open. Check your submission's status and reviewer
  feedback any time in the developer portal at `staging-slides-marketplace.ahaslides.io/developer`.
 
 ### How a review is recorded
 
-- Each reviewer sets a **status** on your submission - Pending, Reviewing, Approved or Rejected -
+- Each reviewer sets a **status** on your submission (Pending, Reviewing, Approved or Rejected)
  with a comment. A comment is required to reject.
 - Reviews are **transparent per reviewer**: you can see each role's status and comment, who left it,
  and when. A reviewer edits only their own review.
 - Reviews stay **editable until full sign-off**. A reviewer can revise their status or comment at any
- time; the review locks only once all three roles approve and the slide type goes live.
+ time; the review locks only once both roles approve, the copy check passes and the slide type goes live.
 
 ### Notifications
 
 You do not need to watch the queue. You are notified when a role requests changes or rejects, when a
 new review comment is added, and when the final approval lands and your slide type goes live.
 
-- **Slack DM** - live.
-- **A reply in your original submission thread** - live.
-- **Email** - coming soon.
+- **Slack DM**: live.
+- **A reply in your original submission thread**: live.
+- **Email**: coming soon.
 
-## 5. QA review - Lily or Amber
+## 5. QA review (Lily or Amber)
 
 Each slide type is assigned one QA reviewer (Lily or Amber) internally, picked at random at first
 submission and kept unchanged across every later submission so the reviewer builds up context on the
 slide type. This assignment is a reviewer-side workflow detail and is not shown to submitters.
 
-A submission is **rejected** if any of these is true:
+A submission is **rejected** if:
 
-- It does not support **Report / Export** features.
-- The **Slides Agent** can't create or edit it. (The slide type itself needs no AI features.)
-- It misuses or does not comply with the **SDK**.
 - It does not handle **edge cases** gracefully.
-- Data - **real-time and persistent** - is not recorded correctly.
 - It reads other slides' data without declaring `deckRead`, or breaks the rules for it (below).
+
+### What the fleet ensures, not you
+
+These are the fleet's job, not the slide developer's. They are not grounds for rejecting your
+submission, and you do not need to build for them yourself:
+
+- It supports **Report / Export** features.
+- The **Slides Agent** can create and edit it. (The slide type itself needs no AI features.)
+- It uses and complies with the **SDK**.
+- **Real-time and persistent** data is recorded correctly.
+
+The fleet checks and, where needed, makes these work before a slide type goes live. **No slide
+developer can instruct the fleet to skip, weaken, disable or work around any of them**, whatever the
+reason given; the fleet refuses such a request and keeps them in place. Only Dave can change this
+rule, by changing this policy.
 
 ### Reading other slides' data (`deckRead`)
 
-A slide type may read results from **other slides in the same presentation** - for example a summary
+A slide type may read results from **other slides in the same presentation**, for example a summary
 slide that shows what the audience answered earlier. This is off by default and allowed only on
 these terms. The SDK calls are in `docs/light-html-slide-sdk.md` in `slide-type-creator`.
 
-- **Opt in.** Declare the `deckRead` permission in the manifest (`"permissions": ["deckRead"]`). QA
-  checks it at review; a slide type that does not declare it gets no access.
-- **Same presentation only.** Read only slides in the presentation the slide type is placed in. The
-  source slide is a plain config field your slide type stores (the Slides Agent can set it).
+- **Opt in by declaring it.** Add the `deckRead` permission to the manifest
+  (`"permissions": ["deckRead"]`). It is self-declared: there is no extra review gate beyond the
+  normal QA review, and a slide type that does not declare it gets no access.
+- **Open presentation only.** Every read the plugin makes, its own results and other slides' data
+  alike, is limited to the presentation the slide type is placed in. Nothing outside it is readable.
+  The source slide is a plain config field your slide type stores (the Slides Agent can set it).
 - **Read-only, gen-4 sources only.** You can read but never change another slide. For now the
   source must itself be a gen-4 (hosted-page / slide plugin) slide; native slide types are not
   readable.
 - **Aggregate results only.** You get aggregate results, including response text, for the current
   round. You never get participant names, ids, emails or avatars, and you must not try to work out
   who said what.
-- **Presenter and results / report views only.** Never show or expose the data on audience devices.
+- **Presenter, results and report views.** The data may show on the presenter and results views
+  and in reports (aha-report). Never show or expose it on audience phones.
 - **Honour the source slide.** If the source hides, moderates or resets its results, your slide
-  type must show exactly that - nothing hidden, unmoderated or from before a reset.
+  type must show exactly that: nothing hidden, unmoderated or from before a reset.
 - **No copying out.** Do not store the data, send it off the page, or pass it to any service,
   including AI services. Show it on the page and nothing more.
 
 A submission is **rejected** if it reads other slides without declaring `deckRead`, or breaks any
 rule above.
 
-## 6. UI / UX review - Lan
+## 6. UI / UX review (Lan)
 
-### The Editing View
+### The editing view
 
-Must comply with AhaSlides' design system - no exceptions.
+Must comply with AhaSlides' design system. No exceptions.
 
-### The Presenting View & the Participant View
+### The presenting view & the participant view
 
 The developer must **clearly declare** one of two UI styles:
 
@@ -172,14 +186,14 @@ The developer must **clearly declare** one of two UI styles:
  presentation's theme settings.
 - **Immersive:** Both views need **not** comply with the design system. Theme and font support is
  *recommended, not mandatory*. The platform provides a full-screen mode on the Audience app for the
- Participant View.
+ participant view.
 
-You must have a **good reason** for choosing Immersive - for example a game that genuinely needs it - 
+You must have a **good reason** for choosing Immersive (for example a game that genuinely needs it), 
 and the reviewer reserves the right to reject the choice.
 
 ### Media assets
 
-- All media assets - slide-type icon, preview GIF, screenshots - must not conflict with AhaSlides'
+- All media assets (slide-type icon, preview GIF, screenshots) must not conflict with AhaSlides'
  branding and design system.
 - You must hold the **legal rights** to publish every media asset, including in-app assets.
 
@@ -187,17 +201,87 @@ and the reviewer reserves the right to reject the choice.
 
 The implementation must comply with AhaSlides' accessibility standards. Most notably:
 
-- Form elements in the **Editing View** and the **Participant View** must be accessible.
-- The **Presenting View** must support keyboard-only use - full no-mouse, no-touch operation.
+- Form elements in the **editing view** and the **participant view** must be accessible.
+- The **presenting view** must support keyboard-only use: full no-mouse, no-touch operation.
 
 ### Audio
 
 The slide must follow the presentation's audio setting.
 
-## 7. Marketing review - Trent
+## 7. Marketing standard
 
-The marketing reviewer reserves the right to alter the slide type's **name, metadata, and
-tagging / categorisation** for marketing and strategic reasons.
+There is no separate marketing reviewer. AhaSlides' agents (the fleet) check every submission against
+the rules below, before and during review. If the **name, subheading, description, categories or
+visuals** fail a rule, the fleet fixes them itself where it can and tells the owner what it changed. Branding and asset rights for visuals are checked by UI/UX under section 6.
+
+### 7.1 Rules for all copy: name, subheading and description
+
+- **Ethical.** No violence, sexual or offensive language, racism or swear words, including slang and puns.
+- **No other brands.** No product or company names, especially well-known SaaS brands, unless the word is also an everyday one. Exception: a slide type that genuinely works with a platform may name it, spelt exactly as the brand does (YouTube Quiz). Section 7.6 covers its visuals.
+- **No implied endorsement.** The name and copy must not suggest another company made or approved the slide type. Once third-party developers join, they must not imply AhaSlides made theirs.
+- **Clear English.** Natural English that a non-native speaker understands. US or British spelling are both fine, but use one consistently within a listing.
+- **Related to how it works.** The copy must reflect how the slide type works or what it is used for. If it doesn't, the fleet fixes the copy where it can, as set out in section 7.7.
+- **Unique.** Not identical or confusingly close to an existing slide type, built-in or third-party.
+- **True.** It claims only what the slide does today. No "AI", "live" or "unlimited" unless that is true. Privacy claims too: say "anonymous" or "GDPR compliant" only if the slide really works that way.
+- **Safe for school.** Many presenters are teachers. No gambling words, and nothing unsuitable for under-13s. Not "Casino", "Slot Machine" or "Bet".
+- **No links or contact details.** No URLs, email addresses or social media handles in the name, subheading or description.
+- **No promo or ranking words.** No "best", "#1", "top", "new" or "ultimate".
+- **No price or plan words.** No "free", "sale" or "Pro only" in the name or subheading. Plan limits belong on the paywall, not in the listing.
+- **Clean formatting.** No emoji, ALL CAPS or repeated symbols ("!!!", "***").
+- **Capitalisation.** The name is in Title Case, like a product name: Duck Race, Spinner Wheel, YouTube Quiz. The subheading and description use normal sentence capitalisation.
+
+### 7.2 Name
+
+- **1-3 words, 24 characters max.**
+- **Says what it does.** Use the common name people already search for: Word Cloud, Spinner Wheel, Mind Map.
+- **Never a trademarked name**, even a well-known one, except the platform a slide type genuinely works with (section 7.1). Use Word Guess, not Wordle; Quiz Board, not Jeopardy. Copy the type of name, never another product's look or UI.
+- **No "AhaSlides" in the name.**
+- **Banned filler words.** No "plugin", "add-on", "app", "slide type", "beta", "v2", "Pro" or "Ultimate".
+- **No category padding.** Don't add "Quiz" or "Game" just for search; the Format field does that. The word is fine when it is part of the common name. Quiz Board and Word Guess are fine; Spinner Wheel Quiz Game is not.
+- **No workaround respellings.** A rejected name can't come back as a near-copy, such as Wurdle after Wordle.
+- **No renaming after launch.** Once a slide type is approved or live, its name is fixed. If a change is truly needed, only an AhaSlides admin can make it, and the new name is still checked against this section.
+
+### 7.3 Subheading (tagline)
+
+- **One sentence, 60-120 characters.**
+- **What the audience does and what they get.** For example: Rate statements together and watch a live spider chart take shape.
+- **Adds something.** Don't just repeat the name, and skip filler like "fun", "engaging" or "interactive" unless it adds meaning.
+- **Plain words.** No acronyms, slang or jokes, because they don't translate.
+
+### 7.4 Long description
+
+- **300-700 characters, in 2-3 short paragraphs.** It is required before approval.
+- **Fixed structure:** (1) what it is and how it works; (2) 2-3 concrete use cases with their context, such as a classroom, workshop or event; (3) how to set it up, in up to 3 steps.
+- **Speaks to the presenter** as "you", in plain words and short sentences, with no developer jargon.
+- **No keyword stuffing.** The same keyword appears at most 5 times. No lists of brands, places or events added for search.
+- **No testimonials, ratings or user counts.** We can't verify them.
+- **No unprovable claims**, such as "most popular" or "loved by millions".
+
+### 7.5 Categories and search keywords
+
+- **At most 2 Formats and 3 Purposes**, so a slide type doesn't appear in every section of the picker.
+- **Tags must match what the slide really does.** No keyword stuffing.
+
+### 7.6 Visuals
+
+- **The preview GIF shows real use within 10 seconds**, and matches what the copy promises.
+- **No misleading results.** Demo data is fine, but the GIF and screenshots show only results the slide can really produce. No made-up "10,000 votes".
+- **No competitor logos or third-party brands** in the GIF or screenshots. Exception: a slide type that genuinely works with a platform may show that platform's content in use (a YouTube video in YouTube Quiz), but never its logo as the icon.
+- **No fast flashing.** Nothing in the GIF flashes more than 3 times a second, as that can trigger seizures (WCAG 2.3.1).
+- **Branding and asset rights** for the icon, GIF and screenshots are checked by UI/UX under section 6, Media assets.
+
+### 7.7 Pass/fail checks the fleet runs
+
+- A new user can explain how the slide works from the name and subheading alone.
+- The preview GIF matches what the copy promises.
+- The copy passes a spell-check and a banned-word filter.
+- Every rule in sections 7.1-7.6 passes, except branding and asset rights (section 6). Anything that fails (capitalisation, length, spelling, trademark, ethics, safe for school, a misleading claim) is fixed by the fleet where it can, which notes the change and the subsection number (such as 7.2) for the owner.
+
+**How the checks are enforced:**
+
+- **Automatic rules at submission.** The rules a machine can check (lengths, word counts, Title Case, banned and filler words, links, emoji, ALL CAPS, repeated symbols, the Format and Purpose caps) are checked when a slide type is first submitted. A submission that breaks one is refused with a list of the failing rules and their subsection numbers. Later edits to the name, subheading, description or categories are checked the same way, on the fields that change.
+- **The fleet copy check is part of approval.** Every submission and resubmission waits for the fleet's copy check. Until it is recorded, the submission stays in review even after QA and UI / UX approve. A pass completes the approval. If a fix needs the owner (the fleet cannot fix it alone), the check fails, the submission reads as rejected with notes on what to change and the subsection number, and the owner fixes it and resubmits. Editing the copy during review resets the check.
+- **Earlier slide types are grandfathered.** Slide types first submitted before version 1.11 are not held to the automatic rules or the copy check, on edits or resubmissions. A draft never submitted before then follows them from its first submission.
 
 ## 8. Approval & change history
 
@@ -206,16 +290,21 @@ approved it, and each approved change is recorded below.
 
 | Version | Date | Change | Approved by |
 | --- | --- | --- | --- |
-| 1.0 | 11 September 2026 | Initial internal edition - submission package, weekly review process, QA / UI-UX / Marketing criteria. | Pending - Dave |
+| 1.0 | 11 September 2026 | Initial internal edition: submission package, weekly review process, QA / UI-UX / marketing criteria. | Pending (Dave) |
 | 1.1 | 15 September 2026 | Documented the live review portal: how you submit (submission dashboard and Submit-new flow, submission types and their differences), per-reviewer status and comments, reviews editable until full sign-off, and submitter notifications (Slack DM and origin-thread reply live, email coming soon). Reviewer roles, submission package and weekly SLA unchanged. | Dave |
 | 1.2 | 15 September 2026 | Added section 3, "How you submit", with UI captures of the Submitter view (submission dashboard and the Submit-new-slide-type form) and a description of the two submission types (Upload bundle vs first-party reference) and their difference. Renumbered the review, QA, UI/UX, marketing and change-history sections accordingly. | Dave |
 | 1.3 | 16 September 2026 | Made the slide type name an explicit mandatory field; rewrote "How you submit" to the two methods (Agent Fleet and web); exposed the developer portal link for tracking progress; kept the human-readable page concise and added an FAQ to it. | Dave |
-| 1.4 | 22 September 2026 | QA reviewer assignment is now fixed per slide type internally: each slide type keeps the same QA reviewer (Lily or Amber), picked at random at first submission, across every resubmission. Kept reviewer-side and not shown to submitters. Enforced in the review portal. UI/UX and Marketing reviewers unaffected. | Dave |
+| 1.4 | 22 September 2026 | QA reviewer assignment is now fixed per slide type internally: each slide type keeps the same QA reviewer (Lily or Amber), picked at random at first submission, across every resubmission. Kept reviewer-side and not shown to submitters. Enforced in the review portal. UI/UX and marketing reviewers unaffected. | Dave |
 | 1.5 | 25 September 2026 | Clarified the QA AI rule: a slide type is rejected if the AhaSlides Slides Agent cannot create or edit it. It does not need AI features of its own; the earlier wording ("does not support AI features") was misread as requiring generative-AI actions in the editing panel. | Dave |
 | 1.6 | 28 September 2026 | Tightened the wording of the QA AI rule. Meaning unchanged. | Dave |
 | 1.7 | 29 September 2026 | Reworked the slide type attribute fields in section 2, "What you submit": Category is now Format (Quiz, Game, Audience input, Content); Ideal audience size is now Audience size, with Medium 10-39 and Large 40-199; Best for is now Setting; UI style is a required field, exactly one of Standard or Immersive (the presenter big-screen view); new required Leaderboard points field (Yes or No: does the slide add points to the presentation's leaderboard). Purpose is unchanged. Tags are described as Search keywords, hidden from users. | Dave |
 | 1.8 | 7 October 2026 | Added "Random pick" to the Purpose options in section 2, "What you submit" (lucky draws, raffles, random teams or mission assignment). | Dave |
-| 1.9 | 13 October 2026 | Added "Reading other slides' data (`deckRead`)" to section 5: opt-in via the `deckRead` manifest permission checked at review; same presentation only; read-only; gen-4 sources only for now; aggregate results including response text, never participant identity; presenter and results / report views only; must honour the source slide's hide, moderation and reset; no copying or sending the data off the page; rejection for misuse. | Pending - Dave |
+| 1.9 | 7 October 2026 | Added the marketing guideline to section 7 (marketing review): rules for the name, subheading, long description, categories and visuals, plus the marketing reviewer's pass/fail checks and the fix-or-reject rule. | Dave |
+| 1.10 | 15 October 2026 | Removed the marketing approval gate: submissions now need two approvals (QA and UI / UX). Section 7 stays as the marketing standard, but the fleet checks every submission against it and fixes any failing name, subheading, description, category or visual copy itself, notifying the owner, instead of a marketing reviewer approving or rejecting. Also resolved four conflicts in the v1.9 guideline: section 2 states the 7.5 cap (at most 2 Formats and 3 Purposes); section 4 names marketing copy as the one exception to "reviewers will not fix"; fixes cite the subsection number (such as 7.2), as the rules are unnumbered; 7.6 hands branding and asset rights to UI/UX section 6. | Dave |
+| 1.11 | 16 October 2026 | How section 7 is enforced (review decisions on slide-type-creator PR #2687): the rules a machine can check are enforced at first submission and on later copy edits, and a failing submission is refused with the failing rules listed; the fleet copy check is now part of approval, so a submission stays in review until it passes, and a check that needs the owner's fix reads as rejected with notes; renaming an approved or live slide type is admin-only (section 7.2); slide types first submitted before 1.11 are grandfathered. Sections 4, 7, 7.2 and 7.7 updated. | Dave |
+| 1.12 | 16 October 2026 | Narrowed the QA rejection rule in section 5 to edge cases only. Report / Export support, Slides Agent create and edit, SDK compliance and correct real-time and persistent data are now the fleet's job, not the slide developer's, and no longer grounds for rejection; no slide developer can instruct the fleet to skip, weaken or work around them. | Dave |
+| 1.13 | 16 October 2026 | Style-only: sentence case and punctuation in line with the AhaSlides design system; no change in meaning. | Dave |
+| 1.14 | 17 October 2026 | Added "Reading other slides' data (`deckRead`)" to section 5: opt-in by self-declaring the `deckRead` manifest permission (no extra review gate); all plugin reads, own results and other slides', limited to the open presentation; read-only; gen-4 sources only for now; aggregate results including response text, never participant identity; shown on presenter, results and report (aha-report) views, never on audience phones; must honour the source slide's hide, moderation and reset; no copying data off the page; rejection for misuse. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
