@@ -159,13 +159,13 @@ these terms. The SDK calls are in `docs/light-html-slide-sdk.md` in `slide-type-
 - **Read-only, gen-4 sources only.** You can read but never change another slide. For now the
   source must itself be a gen-4 (hosted-page / slide plugin) slide; native slide types are not
   readable.
-- **Aggregate results only.** You get aggregate results, including response text, for the current
-  round. You never get participant names, ids, emails or avatars, and you must not try to work out
-  who said what.
+- **Results and individual responses, never who sent them.** You get aggregate results and the
+  individual responses (their content) of the current round from gen-4 slides. You never get
+  participant names, ids, emails or avatars, and you must not try to work out who said what.
 - **Presenter, results and report views.** The data may show on the presenter and results views
   and in reports (aha-report). Never show or expose it on audience phones.
-- **Honour the source slide.** If the source hides, moderates or resets its results, your slide
-  type must show exactly that: nothing hidden, unmoderated or from before a reset.
+- **Honour the source slide.** If the source hides, moderates or resets its results or responses, your
+  slide type must show exactly that: nothing hidden, unmoderated or from before a reset.
 - **No copying out.** Do not store the data, send it off the page, or pass it to any service,
   including AI services. Show it on the page and nothing more.
 
@@ -304,7 +304,7 @@ approved it, and each approved change is recorded below.
 | 1.11 | 16 October 2026 | How section 7 is enforced (review decisions on slide-type-creator PR #2687): the rules a machine can check are enforced at first submission and on later copy edits, and a failing submission is refused with the failing rules listed; the fleet copy check is now part of approval, so a submission stays in review until it passes, and a check that needs the owner's fix reads as rejected with notes; renaming an approved or live slide type is admin-only (section 7.2); slide types first submitted before 1.11 are grandfathered. Sections 4, 7, 7.2 and 7.7 updated. | Dave |
 | 1.12 | 16 October 2026 | Narrowed the QA rejection rule in section 5 to edge cases only. Report / Export support, Slides Agent create and edit, SDK compliance and correct real-time and persistent data are now the fleet's job, not the slide developer's, and no longer grounds for rejection; no slide developer can instruct the fleet to skip, weaken or work around them. | Dave |
 | 1.13 | 16 October 2026 | Style-only: sentence case and punctuation in line with the AhaSlides design system; no change in meaning. | Dave |
-| 1.14 | 17 October 2026 | Added "Reading other slides' data (`deckRead`)" to section 5: opt-in by self-declaring the `deckRead` manifest permission (no extra review gate); all plugin reads, own results and other slides', limited to the open presentation; read-only; gen-4 sources only for now; aggregate results including response text, never participant identity; shown on presenter, results and report (aha-report) views, never on audience phones; must honour the source slide's hide, moderation and reset; no copying data off the page; rejection for misuse. | Pending - Dave |
+| 1.14 | 17 October 2026 | Added "Reading other slides' data (`deckRead`)" to section 5: opt-in by self-declaring the `deckRead` manifest permission (no extra review gate); all plugin reads, own results and other slides', limited to the open presentation; read-only; gen-4 sources only for now; aggregate results and individual responses (content only), never participant identity; shown on presenter, results and report (aha-report) views, never on audience phones; must honour the source slide's hide, moderation and reset; no copying data off the page; rejection for misuse. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
