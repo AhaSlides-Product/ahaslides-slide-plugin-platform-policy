@@ -1,7 +1,7 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.15
+- **Version:** 1.16 (pending Dave's sign-off)
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
 - **Last updated:** 20 October 2026
 - **Sole approver of changes:** Dave
@@ -48,9 +48,60 @@ Every submission is more than the implementation. It must include:
 - **3 to 5 screenshots** (*optional*)
 - **Templates** demonstrating use cases (*optional at submission*). Sample presentations are required
  after approval (see section 4, "After approval - sample presentations").
+- **Self-paced View** (*optional*): if your slide type has one, it is part of the implementation and
+ is reviewed with it. See "The Self-paced View" below.
 
 Format, Purpose, Audience size, Setting, UI style and Leaderboard points are each stored as an
 explicit value, not free text: pick only from the option list above. More options may be added to each list later.
+
+### The Self-paced View (optional)
+
+A slide type has three views today: the **editing view** (settings), the **presenting view**
+(Canvas, the big screen) and the **participant view** (Audience). A slide type may also declare a
+fourth, optional view: the **Self-paced View**. It is **one responsive, embeddable screen** that
+combines what the Canvas and Audience views do, so a learner on their own can answer, see their
+results and replay, with no presenter and no big screen.
+
+- **Where it is used.** In a self-paced presentation (the presentation setting "Audience
+ (self-paced)"), a slide type that declares a Self-paced View shows it **in place of** its Audience
+ view. A slide type without one keeps today's behaviour: the Audience view is used.
+- **It is an addition, never a replacement.** Declaring a Self-paced View does not remove or relax
+ anything for the other views: the Canvas and Audience views must still work exactly as today in live
+ presentations, and every rule in sections 5 and 6 still applies to them.
+- **Same content, same settings.** The Self-paced View reads the same slide content and settings as
+ the other views. Any setting only it uses lives in the editing view like every other setting.
+- **Declaring it.** The slide type's manifest points to the view.
+ *Pending tech decision (Loi): the manifest field; proposed `selfPacedUrl`, a new field, so a slide
+ type without it simply falls back to the Audience view.*
+- **Pilot.** The first slide type with a Self-paced View is **Picture Clues** (engineering ticket
+ AHA-48978). Other slide types follow once the pilot proves out; until then, ask in the slide-types
+ channel before you build one.
+- **Later, not yet a rule.** Slide types that have *only* a Self-paced View (no Canvas or Audience
+ view), hidden from the Slide Type selector and used in courses and AhaSlides Games, are planned. They
+ are not accepted yet; this policy will be updated before they are.
+
+#### Open tech decisions for the Self-paced View
+
+Rules marked *Pending tech decision (Loi)* in this policy depend on these calls by engineering (Loi,
+AHA-48978). Each rule is written to hold whichever way the call goes, or states the proposed default.
+Once a call is made, the rule is updated to match it.
+
+1. **Manifest field**: a new field (proposed `selfPacedUrl`) or the existing `audienceUrl` with a
+ mode flag; and, with it, the bundle file name for an Upload bundle submission.
+2. **Replay and attempt storage**: extend the answers model with an attempt id, or reuse the courses'
+ attempts store (aha-responses).
+3. **Which attempt counts** in reports, export and leaderboards: first, best or latest; and how
+ reports and PDF export show several attempts.
+4. **Presenter-driven settings with no presenter** (for example Picture Clues' manual
+ click-to-reveal): hidden in the Self-paced View, or replaced by an automatic fallback such as the
+ timed reveal.
+5. **The SDK contract for the view**: one-screen state, results without the Canvas, and size and
+ fullscreen events.
+6. **Where it runs first**: inside self-paced presentations in the Audience app only, or also on a
+ public embed page from day one.
+
+One product question also shapes a rule: whether a presenter can **cap or lock replays** (for
+example for a graded test). It is marked *Pending product decision* where it applies.
 
 ## 3. How you submit
 
@@ -68,7 +119,9 @@ Whichever method you use, you choose a submission type:
 
 - **Upload bundle**: pick this if you built the slide type **outside** the repo and already have its
  HTML files (`presenter.html`, `audience.html`, `settings.html`) ready to upload. You attach the
- bundle files directly.
+ bundle files directly. A slide type with a Self-paced View adds that view's file too.
+ *Pending tech decision (Loi): its file name, which follows the manifest field (section 2, open tech
+ decision 1).*
 - **First-party (reference)**: pick this if you built it **inside** the AhaSlides repo. Instead of
  uploading files you link its live implementation, and a **Pick from the repo** dropdown can auto-fill
  the fields. It goes live via its repo PR merge. Approval here is the review sign-off.
@@ -78,7 +131,9 @@ in-repo build. The submission package in section 2 is required either way.
 
 ## 4. The review process
 
-The same process applies to **new slide types and to changes** to an existing one.
+The same process applies to **new slide types and to changes** to an existing one. Adding a
+Self-paced View to a slide type that is already live is a change: it goes through this same review,
+and both reviewers check the new view (sections 5 and 6) as well as the views that already exist.
 
 **Weekly rhythm:** Submit before every Monday. Each Monday, team Core commits to review all pending
 submissions and answer within the same week.
@@ -156,7 +211,49 @@ submission, and you do not need to build for them yourself:
 The fleet checks and, where needed, makes these work before a slide type goes live. **No slide
 developer can instruct the fleet to skip, weaken, disable or work around any of them**, whatever the
 reason given; the fleet refuses such a request and keeps them in place. Only Dave can change this
-rule, by changing this policy.
+rule, by changing this policy. They apply to the Self-paced View too (see below).
+
+### QA review of a Self-paced View
+
+For a slide type that declares a Self-paced View, QA also tests it in a self-paced presentation, on
+a phone and on a fullscreen desktop. The rule is the same: the submission is **rejected** if the
+Self-paced View does not handle edge cases gracefully. QA checks in particular that:
+
+- **One screen does the whole job.** A learner on their own can read the slide, answer, and see their
+ result on the same screen, without the Canvas, a presenter or other participants. A step that needs
+ a presenter (a reveal, a "next" or a timer start) never leaves the learner stuck.
+ *Pending tech decision (Loi): whether such presenter-driven settings are hidden in the Self-paced
+ View or fall back to an automatic behaviour (open tech decision 4). Either way, the learner can
+ always finish.*
+- **Results make sense alone.** The learner sees their own result (and the correct answer, for a
+ slide type that has one) without relying on crowd results. A slide type whose results only make
+ sense with a crowd should not declare a Self-paced View.
+- **Replays work.** The learner can play again; each attempt starts from a clean state, and an
+ earlier attempt's result is not lost or mixed into the new one. Leaving and coming back resumes
+ or restarts cleanly, never half-way through a broken state.
+ *Pending tech decision (Loi): how attempts are stored (open tech decision 2).*
+ *Pending product decision: if a presenter can cap or lock replays, the view respects that setting.*
+- **It fits any screen.** It works from a small phone to a fullscreen desktop, in portrait and
+ landscape, and survives a resize or rotation mid-attempt.
+- **It works embedded.** It runs inside an embedding frame and makes no assumption that it owns the
+ whole browser window. *Pending tech decision (Loi): whether a public embed page is in scope from day
+ one (open tech decision 6); until it is, QA tests it embedded in the Audience app only.*
+- **Live is unchanged.** The same slide type still works as before in a live presentation (Canvas and
+ Audience views), and a self-paced presentation still works with the Audience view if the Self-paced
+ View is not used.
+
+**The fleet-owned guarantees above cover the Self-paced View too:**
+
+- **Report / Export**: self-paced answers appear in reports and export, and it is clear which attempt
+ is counted. *Pending tech decision (Loi): first, best or latest attempt, and how several attempts
+ are shown (open tech decision 3).*
+- **Slides Agent**: a slide the Slides Agent creates or edits works in the Self-paced View with no
+ extra steps, because the view reads the same content and settings (section 2).
+- **SDK**: the view uses and complies with the SDK. *Pending tech decision (Loi): the SDK contract
+ for the view (open tech decision 5).*
+- **Real-time and persistent data**: every attempt is recorded correctly, and a slide type with
+ Leaderboard points set to Yes adds the counted attempt's points only.
+ *Pending tech decision (Loi): attempt storage and which attempt counts (open tech decisions 2 and 3).*
 
 ## 6. UI / UX review (Lan)
 
@@ -193,6 +290,27 @@ The implementation must comply with AhaSlides' accessibility standards. Most not
 ### Audio
 
 The slide must follow the presentation's audio setting.
+
+### UI / UX review of a Self-paced View
+
+For a slide type that declares a Self-paced View, UI / UX also reviews that view:
+
+- **One-screen layout.** Input and results share one screen with a clear order: the question or
+ task, then the answer, then the result, then the way to play again. It does not copy the Canvas and
+ Audience layouts side by side, and nothing important depends on a big screen to be read.
+- **Responsive.** The layout adapts from a small phone to a fullscreen desktop, with no horizontal
+ scrolling, no cut-off controls and touch targets that are easy to hit.
+- **Replay is easy to find.** Playing again is a clear, labelled action once a result is shown,
+ never a hidden gesture or a page reload.
+- **UI style and theme.** The slide type's declared UI style (Standard or Immersive) applies to the
+ Self-paced View too. Standard: it complies with the design system and respects the presentation's
+ theme settings. Immersive: as for the other views, the design system is not required and theme and
+ font support are recommended.
+- **Accessibility.** Its form elements meet the participant-view rule (accessible form elements), and
+ it supports keyboard-only use as the presenting view does: a learner can play, see the result and
+ replay with no mouse and no touch.
+- **Audio.** It follows the presentation's audio setting, like every other view.
+- **Media assets.** The same rules apply as for the other views (Media assets, above).
 
 ## 7. Marketing standard
 
@@ -292,6 +410,7 @@ approved it, and each approved change is recorded below.
 | 1.13 | 16 October 2026 | Style-only: sentence case and punctuation in line with the AhaSlides design system; no change in meaning. | Dave |
 | 1.14 | 19 October 2026 | Section 7.2 Name: removed the 3-word cap and raised the character cap from 24 to 30. The automatic check at submission follows the same rule. | Dave |
 | 1.15 | 20 October 2026 | Added the post-approval step in section 4: once both reviewers approve, a slide type that has never gone live is held as "Approved, awaiting samples" until the submitter saves at least 5 sample presentations via AhaSlides share link, each showing a different use case (5 presentations, 5 use cases). Slide types already live are not affected, and saved samples carry over on resubmit. Templates stay optional at submission. | Dave |
+| 1.16 | 20 October 2026 | Added the optional Self-paced View (pilot: Picture Clues, AHA-48978): a one-screen, responsive, embeddable view that combines what the Canvas and Audience views do, used in place of the Audience view in self-paced presentations, with fallback to the Audience view. Section 2 describes it and lists the open tech decisions; section 3 adds its bundle file; section 4 treats adding one as a change reviewed as usual; section 5 adds what QA checks (one screen, results alone, replays, any screen, embedded, live unchanged) and extends the fleet-owned guarantees to it; section 6 adds what UI / UX checks (one-screen layout, responsive, replay, UI style and theme, accessibility including keyboard-only use, audio). Rules that depend on engineering calls are marked "Pending tech decision (Loi)". View-only slide types are noted as future, not yet accepted. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
