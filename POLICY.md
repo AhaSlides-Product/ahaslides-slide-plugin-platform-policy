@@ -1,9 +1,9 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.14
+- **Version:** 1.15
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
-- **Last updated:** 19 October 2026
+- **Last updated:** 20 October 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -46,7 +46,8 @@ Every submission is more than the implementation. It must include:
 - **Search keywords (tags)**: chosen from the platform's tag list. They are never shown to users;
  they only help people find your slide type when searching.
 - **3 to 5 screenshots** (*optional*)
-- **Templates** demonstrating use cases (*optional*)
+- **Templates** demonstrating use cases (*optional at submission*). Sample presentations are required
+ after approval (see section 4, "After approval - sample presentations").
 
 Format, Purpose, Audience size, Setting, UI style and Leaderboard points are each stored as an
 explicit value, not free text: pick only from the option list above. More options may be added to each list later.
@@ -84,7 +85,8 @@ submissions and answer within the same week.
 
 **The answer is one of:**
 
-- **Pass**: approved to go live.
+- **Pass**: approved. You then provide sample presentations (see "After approval - sample
+ presentations" below) before a new slide type goes live.
 - **Rejection**: always with comments on **why** and **what to change**.
 
 **Two reviewers: a submission passes only if both approve and the fleet's copy check (section 7.7) passes:**
@@ -109,10 +111,23 @@ submissions and answer within the same week.
 - Reviews stay **editable until full sign-off**. A reviewer can revise their status or comment at any
  time; the review locks only once both roles approve, the copy check passes and the slide type goes live.
 
+### After approval - sample presentations
+
+Once both reviewers approve a slide type that has never gone live, it is held as **"Approved,
+awaiting samples"** until you save **at least 5 sample presentations**, each shared via an
+AhaSlides **share link**, each showing a **different use case** for the slide type: 5
+presentations, 5 use cases. It goes live once they are saved.
+
+- Each sample is a real AhaSlides presentation that uses the slide type.
+- Name the use case each sample shows. The use cases must be genuinely different ways of using the
+ slide type, not variations on one.
+- Slide types already live are not affected.
+- Saved samples carry over when you resubmit; you only change them if you want to.
+
 ### Notifications
 
 You do not need to watch the queue. You are notified when a role requests changes or rejects, when a
-new review comment is added, and when the final approval lands and your slide type goes live.
+new review comment is added, when the final approval lands (your cue to send the sample presentations), and when your slide type goes live.
 
 - **Slack DM**: live.
 - **A reply in your original submission thread**: live.
@@ -276,6 +291,7 @@ approved it, and each approved change is recorded below.
 | 1.12 | 16 October 2026 | Narrowed the QA rejection rule in section 5 to edge cases only. Report / Export support, Slides Agent create and edit, SDK compliance and correct real-time and persistent data are now the fleet's job, not the slide developer's, and no longer grounds for rejection; no slide developer can instruct the fleet to skip, weaken or work around them. | Dave |
 | 1.13 | 16 October 2026 | Style-only: sentence case and punctuation in line with the AhaSlides design system; no change in meaning. | Dave |
 | 1.14 | 19 October 2026 | Section 7.2 Name: removed the 3-word cap and raised the character cap from 24 to 30. The automatic check at submission follows the same rule. | Dave |
+| 1.15 | 20 October 2026 | Added the post-approval step in section 4: once both reviewers approve, a slide type that has never gone live is held as "Approved, awaiting samples" until the submitter saves at least 5 sample presentations via AhaSlides share link, each showing a different use case (5 presentations, 5 use cases). Slide types already live are not affected, and saved samples carry over on resubmit. Templates stay optional at submission. | Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
