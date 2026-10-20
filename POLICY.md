@@ -39,7 +39,8 @@ Every submission is more than the implementation. It must include:
  Huge (200+).
 - **Setting**: one or more, chosen from: Classroom, Workplace, Events, Casual.
 - **UI style**: *required*, exactly one of: Standard or Immersive. It describes the presenter
- (big-screen) view, and it cannot be both. See section 6 for what each style means.
+ (big-screen) view and, if the slide type has one, its Self-paced View; it cannot be both. See
+ section 6 for what each style means.
 - **Leaderboard points**: *required*, Yes or No: does the slide type add points to the
  presentation's leaderboard (as Pick answer does)? A game that keeps its own internal score but does
  not add it to the leaderboard is No.
