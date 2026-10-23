@@ -139,7 +139,8 @@ Whichever method you use, you choose a submission type:
 
 - **Upload bundle**: pick this if you built the slide type **outside** the repo and already have its
  HTML files (`presenter.html`, `audience.html`, `settings.html`) ready to upload. You attach the
- bundle files directly, including the Self-paced View file (`self-paced-view.html`).
+ bundle files directly, including the Self-paced View file (`self-paced-view.html`; required for a new
+ Gen4 slide type, see section 2).
 - **First-party (reference)**: pick this if you built it **inside** the AhaSlides repo. Instead of
  uploading files you link its live implementation, and a **Pick from the repo** dropdown can auto-fill
  the fields. It goes live via its repo PR merge. Approval here is the review sign-off.
@@ -233,7 +234,7 @@ rule, by changing this policy. They apply to the Self-paced View too (see below)
 
 ### QA review of a Self-paced View
 
-QA also tests every slide type's Self-paced View in a self-paced presentation, on a phone and on a
+QA also tests the Self-paced View of every slide type that has one (every new Gen4 slide type) in a self-paced presentation, on a phone and on a
 fullscreen desktop. A new Gen4 slide type without a working one is not ready for review. The rule is the same: the submission is **rejected** if the
 Self-paced View does not handle edge cases gracefully. QA checks in particular that:
 
@@ -316,7 +317,7 @@ The slide must follow the presentation's audio setting.
 
 ### UI / UX review of a Self-paced View
 
-UI / UX also reviews every slide type's Self-paced View:
+UI / UX also reviews the Self-paced View of every slide type that has one (every new Gen4 slide type):
 
 - **One-screen layout.** Input and results share one screen with a clear order: the question or
  task, then the answer, then the result, then the way to play again. It is a merged design for this
