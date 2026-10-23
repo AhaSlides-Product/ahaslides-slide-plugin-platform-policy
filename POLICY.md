@@ -251,8 +251,8 @@ Self-paced View does not handle edge cases gracefully. QA checks in particular t
  results, closed submission, time limit, multiple submissions) is honoured, and an answer given in
  one view is restored in the other.
 - **Results make sense alone.** The learner sees their own result (and the correct answer, for a
- slide type that has one) without relying on crowd results. A slide type whose results only make
- sense with a crowd should not declare a Self-paced View.
+ slide type that has one) without relying on crowd results. A slide type whose results come from a
+ crowd (a poll, a word cloud) shows the learner's own answer marked within the results so far.
 - **Replays work.** The learner can play again; each attempt starts from a clean state, and an
  earlier attempt's result is not lost or mixed into the new one. Leaving and coming back resumes
  or restarts cleanly, never half-way through a broken state.
