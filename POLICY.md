@@ -1,9 +1,9 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.17
+- **Version:** 1.18
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
-- **Last updated:** 23 October 2026
+- **Last updated:** 28 October 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -44,6 +44,9 @@ Every submission is more than the implementation. It must include:
 - **Leaderboard points**: *required*, Yes or No: does the slide type add points to the
  presentation's leaderboard (as Pick answer does)? A game that keeps its own internal score but does
  not add it to the leaderboard is No.
+- **Season** (*optional*): at most one, chosen from the platform's season calendar: Halloween,
+  Christmas, Lunar New Year, Valentine's Day, Easter. Calendar events only, never hemisphere seasons
+  such as summer or winter. Leave it empty unless the slide type is built for that event. See section 7.5.
 - **Search keywords (tags)**: chosen from the platform's tag list. They are never shown to users;
  they only help people find your slide type when searching.
 - **3 to 5 screenshots** (*optional*)
@@ -52,7 +55,7 @@ Every submission is more than the implementation. It must include:
 - **Self-paced View** (*required for every new Gen4 slide type*): part of the implementation and
  reviewed with it. See "The Self-paced View" below.
 
-Format, Purpose, Audience size, Setting, UI style and Leaderboard points are each stored as an
+Format, Purpose, Audience size, Setting, UI style, Leaderboard points and Season are each stored as an
 explicit value, not free text: pick only from the option list above. More options may be added to each list later.
 
 ### The Self-paced View (required)
@@ -397,6 +400,17 @@ visuals** fail a rule, the fleet fixes them itself where it can and tells the ow
 - **At most 2 Formats and 3 Purposes**, so a slide type doesn't appear in every section of the picker.
 - **Tags must match what the slide really does.** No keyword stuffing.
 
+**Seasonal slide types.** A slide type tagged with a Season is promoted only in its season:
+
+- **In season**: shown from 4 weeks before the event date to 2 days after it, by the presenter's
+  local date. The season calendar is owned by the platform and stores each year's date for moving
+  events (Lunar New Year, Easter).
+- **Off season**: it stays live. The picker stops promoting it (browse sections, "For you", the
+  spotlight, the New badge), but it stays findable by name in search, and every existing slide that
+  uses it keeps working: render, present, duplicate and report.
+- **The Slides Agent** offers a seasonal slide type off season only when the user names the theme.
+- Do not take a seasonal slide type down after its season. Untagged slide types are unaffected.
+
 ### 7.6 Visuals
 
 - **The preview GIF shows real use within 10 seconds**, and matches what the copy promises.
@@ -443,6 +457,7 @@ approved it, and each approved change is recorded below.
 | 1.15 | 20 October 2026 | Added the post-approval step in section 4: once both reviewers approve, a slide type that has never gone live is held as "Approved, awaiting samples" until the submitter saves at least 5 sample presentations via AhaSlides share link, each showing a different use case (5 presentations, 5 use cases). Slide types already live are not affected, and saved samples carry over on resubmit. Templates stay optional at submission. | Dave |
 | 1.16 | 20 October 2026 | Added the optional Self-paced View (pilot: Picture Clues, AHA-48978): a one-screen, responsive, embeddable view that combines what the Canvas and Audience views do, used in place of the Audience view in self-paced presentations, with fallback to the Audience view. Section 2 describes it and lists the open tech decisions; section 3 adds its bundle file; section 4 treats adding one as a change reviewed as usual; section 5 adds what QA checks (one screen, results alone, replays, any screen, embedded, live unchanged) and extends the fleet-owned guarantees to it; section 6 adds what UI / UX checks (one-screen layout, responsive, replay, UI style and theme, accessibility including keyboard-only use, audio). Rules that depend on engineering calls are marked "Pending tech decision (Loi)". View-only slide types are noted as future, not yet accepted. | Dave |
 | 1.17 | 23 October 2026 | Self-paced View is now required for every new Gen4 slide type (standing rule since 21 October 2026); slide types already live without one keep the Audience view in self-paced presentations. Resolved the open tech decisions the shipped platform answers: the manifest field (`selfPacedUrl`, file `self-paced-view.html`), presenter-driven steps with no presenter (the learner's own answer reveals), the SDK contract (host Next / Back bar and `xprops.audienceNextSlide`, `audiencePrevSlide`, `audienceSlideNavigation`) and where it runs (Audience app only, no public embed page). Added the quiz modes (plain, host quiz, own quiz), the merged one-screen design rule and the same-rules-as-Audience rule. Section 2 rewritten; section 3 names the bundle file; section 5 adds navigation, quiz-mode and Audience-parity checks and drops the resolved pending notes; section 6 adds merged design, width and host-control checks. Still open: attempt storage, which attempt counts, and a replay cap. | Dave |
+| 1.18 | 28 October 2026 | Added the optional Season field (section 2) and the seasonal promotion rule (section 7.5, SLPL-805): a seasonal slide type is promoted only from 4 weeks before its event to 2 days after, stays live and findable by name in search off season, existing slides keep working, and the Slides Agent offers it off season only when the user names the theme. | Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
