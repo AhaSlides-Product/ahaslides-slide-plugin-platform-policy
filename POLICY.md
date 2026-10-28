@@ -1,9 +1,9 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.17
+- **Version:** 1.18 (draft, pending Dave)
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
-- **Last updated:** 23 October 2026
+- **Last updated:** 28 October 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -13,7 +13,7 @@
 
 This first edition covers **internal slide developers** only: AhaSliders and trusted partners we
 have invited. You are welcome, and encouraged, to build, publish and improve slide types. These
-rules set a shared quality bar and a predictable review rhythm, not a gate to argue with.
+rules set a shared quality bar that the fleet checks for you, with no wait for a human review, not a gate to argue with.
 
 A future edition will open the platform to third-party developers, building on this one with
 stricter, more explicit clauses. Design your slide type as if that scrutiny is coming.
@@ -47,10 +47,10 @@ Every submission is more than the implementation. It must include:
 - **Search keywords (tags)**: chosen from the platform's tag list. They are never shown to users;
  they only help people find your slide type when searching.
 - **3 to 5 screenshots** (*optional*)
-- **Templates** demonstrating use cases (*optional at submission*). Sample presentations are required
- after approval (see section 4, "After approval - sample presentations").
+- **Templates** demonstrating use cases (*optional at submission*). Sample presentations are still
+ requested after approval but no longer hold go-live (see section 4, "Sample presentations").
 - **Self-paced View** (*required for every new Gen4 slide type*): part of the implementation and
- reviewed with it. See "The Self-paced View" below.
+ checked with it. See "The Self-paced View" below.
 
 Format, Purpose, Audience size, Setting, UI style and Leaderboard points are each stored as an
 explicit value, not free text: pick only from the option list above. More options may be added to each list later.
@@ -64,10 +64,10 @@ on their own can answer, see the result and move on, with no presenter and no bi
 a slide type built on the slide-type marketplace platform (feature flag `slideTypeMarketGen4-<Name>`).
 
 - **Required for new slide types.** Since 21 October 2026, every new Gen4 slide type ships a
- Self-paced View. A submission without a working one is incomplete and is not ready for review.
+ Self-paced View. A submission without a working one is incomplete and does not pass the fleet's checks.
 - **Existing slide types.** A slide type that is already live without one is not removed or
- re-reviewed because of this rule: in a self-paced presentation it keeps using its Audience view.
- Adding a Self-paced View to it later is a change, reviewed as usual (section 4).
+ re-checked because of this rule: in a self-paced presentation it keeps using its Audience view.
+ Adding a Self-paced View to it later is a change, checked as usual (section 4).
 - **Declaring it.** The slide type's manifest carries a `selfPacedUrl` field pointing to the view
  (`/self-paced-view.html` on the slide type's page). The platform's scaffold, starter and checks
  create and verify it.
@@ -125,10 +125,10 @@ Audience app in self-paced presentations). These remain open, and rules that dep
 
 ## 3. How you submit
 
-There are two ways to submit a slide type for review:
+There are two ways to submit a slide type:
 
 - **Via Agent Fleet**: in the slide-types channel, ask the AhaSlides agent to submit your slide
- type for review; it gathers the submission package and files it for you.
+ type; it gathers the submission package and files it for you.
 - **Via the web interface**: sign in to the developer portal at
  `staging-slides-marketplace.ahaslides.io/developer` and use **Submit new slide type**. The form is
  self-explanatory (and may change).
@@ -143,54 +143,49 @@ Whichever method you use, you choose a submission type:
  Gen4 slide type, see section 2).
 - **First-party (reference)**: pick this if you built it **inside** the AhaSlides repo. Instead of
  uploading files you link its live implementation, and a **Pick from the repo** dropdown can auto-fill
- the fields. It goes live via its repo PR merge. Approval here is the review sign-off.
+ the fields. It goes live via its repo PR merge. Approval here is the fleet's checks passing (section 4).
 
 The difference is only in *how the implementation reaches us*: upload the files, or reference a live
 in-repo build. The submission package in section 2 is required either way.
 
-## 4. The review process
+## 4. Approval and going live
 
-The same process applies to **new slide types and to changes** to an existing one. Adding a
-Self-paced View to a slide type that is already live is a change: it goes through this same review,
-and both reviewers check the new view (sections 5 and 6) as well as the views that already exist.
+There is **no human QA or UI / UX review** of a submission. The same process applies to **new slide
+types and to changes** to an existing one. Adding a Self-paced View to a slide type that is already
+live is a change: it goes through the same fleet checks, which test the new view (sections 5 and 6) as
+well as the views that already exist.
 
-**Weekly rhythm:** Submit before every Monday. Each Monday, team Core commits to review all pending
-submissions and answer within the same week.
+**Submit any time.** There is no weekly review rhythm and no reviewer queue to wait for.
+
+**A submission is approved when the fleet's checks pass:**
+
+- **The fleet QA check**: edge cases (the happy-path test and the edge-case checks), keyboard-only
+ use and accessibility, plus the fleet-owned guarantees in section 5 (Report / Export, Slides Agent
+ create and edit, SDK compliance, and correct real-time and persistent data). It applies the QA
+ standard (section 5).
+- **The fleet copy check** (section 7.7). It applies the marketing standard (section 7).
+
+The fleet also applies the UI / UX standard (section 6) in these checks, and it is the fleet's job to
+make sure every standard is met before a slide type goes live.
 
 **The answer is one of:**
 
-- **Pass**: approved. You then provide sample presentations (see "After approval - sample
- presentations" below) before a new slide type goes live.
-- **Rejection**: always with comments on **why** and **what to change**.
+- **Pass**: approved. An **upload bundle** goes live automatically (the bundle and its hosted page).
+ A **first-party (reference)** slide type goes live via its repo PR merge.
+- **Not passed**: always with comments on **why** and **what to change**. Fix it and resubmit.
 
-**Two reviewers: a submission passes only if both approve and the fleet's copy check (section 7.7) passes:**
+- **Fixes are yours to make.** The fleet will not fix the issues for you. The one exception is
+ marketing copy: the fleet fixes any copy that fails section 7 itself where it can, and notes the
+ change (section 7.7).
+- **Track your submission.** Check your submission's status and the fleet's feedback any time in the
+ developer portal at `staging-slides-marketplace.ahaslides.io/developer`.
 
-| Role | Reviewer | Owns |
-| --- | --- | --- |
-| QA | Lily or Amber | Edge cases (section 5) |
-| UI / UX | Lan | Design system, style, assets, accessibility (section 6) |
+### Sample presentations (proposed rule)
 
-- **Work with your reviewers.** You are welcome to reach out and work with them, but reviewers will
- not fix the issues for you. The fixes are yours to make. The one exception is marketing copy: the
- fleet fixes any copy that fails section 7 itself where it can, and notes the change (section 7.7).
-- **Track your submission.** The review queue is open. Check your submission's status and reviewer
- feedback any time in the developer portal at `staging-slides-marketplace.ahaslides.io/developer`.
-
-### How a review is recorded
-
-- Each reviewer sets a **status** on your submission (Pending, Reviewing, Approved or Rejected)
- with a comment. A comment is required to reject.
-- Reviews are **transparent per reviewer**: you can see each role's status and comment, who left it,
- and when. A reviewer edits only their own review.
-- Reviews stay **editable until full sign-off**. A reviewer can revise their status or comment at any
- time; the review locks only once both roles approve, the copy check passes and the slide type goes live.
-
-### After approval - sample presentations
-
-Once both reviewers approve a slide type that has never gone live, it is held as **"Approved,
-awaiting samples"** until you save **at least 5 sample presentations**, each shared via an
-AhaSlides **share link**, each showing a **different use case** for the slide type: 5
-presentations, 5 use cases. It goes live once they are saved.
+You are still asked for **at least 5 sample presentations**, each shared via an AhaSlides **share
+link**, each showing a **different use case** for the slide type: 5 presentations, 5 use cases. Samples
+**no longer hold go-live**: an approved slide type goes live without waiting for them, and you add them
+afterwards. *Proposed rule, for Dave to confirm.*
 
 - Each sample is a real AhaSlides presentation that uses the slide type.
 - Name the use case each sample shows. The use cases must be genuinely different ways of using the
@@ -198,28 +193,54 @@ presentations, 5 use cases. It goes live once they are saved.
 - Slide types already live are not affected.
 - Saved samples carry over when you resubmit; you only change them if you want to.
 
+### Standards owners and take-down
+
+The QA standard, the UI / UX standard and the marketing standard stay published (sections 5, 6 and 7).
+**Lan, Lily, Amber and Trent keep the right to take down (unpublish) or change any slide type at any
+time** so that it meets the UI / UX, QA and Marketing standards. The developer is always told why.
+
+### How slide types are labelled in the picker
+
+The Slide Picker shows who built each slide type and whether it has proven itself with users.
+
+- **AhaSlides Official**: slide types developed by **Lan, Amber or Lily**, and AhaSlides' own native
+ slide types. They show "AhaSlides Official" with a check icon in the design system's Official
+ colour, and an "Official" tooltip.
+- **Verified developer**: slide types developed by every other AhaSlider show a "Verified developer"
+ tooltip with a check icon in a lighter colour than the Official one.
+- **Beta badge**: shown on slide types that are not Official until they prove themselves with users.
+ Official slide types are never Beta. The Beta badge on a slide type **clears** when it has **100 or
+ more hosts** AND either **80% or more positive ratings from at least 20 votes**, OR a **hosting rate
+ at or above the median**. It **returns** if positive ratings fall **below 60%** (from at least 20
+ votes). The state is recomputed automatically, with the ratings. Lan, Lily, Amber and Trent can force
+ the Beta badge on or off for any slide type. *Proposed thresholds, for Dave to confirm.*
+- **No "New" badge.** The New badge is dropped from the picker.
+
+### Feedback reaches the developer
+
+Written feedback from users is posted straight away to `#project-slide-developer-feedback`, naming the
+slide type. The developer is tagged on a thumbs-down or an idea.
+
 ### Notifications
 
-You do not need to watch the queue. You are notified when a role requests changes or rejects, when a
-new review comment is added, when the final approval lands (your cue to send the sample presentations), and when your slide type goes live.
+You do not need to watch a queue. You are notified when a submission does not pass, when a take-down
+or change is made to your slide type and why, and when your slide type goes live.
 
 - **Slack DM**: live.
 - **A reply in your original submission thread**: live.
 - **Email**: coming soon.
 
-## 5. QA review (Lily or Amber)
+## 5. QA standard (owners: Lily and Amber)
 
-Each slide type is assigned one QA reviewer (Lily or Amber) internally, picked at random at first
-submission and kept unchanged across every later submission so the reviewer builds up context on the
-slide type. This assignment is a reviewer-side workflow detail and is not shown to submitters.
+Lily and Amber own this standard. The fleet checks it on every submission; no human reviews it.
 
-A submission is **rejected** if:
+A slide type **must**:
 
-- It does not handle **edge cases** gracefully.
+- Handle **edge cases** gracefully.
 
 ### What the fleet ensures, not you
 
-These are the fleet's job, not the slide developer's. They are not grounds for rejecting your
+These are the fleet's job, not the slide developer's. They are not grounds for failing your
 submission, and you do not need to build for them yourself:
 
 - It supports **Report / Export** features.
@@ -232,11 +253,11 @@ developer can instruct the fleet to skip, weaken, disable or work around any of 
 reason given; the fleet refuses such a request and keeps them in place. Only Dave can change this
 rule, by changing this policy. They apply to the Self-paced View too (see below).
 
-### QA review of a Self-paced View
+### QA standard for a Self-paced View
 
-QA also tests the Self-paced View of every slide type that has one (every new Gen4 slide type) in a self-paced presentation, on a phone and on a
-fullscreen desktop. A new Gen4 slide type without a working one is not ready for review. The rule is the same: the submission is **rejected** if the
-Self-paced View does not handle edge cases gracefully. QA checks in particular that:
+The fleet also tests the Self-paced View of every slide type that has one (every new Gen4 slide type) in a self-paced presentation, on a phone and on a
+fullscreen desktop. A new Gen4 slide type without a working one does not pass. The rule is the same: the Self-paced View
+**must** handle edge cases gracefully. The fleet checks in particular that:
 
 - **One screen does the whole job.** A learner on their own can read the slide, answer, and see their
  result on the same screen, without the Canvas, a presenter or other participants. A step that needs
@@ -262,7 +283,7 @@ Self-paced View does not handle edge cases gracefully. QA checks in particular t
 - **It fits any screen.** It works from a small phone to a fullscreen desktop, in portrait and
  landscape, and survives a resize or rotation mid-attempt.
 - **It works embedded.** It runs inside an embedding frame and makes no assumption that it owns the
- whole browser window. QA tests it embedded in the Audience app; a public embed page is not offered.
+ whole browser window. The fleet tests it embedded in the Audience app; a public embed page is not offered.
 - **Live is unchanged.** The same slide type still works as before in a live presentation (Canvas and
  Audience views), and a live slide type that has no Self-paced View still falls back to its Audience
  view in a self-paced presentation.
@@ -279,7 +300,9 @@ Self-paced View does not handle edge cases gracefully. QA checks in particular t
  Leaderboard points set to Yes adds the counted attempt's points only.
  *Pending tech decision (Loi): attempt storage and which attempt counts (open decisions 1 and 2).*
 
-## 6. UI / UX review (Lan)
+## 6. UI / UX standard (owner: Lan)
+
+Lan owns this standard. The fleet checks it on every submission; no human reviews it.
 
 ### The editing view
 
@@ -296,7 +319,7 @@ The developer must **clearly declare** one of two UI styles:
  participant view.
 
 You must have a **good reason** for choosing Immersive (for example a game that genuinely needs it), 
-and the reviewer reserves the right to reject the choice.
+and the standards owners reserve the right to change the choice.
 
 ### Media assets
 
@@ -315,9 +338,9 @@ The implementation must comply with AhaSlides' accessibility standards. Most not
 
 The slide must follow the presentation's audio setting.
 
-### UI / UX review of a Self-paced View
+### UI / UX standard for a Self-paced View
 
-UI / UX also reviews the Self-paced View of every slide type that has one (every new Gen4 slide type):
+The UI / UX standard also covers the Self-paced View of every slide type that has one (every new Gen4 slide type). It **must** meet these points:
 
 - **One-screen layout.** Input and results share one screen with a clear order: the question or
  task, then the answer, then the result, then the way to play again. It is a merged design for this
@@ -346,8 +369,8 @@ UI / UX also reviews the Self-paced View of every slide type that has one (every
 ## 7. Marketing standard
 
 There is no separate marketing reviewer. AhaSlides' agents (the fleet) check every submission against
-the rules below, before and during review. If the **name, subheading, description, categories or
-visuals** fail a rule, the fleet fixes them itself where it can and tells the owner what it changed. Branding and asset rights for visuals are checked by UI/UX under section 6.
+the rules below, before approval and when a slide type changes. If the **name, subheading, description, categories or
+visuals** fail a rule, the fleet fixes them itself where it can and tells the owner what it changed. Branding and asset rights for visuals are covered by the UI / UX standard under section 6.
 
 ### 7.1 Rules for all copy: name, subheading and description
 
@@ -403,7 +426,7 @@ visuals** fail a rule, the fleet fixes them itself where it can and tells the ow
 - **No misleading results.** Demo data is fine, but the GIF and screenshots show only results the slide can really produce. No made-up "10,000 votes".
 - **No competitor logos or third-party brands** in the GIF or screenshots. Exception: a slide type that genuinely works with a platform may show that platform's content in use (a YouTube video in YouTube Quiz), but never its logo as the icon.
 - **No fast flashing.** Nothing in the GIF flashes more than 3 times a second, as that can trigger seizures (WCAG 2.3.1).
-- **Branding and asset rights** for the icon, GIF and screenshots are checked by UI/UX under section 6, Media assets.
+- **Branding and asset rights** for the icon, GIF and screenshots are covered by the UI / UX standard under section 6, Media assets.
 
 ### 7.7 Pass/fail checks the fleet runs
 
@@ -415,7 +438,7 @@ visuals** fail a rule, the fleet fixes them itself where it can and tells the ow
 **How the checks are enforced:**
 
 - **Automatic rules at submission.** The rules a machine can check (lengths, Title Case, banned and filler words, links, emoji, ALL CAPS, repeated symbols, the Format and Purpose caps) are checked when a slide type is first submitted. A submission that breaks one is refused with a list of the failing rules and their subsection numbers. Later edits to the name, subheading, description or categories are checked the same way, on the fields that change.
-- **The fleet copy check is part of approval.** Every submission and resubmission waits for the fleet's copy check. Until it is recorded, the submission stays in review even after QA and UI / UX approve. A pass completes the approval. If a fix needs the owner (the fleet cannot fix it alone), the check fails, the submission reads as rejected with notes on what to change and the subsection number, and the owner fixes it and resubmits. Editing the copy during review resets the check.
+- **The fleet copy check is part of approval.** Every submission and resubmission waits for the fleet's copy check. Until it is recorded, the submission is not approved, even when the fleet QA check has passed. A pass, with the QA check, completes the approval. If a fix needs the owner (the fleet cannot fix it alone), the check fails, the submission reads as not passed, with notes on what to change and the subsection number, and the owner fixes it and resubmits. Editing the copy before approval resets the check.
 - **Earlier slide types are grandfathered.** Slide types first submitted before version 1.11 are not held to the automatic rules or the copy check, on edits or resubmissions. A draft never submitted before then follows them from its first submission.
 
 ## 8. Approval & change history
@@ -443,6 +466,7 @@ approved it, and each approved change is recorded below.
 | 1.15 | 20 October 2026 | Added the post-approval step in section 4: once both reviewers approve, a slide type that has never gone live is held as "Approved, awaiting samples" until the submitter saves at least 5 sample presentations via AhaSlides share link, each showing a different use case (5 presentations, 5 use cases). Slide types already live are not affected, and saved samples carry over on resubmit. Templates stay optional at submission. | Dave |
 | 1.16 | 20 October 2026 | Added the optional Self-paced View (pilot: Picture Clues, AHA-48978): a one-screen, responsive, embeddable view that combines what the Canvas and Audience views do, used in place of the Audience view in self-paced presentations, with fallback to the Audience view. Section 2 describes it and lists the open tech decisions; section 3 adds its bundle file; section 4 treats adding one as a change reviewed as usual; section 5 adds what QA checks (one screen, results alone, replays, any screen, embedded, live unchanged) and extends the fleet-owned guarantees to it; section 6 adds what UI / UX checks (one-screen layout, responsive, replay, UI style and theme, accessibility including keyboard-only use, audio). Rules that depend on engineering calls are marked "Pending tech decision (Loi)". View-only slide types are noted as future, not yet accepted. | Dave |
 | 1.17 | 23 October 2026 | Self-paced View is now required for every new Gen4 slide type (standing rule since 21 October 2026); slide types already live without one keep the Audience view in self-paced presentations. Resolved the open tech decisions the shipped platform answers: the manifest field (`selfPacedUrl`, file `self-paced-view.html`), presenter-driven steps with no presenter (the learner's own answer reveals), the SDK contract (host Next / Back bar and `xprops.audienceNextSlide`, `audiencePrevSlide`, `audienceSlideNavigation`) and where it runs (Audience app only, no public embed page). Added the quiz modes (plain, host quiz, own quiz), the merged one-screen design rule and the same-rules-as-Audience rule. Section 2 rewritten; section 3 names the bundle file; section 5 adds navigation, quiz-mode and Audience-parity checks and drops the resolved pending notes; section 6 adds merged design, width and host-control checks. Still open: attempt storage, which attempt counts, and a replay cap. | Dave |
+| 1.18 | 28 October 2026 | Removed the human QA and UI / UX review of submissions (draft, SLPL-1074). A submission is approved when the fleet's QA check and copy check pass, and approved slide types go live automatically (upload bundle) or via the repo PR merge (first-party); the weekly Monday rhythm and the reviewer table go. Sections 5 and 6 become the QA standard and the UI / UX standard, applied by the fleet. New in section 4: standards owners (Lan, Lily, Amber, Trent) keep the right to take down or change any slide type; how slide types are labelled in the picker (AhaSlides Official, Verified developer, Beta badge logic, New badge dropped); user feedback goes straight to `#project-slide-developer-feedback`. Proposed: sample presentations stay requested but no longer hold go-live. Sections 1, 2, 3 and 7 reworded to match. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
