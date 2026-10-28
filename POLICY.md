@@ -1,7 +1,7 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.19 (draft, pending Dave)
+- **Version:** 1.19
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
 - **Last updated:** 28 October 2026
 - **Sole approver of changes:** Dave
@@ -183,12 +183,12 @@ make sure every standard is met before a slide type goes live.
 - **Track your submission.** Check your submission's status and the fleet's feedback any time in the
  developer portal at `staging-slides-marketplace.ahaslides.io/developer`.
 
-### Sample presentations (proposed rule)
+### Sample presentations
 
 You are still asked for **at least 5 sample presentations**, each shared via an AhaSlides **share
 link**, each showing a **different use case** for the slide type: 5 presentations, 5 use cases. Samples
 **no longer hold go-live**: an approved slide type goes live without waiting for them, and you add them
-afterwards. *Proposed rule, for Dave to confirm.*
+afterwards.
 
 - Each sample is a real AhaSlides presentation that uses the slide type.
 - Name the use case each sample shows. The use cases must be genuinely different ways of using the
@@ -216,7 +216,7 @@ The Slide Picker shows who built each slide type and whether it has proven itsel
  more hosts** AND either **80% or more positive ratings from at least 20 votes**, OR a **hosting rate
  at or above the median**. It **returns** if positive ratings fall **below 60%** (from at least 20
  votes). The state is recomputed automatically, with the ratings. Lan, Lily, Amber and Trent can force
- the Beta badge on or off for any slide type. *Proposed thresholds, for Dave to confirm.*
+ the Beta badge on or off for any slide type.
 - **No "New" badge.** The New badge is dropped from the picker.
 
 ### Feedback reaches the developer
@@ -481,7 +481,7 @@ approved it, and each approved change is recorded below.
 | 1.16 | 20 October 2026 | Added the optional Self-paced View (pilot: Picture Clues, AHA-48978): a one-screen, responsive, embeddable view that combines what the Canvas and Audience views do, used in place of the Audience view in self-paced presentations, with fallback to the Audience view. Section 2 describes it and lists the open tech decisions; section 3 adds its bundle file; section 4 treats adding one as a change reviewed as usual; section 5 adds what QA checks (one screen, results alone, replays, any screen, embedded, live unchanged) and extends the fleet-owned guarantees to it; section 6 adds what UI / UX checks (one-screen layout, responsive, replay, UI style and theme, accessibility including keyboard-only use, audio). Rules that depend on engineering calls are marked "Pending tech decision (Loi)". View-only slide types are noted as future, not yet accepted. | Dave |
 | 1.17 | 23 October 2026 | Self-paced View is now required for every new Gen4 slide type (standing rule since 21 October 2026); slide types already live without one keep the Audience view in self-paced presentations. Resolved the open tech decisions the shipped platform answers: the manifest field (`selfPacedUrl`, file `self-paced-view.html`), presenter-driven steps with no presenter (the learner's own answer reveals), the SDK contract (host Next / Back bar and `xprops.audienceNextSlide`, `audiencePrevSlide`, `audienceSlideNavigation`) and where it runs (Audience app only, no public embed page). Added the quiz modes (plain, host quiz, own quiz), the merged one-screen design rule and the same-rules-as-Audience rule. Section 2 rewritten; section 3 names the bundle file; section 5 adds navigation, quiz-mode and Audience-parity checks and drops the resolved pending notes; section 6 adds merged design, width and host-control checks. Still open: attempt storage, which attempt counts, and a replay cap. | Dave |
 | 1.18 | 28 October 2026 | Added the optional Season field (section 2) and the seasonal promotion rule (section 7.5, SLPL-805): a seasonal slide type is promoted only from 4 weeks before its event to 2 days after, stays live and findable by name in search off season, existing slides keep working, and the Slides Agent offers it off season only when the user names the theme. | Dave |
-| 1.19 | 28 October 2026 | Removed the human QA and UI / UX review of submissions (draft, SLPL-1074). A submission is approved when the fleet's QA check and copy check pass, and approved slide types go live automatically (upload bundle) or via the repo PR merge (first-party); the weekly Monday rhythm and the reviewer table go. Sections 5 and 6 become the QA standard and the UI / UX standard, applied by the fleet. New in section 4: standards owners (Lan, Lily, Amber, Trent) keep the right to take down or change any slide type; how slide types are labelled in the picker (AhaSlides Official, Verified developer, Beta badge logic, New badge dropped); user feedback goes straight to `#project-slide-developer-feedback`. Proposed: sample presentations stay requested but no longer hold go-live. Sections 1, 2, 3 and 7 reworded to match. | Pending - Dave |
+| 1.19 | 28 October 2026 | Removed the human QA and UI / UX review of submissions (SLPL-1074). A submission is approved when the fleet's QA check and copy check pass, and approved slide types go live automatically (upload bundle) or via the repo PR merge (first-party); the weekly Monday rhythm and the reviewer table go. Sections 5 and 6 become the QA standard and the UI / UX standard, applied by the fleet. New in section 4: standards owners (Lan, Lily, Amber, Trent) keep the right to take down or change any slide type; how slide types are labelled in the picker (AhaSlides Official, Verified developer, Beta badge logic, New badge dropped); user feedback goes straight to `#project-slide-developer-feedback`. Sample presentations stay requested but no longer hold go-live. Sections 1, 2, 3 and 7 reworded to match. | Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
