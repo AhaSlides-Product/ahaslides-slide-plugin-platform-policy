@@ -1,7 +1,7 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.19
+- **Version:** 1.20
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
 - **Last updated:** 28 October 2026
 - **Sole approver of changes:** Dave
@@ -50,8 +50,8 @@ Every submission is more than the implementation. It must include:
 - **Search keywords (tags)**: chosen from the platform's tag list. They are never shown to users;
  they only help people find your slide type when searching.
 - **3 to 5 screenshots** (*optional*)
-- **Templates** demonstrating use cases (*optional at submission*). Sample presentations are still
- requested after approval but no longer hold go-live (see section 4, "Sample presentations").
+- **Templates** demonstrating use cases (*optional at submission*). AhaSlides creates the sample
+ presentations after approval (see section 4, "Sample presentations").
 - **Self-paced View** (*required for every new Gen4 slide type*): part of the implementation and
  checked with it. See "The Self-paced View" below.
 
@@ -185,14 +185,17 @@ make sure every standard is met before a slide type goes live.
 
 ### Sample presentations
 
-You are still asked for **at least 5 sample presentations**, each shared via an AhaSlides **share
-link**, each showing a **different use case** for the slide type: 5 presentations, 5 use cases. Samples
-**no longer hold go-live**: an approved slide type goes live without waiting for them, and you add them
-afterwards.
+Once a slide type that has never gone live is approved, AhaSlides **automatically creates 5 sample
+presentations** that use it, each showing a **different use case**, and saves them as the slide type's
+samples. You do not need to make them. Samples **do not hold go-live**: an approved slide type goes live
+without waiting for them.
 
 - Each sample is a real AhaSlides presentation that uses the slide type.
-- Name the use case each sample shows. The use cases must be genuinely different ways of using the
- slide type, not variations on one.
+- Each of the 5 samples shows a genuinely different way of using the slide type, not a variation on
+ one.
+- You can replace or add to the samples at any time. Keep at least 5, each shared via an AhaSlides
+ **share link** and each showing a different use case. Name the use case each one shows.
+- Saving samples never publishes or unpublishes the slide type.
 - Slide types already live are not affected.
 - Saved samples carry over when you resubmit; you only change them if you want to.
 
@@ -482,6 +485,7 @@ approved it, and each approved change is recorded below.
 | 1.17 | 23 October 2026 | Self-paced View is now required for every new Gen4 slide type (standing rule since 21 October 2026); slide types already live without one keep the Audience view in self-paced presentations. Resolved the open tech decisions the shipped platform answers: the manifest field (`selfPacedUrl`, file `self-paced-view.html`), presenter-driven steps with no presenter (the learner's own answer reveals), the SDK contract (host Next / Back bar and `xprops.audienceNextSlide`, `audiencePrevSlide`, `audienceSlideNavigation`) and where it runs (Audience app only, no public embed page). Added the quiz modes (plain, host quiz, own quiz), the merged one-screen design rule and the same-rules-as-Audience rule. Section 2 rewritten; section 3 names the bundle file; section 5 adds navigation, quiz-mode and Audience-parity checks and drops the resolved pending notes; section 6 adds merged design, width and host-control checks. Still open: attempt storage, which attempt counts, and a replay cap. | Dave |
 | 1.18 | 28 October 2026 | Added the optional Season field (section 2) and the seasonal promotion rule (section 7.5, SLPL-805): a seasonal slide type is promoted only from 4 weeks before its event to 2 days after, stays live and findable by name in search off season, existing slides keep working, and the Slides Agent offers it off season only when the user names the theme. | Dave |
 | 1.19 | 28 October 2026 | Removed the human QA and UI / UX review of submissions (SLPL-1074). A submission is approved when the fleet's QA check and copy check pass, and approved slide types go live automatically (upload bundle) or via the repo PR merge (first-party); the weekly Monday rhythm and the reviewer table go. Sections 5 and 6 become the QA standard and the UI / UX standard, applied by the fleet. New in section 4: standards owners (Lan, Lily, Amber, Trent) keep the right to take down or change any slide type; how slide types are labelled in the picker (AhaSlides Official, Verified developer, Beta badge logic, New badge dropped); user feedback goes straight to `#project-slide-developer-feedback`. Sample presentations stay requested but no longer hold go-live. Sections 1, 2, 3 and 7 reworded to match. | Dave |
+| 1.20 | 28 October 2026 | Sample presentations are now created automatically (SLPL-1084): once a slide type that has never gone live is approved, AhaSlides creates 5 sample presentations that use it, each showing a different use case, and saves them as its samples. The submitter can replace or add to them at any time (at least 5, each a share link showing a different use case). Samples still do not hold go-live, and saving them never publishes or unpublishes. Slide types already live are not affected, and saved samples carry over on resubmit. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
