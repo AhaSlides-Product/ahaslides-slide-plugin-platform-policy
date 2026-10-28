@@ -1,9 +1,9 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.17
+- **Version:** 1.18
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
-- **Last updated:** 23 October 2026
+- **Last updated:** 28 October 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -47,8 +47,8 @@ Every submission is more than the implementation. It must include:
 - **Search keywords (tags)**: chosen from the platform's tag list. They are never shown to users;
  they only help people find your slide type when searching.
 - **3 to 5 screenshots** (*optional*)
-- **Templates** demonstrating use cases (*optional at submission*). Sample presentations are required
- after approval (see section 4, "After approval - sample presentations").
+- **Templates** demonstrating use cases (*optional at submission*). AhaSlides creates the sample
+ presentations after approval (see section 4, "After approval - sample presentations").
 - **Self-paced View** (*required for every new Gen4 slide type*): part of the implementation and
  reviewed with it. See "The Self-paced View" below.
 
@@ -159,8 +159,8 @@ submissions and answer within the same week.
 
 **The answer is one of:**
 
-- **Pass**: approved. You then provide sample presentations (see "After approval - sample
- presentations" below) before a new slide type goes live.
+- **Pass**: approved. For a new slide type, AhaSlides then creates its sample presentations (see
+ "After approval - sample presentations" below) before it goes live.
 - **Rejection**: always with comments on **why** and **what to change**.
 
 **Two reviewers: a submission passes only if both approve and the fleet's copy check (section 7.7) passes:**
@@ -187,21 +187,25 @@ submissions and answer within the same week.
 
 ### After approval - sample presentations
 
-Once both reviewers approve a slide type that has never gone live, it is held as **"Approved,
-awaiting samples"** until you save **at least 5 sample presentations**, each shared via an
-AhaSlides **share link**, each showing a **different use case** for the slide type: 5
-presentations, 5 use cases. It goes live once they are saved.
+Once both reviewers approve a slide type that has never gone live, AhaSlides **automatically
+creates 5 sample presentations** that use the slide type, each showing a **different use case**, and
+saves them as the slide type's samples. You do not need to make them. The slide type is held as
+**"Approved, awaiting samples"** until the samples are saved and a reviewer has checked them. Then it
+can go live.
 
 - Each sample is a real AhaSlides presentation that uses the slide type.
-- Name the use case each sample shows. The use cases must be genuinely different ways of using the
- slide type, not variations on one.
+- Each of the 5 samples shows a genuinely different way of using the slide type, not a variation on
+ one.
+- You can replace or add to the samples at any time. Keep at least 5, each shared via an AhaSlides
+ **share link** and each showing a different use case. Name the use case each one shows.
+- Saving samples never publishes the slide type. A reviewer checks the samples before publishing.
 - Slide types already live are not affected.
 - Saved samples carry over when you resubmit; you only change them if you want to.
 
 ### Notifications
 
 You do not need to watch the queue. You are notified when a role requests changes or rejects, when a
-new review comment is added, when the final approval lands (your cue to send the sample presentations), and when your slide type goes live.
+new review comment is added, when the final approval lands (the message says your sample presentations are being made), and when your slide type goes live.
 
 - **Slack DM**: live.
 - **A reply in your original submission thread**: live.
@@ -443,6 +447,7 @@ approved it, and each approved change is recorded below.
 | 1.15 | 20 October 2026 | Added the post-approval step in section 4: once both reviewers approve, a slide type that has never gone live is held as "Approved, awaiting samples" until the submitter saves at least 5 sample presentations via AhaSlides share link, each showing a different use case (5 presentations, 5 use cases). Slide types already live are not affected, and saved samples carry over on resubmit. Templates stay optional at submission. | Dave |
 | 1.16 | 20 October 2026 | Added the optional Self-paced View (pilot: Picture Clues, AHA-48978): a one-screen, responsive, embeddable view that combines what the Canvas and Audience views do, used in place of the Audience view in self-paced presentations, with fallback to the Audience view. Section 2 describes it and lists the open tech decisions; section 3 adds its bundle file; section 4 treats adding one as a change reviewed as usual; section 5 adds what QA checks (one screen, results alone, replays, any screen, embedded, live unchanged) and extends the fleet-owned guarantees to it; section 6 adds what UI / UX checks (one-screen layout, responsive, replay, UI style and theme, accessibility including keyboard-only use, audio). Rules that depend on engineering calls are marked "Pending tech decision (Loi)". View-only slide types are noted as future, not yet accepted. | Dave |
 | 1.17 | 23 October 2026 | Self-paced View is now required for every new Gen4 slide type (standing rule since 21 October 2026); slide types already live without one keep the Audience view in self-paced presentations. Resolved the open tech decisions the shipped platform answers: the manifest field (`selfPacedUrl`, file `self-paced-view.html`), presenter-driven steps with no presenter (the learner's own answer reveals), the SDK contract (host Next / Back bar and `xprops.audienceNextSlide`, `audiencePrevSlide`, `audienceSlideNavigation`) and where it runs (Audience app only, no public embed page). Added the quiz modes (plain, host quiz, own quiz), the merged one-screen design rule and the same-rules-as-Audience rule. Section 2 rewritten; section 3 names the bundle file; section 5 adds navigation, quiz-mode and Audience-parity checks and drops the resolved pending notes; section 6 adds merged design, width and host-control checks. Still open: attempt storage, which attempt counts, and a replay cap. | Dave |
+| 1.18 | 28 October 2026 | Sample presentations are now created automatically: once both reviewers approve a slide type that has never gone live, AhaSlides creates 5 sample presentations that use it, each showing a different use case, and saves them as its samples. The submitter can replace or add to them at any time (at least 5, each a share link showing a different use case). Saving samples still never publishes; a reviewer checks them before publishing. The final-approval message now says samples are being made. "Approved, awaiting samples" is unchanged. Slide types already live are not affected, and saved samples carry over on resubmit. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
