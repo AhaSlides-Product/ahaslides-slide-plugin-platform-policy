@@ -1,7 +1,7 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.21
+- **Version:** 1.22
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
 - **Last updated:** 6 November 2026
 - **Sole approver of changes:** Dave
@@ -244,11 +244,16 @@ time** so that it meets the UI / UX, QA and Marketing standards. The developer i
 
 The Slide Picker shows who built each slide type and whether it has proven itself with users.
 
-- **AhaSlides Official**: slide types developed by **Lan, Amber or Lily**, and AhaSlides' own native
- slide types. They show "AhaSlides Official" with a check icon in the design system's Official
+- **AhaSlides Official**: slide types **submitted** by a Core team developer (**Lan, Amber or Lily**),
+ and AhaSlides' own native slide types. The badge follows who submitted the slide type, not the
+ developer name it shows. They show a **filled, solid-pink check seal** in the design system's Official
  colour, and an "Official" tooltip.
-- **Verified developer**: slide types developed by every other AhaSlider show a "Verified developer"
- tooltip with a check icon in a lighter colour than the Official one.
+- **Verified developer**: slide types submitted by every other developer show a **solid-pink check
+ seal in outline** (full colour, not faded) and a "Verified developer" tooltip.
+- **Where the badge shows**: only next to the **developer name**, never next to the slide type's name
+ or tile in the picker.
+- **Developer name of a Gen 4 rebuild**: a Gen 4 slide type that rebuilds a Gen 1 one keeps the
+ developer name it was submitted with. It is not forced to "AhaSlides".
 - **Beta badge**: shown on slide types that are not Official until they prove themselves with users.
  Official slide types are never Beta. The Beta badge on a slide type **clears** when it has **100 or
  more hosts** AND either **80% or more positive ratings from at least 20 votes**, OR a **hosting rate
@@ -531,7 +536,8 @@ approved it, and each approved change is recorded below.
 | 1.18 | 28 October 2026 | Added the optional Season field (section 2) and the seasonal promotion rule (section 7.5, SLPL-805): a seasonal slide type is promoted only from 4 weeks before its event to 2 days after, stays live and findable by name in search off season, existing slides keep working, and the Slides Agent offers it off season only when the user names the theme. | Dave |
 | 1.19 | 28 October 2026 | Removed the human QA and UI / UX review of submissions (SLPL-1074). A submission is approved when the fleet's QA check and copy check pass, and approved slide types go live automatically (upload bundle) or via the repo PR merge (first-party); the weekly Monday rhythm and the reviewer table go. Sections 5 and 6 become the QA standard and the UI / UX standard, applied by the fleet. New in section 4: standards owners (Lan, Lily, Amber, Trent) keep the right to take down or change any slide type; how slide types are labelled in the picker (AhaSlides Official, Verified developer, Beta badge logic, New badge dropped); user feedback goes straight to `#project-slide-developer-feedback`. Sample presentations stay requested but no longer hold go-live. Sections 1, 2, 3 and 7 reworded to match. | Dave |
 | 1.20 | 6 November 2026 | Narrowed the fleet QA check (SLPL-1802, Amber). It runs only when a slide type is submitted or resubmitted to Slide Lab, never on edits or Slack conversations. Only a broken function rejects a submission (an edge case that breaks it, a control unusable by keyboard); a failing fleet-owned guarantee holds go-live until the fleet makes it work but is never charged to the developer; design-system, layout, style and taste findings become advice in the notes. A resubmission cannot gain new rejections in files unchanged since the last checked round. A suspected platform bug is reproduced without the slide type before it is charged to the developer. A rejection never triggers changes the developer did not ask for. A Gen 4 slide type that migrates a Gen 1 or Gen 3 one skips the fleet QA check and needs a human QA check and approval (Lily or Amber). The fleet-owned guarantees stay functional checks. Sections 1, 4, 5 and 6 updated. | Dave |
-| 1.21 | 6 November 2026 | Sample presentations are now created automatically (SLPL-1084): once a slide type that has never gone live is approved, AhaSlides creates 5 sample presentations that use it, each showing a different use case, and saves them as its samples. The submitter can replace or add to them at any time (at least 5, each a share link showing a different use case). Samples still do not hold go-live, and saving them never publishes or unpublishes. Slide types already live are not affected, and saved samples carry over on resubmit. | Pending - Dave |
+| 1.21 | 6 November 2026 | Picker labels follow the submitter (SLPL-1546, Lily). AhaSlides Official goes to slide types submitted by a Core team developer (Lan, Amber or Lily) and to native slide types, shown as a filled solid-pink check seal; every other developer's slide types show Verified developer as a solid-pink outline seal. The badge shows only next to the developer name, never next to the slide type in the picker. A Gen 4 rebuild of a Gen 1 slide type keeps its submitted developer name instead of being forced to "AhaSlides". The Beta badge rule is unchanged. Section 4 updated. | Dave |
+| 1.22 | 6 November 2026 | Sample presentations are now created automatically (SLPL-1084): once a slide type that has never gone live is approved, AhaSlides creates 5 sample presentations that use it, each showing a different use case, and saves them as its samples. The submitter can replace or add to them at any time (at least 5, each a share link showing a different use case). Samples still do not hold go-live, and saving them never publishes or unpublishes. Slide types already live are not affected, and saved samples carry over on resubmit. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
