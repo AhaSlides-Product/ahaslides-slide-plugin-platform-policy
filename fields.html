@@ -94,9 +94,11 @@ function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className
 function section(num,title,intro){const s=el('aha-card');const h=el('h2','sec');h.append(el('span','n',num+'.'),' '+title);s.append(h);if(intro)s.append(el('p','lead',intro));return s;}
 function tagOf(text,color){const t=el('aha-tag',null,text);t.setAttribute('color',color);return t;}
 function valuesOf(entry,field){const v=entry[field.field];if(v==null||v==='')return[];return Array.isArray(v)?v:[v];}
+const FIELD_NOTES={uiStyle:'Covers the Presenting (Canvas), Audience, Self-paced and Report views. Standard: follows the design system and the presentation\'s theme. Immersive: full creative freedom, partial alignment encouraged; only for games and simulations where immersion is an important part of the UX. The Settings view always follows the design system and theme.'};
 function card(field,types,primary){
   const c=el('div','fcard'+(primary?' primary':''));c.append(el('h3',null,field.label+(primary?' (main filter)':'')));
   c.append(el('p',null,field.multiple?'Pick every option that fits.':'Exactly one. Required.'));
+  if(FIELD_NOTES[field.field])c.append(el('p',null,FIELD_NOTES[field.field]));
   field.options.forEach(o=>{const n=types.filter(t=>valuesOf(t,field).includes(o.id)).length;const r=el('div','opt');r.append(el('span',null,o.label),el('span',null,String(n)));c.append(r);});
   return c;}
 function grid(fields,types,primaryField){const g=el('div','grid');fields.forEach(f=>g.append(card(f,types,f.field===primaryField)));return g;}

@@ -1,7 +1,7 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.20
+- **Version:** 1.22
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
 - **Last updated:** 6 November 2026
 - **Sole approver of changes:** Dave
@@ -38,8 +38,9 @@ Every submission is more than the implementation. It must include:
 - **Audience size**: one or more, chosen from: Small (1-9), Medium (10-39), Large (40-199),
  Huge (200+).
 - **Setting**: one or more, chosen from: Classroom, Workplace, Events, Casual.
-- **UI style**: *required*, exactly one of: Standard or Immersive. It describes the presenter
- (big-screen) view and its Self-paced View; it cannot be both. See
+- **UI style**: *required*, exactly one of: Standard or Immersive. It covers the Presenting view
+ (Canvas), the Audience view, the Self-paced View and the Report View; it cannot be both. Immersive is
+ only for games and simulation activities where immersion is an important part of the UX. See
  section 6 for what each style means.
 - **Leaderboard points**: *required*, Yes or No: does the slide type add points to the
  presentation's leaderboard (as Pick answer does)? A game that keeps its own internal score but does
@@ -60,8 +61,9 @@ explicit value, not free text: pick only from the option list above. More option
 
 ### The Self-paced View (required)
 
-A slide type has four views: the **editing view** (settings), the **presenting view** (Canvas, the big
-screen), the **participant view** (Audience) and the **Self-paced View**. The Self-paced View is
+A slide type has five views: the **Settings view** (the editing view), the **Presenting view** (Canvas,
+the big screen), the **Audience view** (the participant view), the **Self-paced View** and the
+**Report View** (the slide's results in the presentation report). The Self-paced View is
 **one responsive, embeddable screen** that merges what the Canvas and Audience views do, so a learner
 on their own can answer, see the result and move on, with no presenter and no big screen. "Gen4" means
 a slide type built on the slide-type marketplace platform (feature flag `slideTypeMarketGen4-<Name>`).
@@ -84,7 +86,7 @@ a slide type built on the slide-type marketplace platform (feature flag `slideTy
 - **Same content, same settings.** It reads the same slide content and settings as the other views,
  honours every host setting the Audience view honours (for example hidden results, closed
  submission, time limit, multiple submissions) and uses the same answer storage, so an answer given in
- one view is restored in the other. Any setting only it uses lives in the editing view.
+ one view is restored in the other. Any setting only it uses lives in the Settings view.
 - **One merged design, not a stack.** The Canvas and the participant's input become one screen
  designed for the slide type's own mechanic, as if the projector were a touch screen in the learner's
  hand. It is not the Canvas above the Audience view, and not one layout reused for every slide type.
@@ -352,22 +354,27 @@ notes and never reject a submission on their own; a keyboard-only failure (Acces
 broken function and does (section 4). Lan and the other standards owners can still
 require a change, or take a slide type down, to meet it (section 4).
 
-### The editing view
+### The Settings view (editing view)
 
-Must comply with AhaSlides' design system. No exceptions.
+Must always comply with AhaSlides' design system and respect the presentation's theme settings,
+whatever the slide type's UI style. No exceptions.
 
-### The presenting view & the participant view
+### The Presenting, Audience, Self-paced and Report views
 
-The developer must **clearly declare** one of two UI styles:
+The developer must **clearly declare** one of two UI styles. It applies to all four views: the
+Presenting view (Canvas), the Audience view, the Self-paced View and the Report View.
 
-- **Standard (default):** Both views **must comply** with the design system and respect the
+- **Standard (default):** All four views **must comply** with the design system and respect the
  presentation's theme settings.
-- **Immersive:** Both views need **not** comply with the design system. Theme and font support is
- *recommended, not mandatory*. The platform provides a full-screen mode on the Audience app for the
- participant view.
+- **Immersive:** The four views need **not** comply with the design system or the theme settings; the
+ slide type developer has full creative freedom. We still **encourage** them to partly align with the
+ design system and the theme settings wherever possible, so that users see some continuity and
+ consistency when the slide type is used in the same presentation as other slide types. The platform
+ provides a full-screen mode on the Audience app for the Audience view.
 
-You must have a **good reason** for choosing Immersive (for example a game that genuinely needs it), 
-and the standards owners reserve the right to change the choice.
+**When a slide type can be Immersive:** games and simulation activities where immersion is an important
+part of the UX can opt for the Immersive style. If immersion is not required, the slide type's UI style
+is Standard. The standards owners reserve the right to change the choice.
 
 ### Media assets
 
@@ -379,8 +386,8 @@ and the standards owners reserve the right to change the choice.
 
 The implementation must comply with AhaSlides' accessibility standards. Most notably:
 
-- Form elements in the **editing view** and the **participant view** must be accessible.
-- The **presenting view** must support keyboard-only use: full no-mouse, no-touch operation.
+- Form elements in the **Settings view** and the **Audience view** must be accessible.
+- The **Presenting view** must support keyboard-only use: full no-mouse, no-touch operation.
 
 ### Audio
 
@@ -403,13 +410,13 @@ The UI / UX standard also covers the Self-paced View of every slide type that ha
 - **Replay is easy to find.** Playing again is a clear, labelled action once a result is shown,
  never a hidden gesture or a page reload.
 - **UI style and theme.** The slide type's declared UI style (Standard or Immersive) applies to the
- Self-paced View too. Standard: it complies with the design system and respects the presentation's
- theme settings. Immersive: as for the other views, the design system is not required and theme and
- font support are recommended.
+ Self-paced View as to the Presenting, Audience and Report views. Standard: it complies with the
+ design system and respects the presentation's theme settings. Immersive: neither is required, but
+ partly aligning with both is encouraged for continuity with the other slide types in the deck.
 - **Accessibility.** Its form elements meet the participant-view rule (accessible form elements), it
  uses the design system's audience components and keeps to the Audience view's contrast and
  touch-target rules, and
- it supports keyboard-only use as the presenting view does: a learner can play, see the result and
+ it supports keyboard-only use as the Presenting view does: a learner can play, see the result and
  replay with no mouse and no touch.
 - **Audio.** It follows the presentation's audio setting, like every other view.
 - **Media assets.** The same rules apply as for the other views (Media assets, above).
@@ -528,6 +535,7 @@ approved it, and each approved change is recorded below.
 | 1.18 | 28 October 2026 | Added the optional Season field (section 2) and the seasonal promotion rule (section 7.5, SLPL-805): a seasonal slide type is promoted only from 4 weeks before its event to 2 days after, stays live and findable by name in search off season, existing slides keep working, and the Slides Agent offers it off season only when the user names the theme. | Dave |
 | 1.19 | 28 October 2026 | Removed the human QA and UI / UX review of submissions (SLPL-1074). A submission is approved when the fleet's QA check and copy check pass, and approved slide types go live automatically (upload bundle) or via the repo PR merge (first-party); the weekly Monday rhythm and the reviewer table go. Sections 5 and 6 become the QA standard and the UI / UX standard, applied by the fleet. New in section 4: standards owners (Lan, Lily, Amber, Trent) keep the right to take down or change any slide type; how slide types are labelled in the picker (AhaSlides Official, Verified developer, Beta badge logic, New badge dropped); user feedback goes straight to `#project-slide-developer-feedback`. Sample presentations stay requested but no longer hold go-live. Sections 1, 2, 3 and 7 reworded to match. | Dave |
 | 1.20 | 6 November 2026 | Narrowed the fleet QA check (SLPL-1802, Amber). It runs only when a slide type is submitted or resubmitted to Slide Lab, never on edits or Slack conversations. Only a broken function rejects a submission (an edge case that breaks it, a control unusable by keyboard); a failing fleet-owned guarantee holds go-live until the fleet makes it work but is never charged to the developer; design-system, layout, style and taste findings become advice in the notes. A resubmission cannot gain new rejections in files unchanged since the last checked round. A suspected platform bug is reproduced without the slide type before it is charged to the developer. A rejection never triggers changes the developer did not ask for. A Gen 4 slide type that migrates a Gen 1 or Gen 3 one skips the fleet QA check and needs a human QA check and approval (Lily or Amber). The fleet-owned guarantees stay functional checks. Sections 1, 4, 5 and 6 updated. | Dave |
+| 1.22 | 6 November 2026 | UI style rules restated (SLPL-1833, Dave). The Settings view (the editing view) must always comply with the design system and respect the presentation's theme settings, whatever the UI style. The UI style covers four views: Presenting (Canvas), Audience, Self-paced and Report; Standard means all four comply with the design system and respect the theme settings; Immersive gives the developer full creative freedom, while partly aligning with the design system and theme is encouraged for continuity with other slide types in the same presentation. Immersive is only for games and simulation activities where immersion is an important part of the UX; otherwise a slide type is Standard. Sections 2 and 6 updated; the views are now named Settings, Presenting, Audience, Self-paced and Report. Version 1.21 is held by open drafts. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
