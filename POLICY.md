@@ -1,7 +1,7 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.21
+- **Version:** 1.22
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
 - **Last updated:** 6 November 2026
 - **Sole approver of changes:** Dave
@@ -50,8 +50,8 @@ Every submission is more than the implementation. It must include:
 - **Search keywords (tags)**: chosen from the platform's tag list. They are never shown to users;
  they only help people find your slide type when searching.
 - **3 to 5 screenshots** (*optional*)
-- **Templates** demonstrating use cases (*optional at submission*). Sample presentations are still
- requested after approval but no longer hold go-live (see section 4, "Sample presentations").
+- **Templates** demonstrating use cases (*optional at submission*). AhaSlides creates the sample
+ presentations after approval (see section 4, "Sample presentations").
 - **Self-paced View** (*required for every new Gen4 slide type*): part of the implementation and
  checked with it. See "The Self-paced View" below.
 
@@ -220,14 +220,17 @@ UI / UX standard (section 6) still describe what the human checks.
 
 ### Sample presentations
 
-You are still asked for **at least 5 sample presentations**, each shared via an AhaSlides **share
-link**, each showing a **different use case** for the slide type: 5 presentations, 5 use cases. Samples
-**no longer hold go-live**: an approved slide type goes live without waiting for them, and you add them
-afterwards.
+Once a slide type that has never gone live is approved, AhaSlides **automatically creates 5 sample
+presentations** that use it, each showing a **different use case**, and saves them as the slide type's
+samples. You do not need to make them. Samples **do not hold go-live**: an approved slide type goes live
+without waiting for them.
 
 - Each sample is a real AhaSlides presentation that uses the slide type.
-- Name the use case each sample shows. The use cases must be genuinely different ways of using the
- slide type, not variations on one.
+- Each of the 5 samples shows a genuinely different way of using the slide type, not a variation on
+ one.
+- You can replace or add to the samples at any time. Keep at least 5, each shared via an AhaSlides
+ **share link** and each showing a different use case. Name the use case each one shows.
+- Saving samples never publishes or unpublishes the slide type.
 - Slide types already live are not affected.
 - Saved samples carry over when you resubmit; you only change them if you want to.
 
@@ -534,6 +537,7 @@ approved it, and each approved change is recorded below.
 | 1.19 | 28 October 2026 | Removed the human QA and UI / UX review of submissions (SLPL-1074). A submission is approved when the fleet's QA check and copy check pass, and approved slide types go live automatically (upload bundle) or via the repo PR merge (first-party); the weekly Monday rhythm and the reviewer table go. Sections 5 and 6 become the QA standard and the UI / UX standard, applied by the fleet. New in section 4: standards owners (Lan, Lily, Amber, Trent) keep the right to take down or change any slide type; how slide types are labelled in the picker (AhaSlides Official, Verified developer, Beta badge logic, New badge dropped); user feedback goes straight to `#project-slide-developer-feedback`. Sample presentations stay requested but no longer hold go-live. Sections 1, 2, 3 and 7 reworded to match. | Dave |
 | 1.20 | 6 November 2026 | Narrowed the fleet QA check (SLPL-1802, Amber). It runs only when a slide type is submitted or resubmitted to Slide Lab, never on edits or Slack conversations. Only a broken function rejects a submission (an edge case that breaks it, a control unusable by keyboard); a failing fleet-owned guarantee holds go-live until the fleet makes it work but is never charged to the developer; design-system, layout, style and taste findings become advice in the notes. A resubmission cannot gain new rejections in files unchanged since the last checked round. A suspected platform bug is reproduced without the slide type before it is charged to the developer. A rejection never triggers changes the developer did not ask for. A Gen 4 slide type that migrates a Gen 1 or Gen 3 one skips the fleet QA check and needs a human QA check and approval (Lily or Amber). The fleet-owned guarantees stay functional checks. Sections 1, 4, 5 and 6 updated. | Dave |
 | 1.21 | 6 November 2026 | Picker labels follow the submitter (SLPL-1546, Lily). AhaSlides Official goes to slide types submitted by a Core team developer (Lan, Amber or Lily) and to native slide types, shown as a filled solid-pink check seal; every other developer's slide types show Verified developer as a solid-pink outline seal. The badge shows only next to the developer name, never next to the slide type in the picker. A Gen 4 rebuild of a Gen 1 slide type keeps its submitted developer name instead of being forced to "AhaSlides". The Beta badge rule is unchanged. Section 4 updated. | Dave |
+| 1.22 | 6 November 2026 | Sample presentations are now created automatically (SLPL-1084): once a slide type that has never gone live is approved, AhaSlides creates 5 sample presentations that use it, each showing a different use case, and saves them as its samples. The submitter can replace or add to them at any time (at least 5, each a share link showing a different use case). Samples still do not hold go-live, and saving them never publishes or unpublishes. Slide types already live are not affected, and saved samples carry over on resubmit. | Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
