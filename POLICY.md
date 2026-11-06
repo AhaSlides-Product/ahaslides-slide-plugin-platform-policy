@@ -1,9 +1,9 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.20
+- **Version:** 1.21
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
-- **Last updated:** 28 October 2026
+- **Last updated:** 6 November 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -13,7 +13,7 @@
 
 This first edition covers **internal slide developers** only: AhaSliders and trusted partners we
 have invited. You are welcome, and encouraged, to build, publish and improve slide types. These
-rules set a shared quality bar that the fleet checks for you, with no wait for a human review, not a gate to argue with.
+rules set a shared quality bar that the fleet checks for you, with no wait for a human review (one exception, section 4), not a gate to argue with.
 
 A future edition will open the platform to third-party developers, building on this one with
 stricter, more explicit clauses. Design your slide type as if that scrutiny is coming.
@@ -153,7 +153,8 @@ in-repo build. The submission package in section 2 is required either way.
 
 ## 4. Approval and going live
 
-There is **no human QA or UI / UX review** of a submission. The same process applies to **new slide
+There is **no human QA or UI / UX review** of a submission, with one exception: a Gen 4 slide type
+that migrates an earlier-generation one (see below). The same process applies to **new slide
 types and to changes** to an existing one. Adding a Self-paced View to a slide type that is already
 live is a change: it goes through the same fleet checks, which test the new view (sections 5 and 6) as
 well as the views that already exist.
@@ -165,23 +166,57 @@ well as the views that already exist.
 - **The fleet QA check**: edge cases (the happy-path test and the edge-case checks), keyboard-only
  use and accessibility, plus the fleet-owned guarantees in section 5 (Report / Export, Slides Agent
  create and edit, SDK compliance, and correct real-time and persistent data). It applies the QA
- standard (section 5).
+ standard (section 5) and rejects only a broken function (see "When the fleet QA check runs, and what it can reject").
 - **The fleet copy check** (section 7.7). It applies the marketing standard (section 7).
 
-The fleet also applies the UI / UX standard (section 6) in these checks, and it is the fleet's job to
-make sure every standard is met before a slide type goes live.
+The fleet also applies the UI / UX standard (section 6) in these checks, as advice, and it is the
+fleet's job to make sure every standard is met before a slide type goes live.
 
 **The answer is one of:**
 
 - **Pass**: approved. An **upload bundle** goes live automatically (the bundle and its hosted page).
  A **first-party (reference)** slide type goes live via its repo PR merge.
-- **Not passed**: always with comments on **why** and **what to change**. Fix it and resubmit.
+- **Not passed**: always with comments naming the **broken function** (or, for the copy check, the
+ failing rule and its subsection, section 7.7), **why** it fails and **what to change**. Fix it and resubmit.
+- **Held**: nothing for you to fix; a fleet-owned guarantee (section 5) fails. The slide type goes
+ live once the fleet makes it work, and it is never charged to you as not passed.
 
 - **Fixes are yours to make.** The fleet will not fix the issues for you. The one exception is
  marketing copy: the fleet fixes any copy that fails section 7 itself where it can, and notes the
  change (section 7.7).
+- **A rejection never triggers changes nobody asked for.** A not-passed result goes back to you with
+ its notes and nothing else happens: no agent edits, rebuilds or resubmits your slide type in response
+ unless you ask it to. The fleet-owned guarantees (section 5) are the one exception: making those work
+ is the fleet's job.
 - **Track your submission.** Check your submission's status and the fleet's feedback any time in the
  developer portal at `staging-slides-marketplace.ahaslides.io/developer`.
+
+### When the fleet QA check runs, and what it can reject
+
+- **Only on a submit or resubmit.** The fleet QA check runs when a slide type is submitted or
+ resubmitted to Slide Lab, and at no other time. Building, editing or discussing a slide type, in
+ Slack or anywhere else, never starts a QA check.
+- **Only a broken function rejects.** A submission is not passed only when something does not work:
+ an edge case that breaks it, or a control that cannot be reached or operated by keyboard. A failing
+ fleet-owned guarantee (section 5) also holds go-live until the fleet makes it work, but it is never
+ charged to you as a not-passed result. Design-system, layout, style and taste findings
+ (section 6) are **advice**: they are written in the check's notes for you to consider, and never
+ reject a submission on their own.
+- **Unchanged files cannot gain new rejections.** On a resubmission the check re-tests what the last
+ checked round rejected, plus the files that changed since that round. A file unchanged since then
+ cannot be rejected for something the earlier round did not raise; a new finding there is advice.
+- **A suspected platform bug is re-tested without the slide type first.** When a failure might come
+ from AhaSlides itself (the host app, the report view, the SDK or the test set-up) rather than the
+ slide type, the fleet reproduces it without the slide type, for example with a native slide type in
+ the same place. If it happens there too, it is a platform bug: it goes to the platform owners and is
+ never charged to the developer.
+
+### A Gen 4 slide type that migrates an earlier one: human check
+
+A Gen 4 slide type that migrates (replaces) an earlier-generation slide type (Gen 1 or Gen 3) **skips
+the fleet QA check**. It needs a **human QA check and approval** by a QA standard owner (Lily or
+Amber) instead; the fleet copy check (section 7.7) still applies. The QA standard (section 5) and the
+UI / UX standard (section 6) still describe what the human checks.
 
 ### Sample presentations
 
@@ -238,7 +273,9 @@ or change is made to your slide type and why, and when your slide type goes live
 
 ## 5. QA standard (owners: Lily and Amber)
 
-Lily and Amber own this standard. The fleet checks it on every submission; no human reviews it.
+Lily and Amber own this standard. The fleet checks it on every submission and resubmission; no human
+reviews it, except for a Gen 4 slide type that migrates an earlier one (section 4). Only a broken
+function fails it, under the rules in section 4 ("When the fleet QA check runs, and what it can reject").
 
 A slide type **must**:
 
@@ -258,6 +295,10 @@ The fleet checks and, where needed, makes these work before a slide type goes li
 developer can instruct the fleet to skip, weaken, disable or work around any of them**, whatever the
 reason given; the fleet refuses such a request and keeps them in place. Only Dave can change this
 rule, by changing this policy. They apply to the Self-paced View too (see below).
+
+They stay **functional checks**: the fleet QA check tests every one of them on every run, and a
+failing guarantee holds the slide type back from going live until the fleet makes it work. It is
+never downgraded to advice, and never charged to you as a not-passed result.
 
 ### QA standard for a Self-paced View
 
@@ -308,7 +349,11 @@ fullscreen desktop. A new Gen4 slide type without a working one does not pass. T
 
 ## 6. UI / UX standard (owner: Lan)
 
-Lan owns this standard. The fleet checks it on every submission; no human reviews it.
+Lan owns this standard. The fleet checks it on every submission; no human reviews it. The fleet's
+design-system, layout, style and taste findings against this standard are **advice** in the check's
+notes and never reject a submission on their own; a keyboard-only failure (Accessibility, below) is a
+broken function and does (section 4). Lan and the other standards owners can still
+require a change, or take a slide type down, to meet it (section 4).
 
 ### The editing view
 
@@ -485,7 +530,8 @@ approved it, and each approved change is recorded below.
 | 1.17 | 23 October 2026 | Self-paced View is now required for every new Gen4 slide type (standing rule since 21 October 2026); slide types already live without one keep the Audience view in self-paced presentations. Resolved the open tech decisions the shipped platform answers: the manifest field (`selfPacedUrl`, file `self-paced-view.html`), presenter-driven steps with no presenter (the learner's own answer reveals), the SDK contract (host Next / Back bar and `xprops.audienceNextSlide`, `audiencePrevSlide`, `audienceSlideNavigation`) and where it runs (Audience app only, no public embed page). Added the quiz modes (plain, host quiz, own quiz), the merged one-screen design rule and the same-rules-as-Audience rule. Section 2 rewritten; section 3 names the bundle file; section 5 adds navigation, quiz-mode and Audience-parity checks and drops the resolved pending notes; section 6 adds merged design, width and host-control checks. Still open: attempt storage, which attempt counts, and a replay cap. | Dave |
 | 1.18 | 28 October 2026 | Added the optional Season field (section 2) and the seasonal promotion rule (section 7.5, SLPL-805): a seasonal slide type is promoted only from 4 weeks before its event to 2 days after, stays live and findable by name in search off season, existing slides keep working, and the Slides Agent offers it off season only when the user names the theme. | Dave |
 | 1.19 | 28 October 2026 | Removed the human QA and UI / UX review of submissions (SLPL-1074). A submission is approved when the fleet's QA check and copy check pass, and approved slide types go live automatically (upload bundle) or via the repo PR merge (first-party); the weekly Monday rhythm and the reviewer table go. Sections 5 and 6 become the QA standard and the UI / UX standard, applied by the fleet. New in section 4: standards owners (Lan, Lily, Amber, Trent) keep the right to take down or change any slide type; how slide types are labelled in the picker (AhaSlides Official, Verified developer, Beta badge logic, New badge dropped); user feedback goes straight to `#project-slide-developer-feedback`. Sample presentations stay requested but no longer hold go-live. Sections 1, 2, 3 and 7 reworded to match. | Dave |
-| 1.20 | 28 October 2026 | Sample presentations are now created automatically (SLPL-1084): once a slide type that has never gone live is approved, AhaSlides creates 5 sample presentations that use it, each showing a different use case, and saves them as its samples. The submitter can replace or add to them at any time (at least 5, each a share link showing a different use case). Samples still do not hold go-live, and saving them never publishes or unpublishes. Slide types already live are not affected, and saved samples carry over on resubmit. | Pending - Dave |
+| 1.20 | 6 November 2026 | Narrowed the fleet QA check (SLPL-1802, Amber). It runs only when a slide type is submitted or resubmitted to Slide Lab, never on edits or Slack conversations. Only a broken function rejects a submission (an edge case that breaks it, a control unusable by keyboard); a failing fleet-owned guarantee holds go-live until the fleet makes it work but is never charged to the developer; design-system, layout, style and taste findings become advice in the notes. A resubmission cannot gain new rejections in files unchanged since the last checked round. A suspected platform bug is reproduced without the slide type before it is charged to the developer. A rejection never triggers changes the developer did not ask for. A Gen 4 slide type that migrates a Gen 1 or Gen 3 one skips the fleet QA check and needs a human QA check and approval (Lily or Amber). The fleet-owned guarantees stay functional checks. Sections 1, 4, 5 and 6 updated. | Dave |
+| 1.21 | 6 November 2026 | Sample presentations are now created automatically (SLPL-1084): once a slide type that has never gone live is approved, AhaSlides creates 5 sample presentations that use it, each showing a different use case, and saves them as its samples. The submitter can replace or add to them at any time (at least 5, each a share link showing a different use case). Samples still do not hold go-live, and saving them never publishes or unpublishes. Slide types already live are not affected, and saved samples carry over on resubmit. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
