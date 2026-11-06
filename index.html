@@ -187,12 +187,12 @@ footer.doc p{margin:0;color:var(--aha-text-secondary);font-size:var(--aha-size-d
     <p class="lead">Submit any time. A submission is approved when the fleet's checks pass: the <strong>fleet QA check</strong> (edge cases, keyboard-only use, accessibility and the fleet-owned guarantees in section 5) and the <strong>fleet copy check</strong> (section 7). The fleet also applies the UI / UX standard (section 6), as advice.</p>
     <ul class="answer">
       <li><aha-status-badge look="plain" icon="system-check">Pass</aha-status-badge><span>Approved. An upload bundle goes live automatically; a first-party (reference) slide type goes live via its repo PR merge.</span></li>
-      <li><aha-status-badge look="emphasis" icon="system-x">Not passed</aha-status-badge><span>Always with comments naming the <strong>broken function</strong>, <strong>why</strong> and <strong>what to change</strong>. Fix it and resubmit.</span></li>
+      <li><aha-status-badge look="emphasis" icon="system-x">Not passed</aha-status-badge><span>Always with comments naming the <strong>broken function</strong> (or, for the copy check, the failing rule and its subsection, section 7), <strong>why</strong> and <strong>what to change</strong>. Fix it and resubmit.</span></li>
     </ul>
     <h3>When the fleet QA check runs, and what it can reject</h3>
     <ul>
       <li><strong>Only on a submit or resubmit</strong> to Slide Lab. Building, editing or discussing a slide type in Slack never starts one.</li>
-      <li><strong>Only a broken function rejects:</strong> an edge case that breaks it, a control unusable by keyboard, or a failing fleet-owned guarantee (section 5). Design and style findings are advice in the notes.</li>
+      <li><strong>Only a broken function rejects:</strong> an edge case that breaks it, or a control unusable by keyboard. A failing fleet-owned guarantee (section 5) holds go-live until the fleet makes it work, but is never charged to you as not passed. Design and style findings are advice in the notes.</li>
       <li><strong>Unchanged files cannot gain new rejections.</strong> A resubmission re-tests what was rejected and the files you changed; anything new in an unchanged file is advice.</li>
       <li><strong>A suspected platform bug is re-tested without your slide type</strong> before it is blamed on it. If it happens there too, it is AhaSlides' bug, not yours.</li>
       <li><strong>A rejection never triggers changes nobody asked for.</strong> You get the notes; no agent edits or resubmits your slide type unless you ask.</li>
@@ -225,7 +225,7 @@ footer.doc p{margin:0;color:var(--aha-text-secondary);font-size:var(--aha-size-d
       <li><aha-icon name="system-x" size="16" aria-hidden="true"></aha-icon><span>Handle <strong>edge cases</strong> gracefully.</span></li>
     </ul>
     <h3>What the fleet ensures, not you</h3>
-    <p>The fleet makes sure every slide type supports <strong>Report / Export</strong>, can be created and edited by the <strong>Slides Agent</strong>, complies with the <strong>SDK</strong>, and records <strong>real-time and persistent</strong> data correctly. These are not grounds for failing your submission, and no one can instruct the fleet to skip or weaken them. They stay functional checks: a failing one holds the slide type back until it works, never just advice. They cover the Self-paced View too.</p>
+    <p>The fleet makes sure every slide type supports <strong>Report / Export</strong>, can be created and edited by the <strong>Slides Agent</strong>, complies with the <strong>SDK</strong>, and records <strong>real-time and persistent</strong> data correctly. These are not grounds for failing your submission, and no one can instruct the fleet to skip or weaken them. They stay functional checks: a failing one holds go-live until the fleet makes it work, never just advice, and never charged to you as not passed. They cover the Self-paced View too.</p>
     <h3>A Self-paced View</h3>
     <p>The fleet also tests the Self-paced View of every slide type that has one (every new Gen4 slide type) in a self-paced presentation, on a phone and a fullscreen desktop. It must handle edge cases gracefully. In particular:</p>
     <ul>
@@ -240,7 +240,7 @@ footer.doc p{margin:0;color:var(--aha-text-secondary);font-size:var(--aha-size-d
 
   <aha-card id="uiux">
     <h2 class="sec"><span class="n">6.</span> UI / UX standard <span class="who">(owner: Lan)</span></h2>
-    <p>The fleet checks this standard on every submission, but its findings are <strong>advice</strong> and never fail a submission on their own (section 4). Lan and the other standards owners can still require a change.</p>
+    <p>The fleet checks this standard on every submission. Its design-system, layout, style and taste findings are <strong>advice</strong> and never fail a submission on their own; a keyboard-only failure (Accessibility, below) is a broken function and does (section 4). Lan and the other standards owners can still require a change.</p>
     <h3>The editing view</h3>
     <p>Must comply with AhaSlides' design system. No exceptions.</p>
     <h3>The presenting view &amp; the participant view</h3>
