@@ -51,7 +51,8 @@ Every submission is more than the implementation. It must include:
  they only help people find your slide type when searching.
 - **3 to 5 screenshots** (*optional*)
 - **Templates** demonstrating use cases (*optional at submission*). AhaSlides creates the sample
- presentations after publishing (see section 4, "Sample presentations").
+ presentations when it is first published, or on approval if it has no publish step (see section 4,
+ "Sample presentations").
 - **Self-paced View** (*required for every new Gen4 slide type*): part of the implementation and
  checked with it. See "The Self-paced View" below.
 
@@ -220,9 +221,9 @@ UI / UX standard (section 6) still describe what the human checks.
 
 ### Sample presentations
 
-Once a new slide type is published, AhaSlides **automatically creates sample presentations** until it
-has **5**, each showing a **different use case**, and saves them as the slide type's samples. Bundle and
-first-party slide types get theirs once approved. You do not need to make them. Samples **do not hold
+When a new slide type is first published, or on approval if it has no publish step, AhaSlides
+**automatically creates sample presentations** until it has **5**, each showing a **different use
+case**, and saves them as the slide type's samples. You do not need to make them. Samples **do not hold
 go-live**: an approved slide type goes live without waiting for them.
 
 - Each sample is a real AhaSlides presentation that uses the slide type.
@@ -540,7 +541,7 @@ approved it, and each approved change is recorded below.
 | 1.20 | 6 November 2026 | Narrowed the fleet QA check (SLPL-1802, Amber). It runs only when a slide type is submitted or resubmitted to Slide Lab, never on edits or Slack conversations. Only a broken function rejects a submission (an edge case that breaks it, a control unusable by keyboard); a failing fleet-owned guarantee holds go-live until the fleet makes it work but is never charged to the developer; design-system, layout, style and taste findings become advice in the notes. A resubmission cannot gain new rejections in files unchanged since the last checked round. A suspected platform bug is reproduced without the slide type before it is charged to the developer. A rejection never triggers changes the developer did not ask for. A Gen 4 slide type that migrates a Gen 1 or Gen 3 one skips the fleet QA check and needs a human QA check and approval (Lily or Amber). The fleet-owned guarantees stay functional checks. Sections 1, 4, 5 and 6 updated. | Dave |
 | 1.21 | 6 November 2026 | Picker labels follow the submitter (SLPL-1546, Lily). AhaSlides Official goes to slide types submitted by a Core team developer (Lan, Amber or Lily) and to native slide types, shown as a filled solid-pink check seal; every other developer's slide types show Verified developer as a solid-pink outline seal. The badge shows only next to the developer name, never next to the slide type in the picker. A Gen 4 rebuild of a Gen 1 slide type keeps its submitted developer name instead of being forced to "AhaSlides". The Beta badge rule is unchanged. Section 4 updated. | Dave |
 | 1.22 | 6 November 2026 | Sample presentations are now created automatically (SLPL-1084): once a slide type that has never gone live is approved, AhaSlides creates 5 sample presentations that use it, each showing a different use case, and saves them as its samples. The submitter can replace or add to them at any time (at least 5, each a share link showing a different use case). Samples still do not hold go-live, and saving them never publishes or unpublishes. Slide types already live are not affected, and saved samples carry over on resubmit. | Dave |
-| 1.23 | 6 November 2026 | Corrected the automatic samples wording to match how it runs (SLPL-1084). Samples are created after a new slide type is published (bundle and first-party slide types: once approved), topping up to 5 and keeping any the submitter saved. Submitters may save any number from 1. A live slide type that moves to a new page gets its samples rebuilt. | Pending - Dave |
+| 1.23 | 6 November 2026 | Corrected the automatic samples wording to match how it runs (SLPL-1084). Samples are created when a new slide type is first published, or on approval if it has no publish step, topping up to 5 and keeping any the submitter saved. Submitters may save any number from 1. A live slide type that moves to a new page gets its samples rebuilt. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
