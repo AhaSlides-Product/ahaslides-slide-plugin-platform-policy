@@ -178,6 +178,8 @@ fleet's job to make sure every standard is met before a slide type goes live.
  A **first-party (reference)** slide type goes live via its repo PR merge.
 - **Not passed**: always with comments naming the **broken function** (or, for the copy check, the
  failing rule and its subsection, section 7.7), **why** it fails and **what to change**. Fix it and resubmit.
+- **Held**: nothing for you to fix; a fleet-owned guarantee (section 5) fails. The slide type goes
+ live once the fleet makes it work, and it is never charged to you as not passed.
 
 - **Fixes are yours to make.** The fleet will not fix the issues for you. The one exception is
  marketing copy: the fleet fixes any copy that fails section 7 itself where it can, and notes the
