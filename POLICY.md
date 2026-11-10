@@ -1,9 +1,9 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.24
+- **Version:** 1.25
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
-- **Last updated:** 6 November 2026
+- **Last updated:** 10 November 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -13,7 +13,7 @@
 
 This first edition covers **internal slide developers** only: AhaSliders and trusted partners we
 have invited. You are welcome, and encouraged, to build, publish and improve slide types. These
-rules set a shared quality bar that the fleet checks for you, with no wait for a human review (one exception, section 4), not a gate to argue with.
+rules set a shared quality bar that the fleet checks for you, with no wait for a human review (exceptions in section 4), not a gate to argue with.
 
 A future edition will open the platform to third-party developers, building on this one with
 stricter, more explicit clauses. Design your slide type as if that scrutiny is coming.
@@ -177,12 +177,13 @@ fleet's job to make sure every standard is met before a slide type goes live.
 
 **The answer is one of:**
 
-- **Pass**: approved. An **upload bundle** goes live automatically (the bundle and its hosted page).
- A **first-party (reference)** slide type goes live via its repo PR merge.
+- **Pass**: approved. A slide type's **first version** goes live automatically; every **later
+ version** is published by hand by QA (see "Publishing: first version automatic, updates by QA"). A
+ **first-party (reference)** slide type goes live via its repo PR merge.
 - **Not passed**: always with comments naming the **broken function** (or, for the copy check, the
  failing rule and its subsection, section 7.7), **why** it fails and **what to change**. Fix it and resubmit.
-- **Held**: nothing for you to fix; a fleet-owned guarantee (section 5) fails. The slide type goes
- live once the fleet makes it work, and it is never charged to you as not passed.
+- **Held**: nothing for you to fix; a fleet-owned guarantee (section 5) fails. The slide type is
+ approved once the fleet makes it work, and it is never charged to you as not passed.
 
 - **Fixes are yours to make.** The fleet will not fix the issues for you. The one exception is
  marketing copy: the fleet fixes any copy that fails section 7 itself where it can, and notes the
@@ -193,6 +194,19 @@ fleet's job to make sure every standard is met before a slide type goes live.
  is the fleet's job.
 - **Track your submission.** Check your submission's status and the fleet's feedback any time in the
  developer portal at `staging-slides-marketplace.ahaslides.io/developer`.
+
+### Publishing: first version automatic, updates by QA
+
+- **First version: published automatically.** A new slide type that has never been published is
+ published as soon as it is approved (the bundle and its hosted page). No one needs to press Publish.
+- **Every later version: published by hand by QA.** An approved update or resubmission of a slide type
+ that has been published before, or taken down, is not live until a QA reviewer publishes it. The
+ earlier published version stays live until then.
+- **Publish checks still apply.** Automatic publishing runs the same checks as a manual publish. If one
+ fails, nothing is published and the first version waits for QA to publish it, like an update; the
+ reason shows in the developer portal.
+- **The fleet never publishes an update.** The first-version publish is the only automatic one;
+ updates and republishes stay with a person.
 
 ### When the fleet QA check runs, and what it can reject
 
@@ -551,6 +565,7 @@ approved it, and each approved change is recorded below.
 | 1.22 | 6 November 2026 | Sample presentations are now created automatically (SLPL-1084): once a slide type that has never gone live is approved, AhaSlides creates 5 sample presentations that use it, each showing a different use case, and saves them as its samples. The submitter can replace or add to them at any time (at least 5, each a share link showing a different use case). Samples still do not hold go-live, and saving them never publishes or unpublishes. Slide types already live are not affected, and saved samples carry over on resubmit. | Dave |
 | 1.23 | 6 November 2026 | Corrected the automatic samples wording to match how it runs (SLPL-1084). Samples are created when a new slide type is first published, or on approval if it has no publish step, topping up to 5 and keeping any the submitter saved. Submitters may save any number from 1. A live slide type with a publish step gets any missing samples when an update is published. If the update moves to a new page, its samples are rebuilt, replacing any saved; on the same page, saved samples carry over. Other live slide types are not affected. | Dave |
 | 1.24 | 6 November 2026 | UI style rules restated (SLPL-1833, Dave). The Settings view (the editing view) must always comply with the design system and respect the presentation's theme settings, whatever the UI style. The UI style covers four views: Presenting (Canvas), Audience, Self-paced and Report; Standard means all four comply with the design system and respect the theme settings; Immersive gives the developer full creative freedom, while partly aligning with the design system and theme is encouraged for continuity with other slide types in the same presentation. Immersive is only for games and simulation activities where immersion is an important part of the UX; otherwise a slide type is Standard. Sections 2 and 6 updated; the views are now named Settings, Presenting, Audience, Self-paced and Report. | Dave |
+| 1.25 | 10 November 2026 | Publishing split by version (SLPL-2099, Amber). A slide type's first version is published automatically once approved (fleet QA check and copy check); every later version, an approved update or resubmission of a slide type that has been published or taken down before, is published by hand by a QA reviewer, and the earlier version stays live until then. Automatic publishing runs the same publish checks; if one fails, nothing is published and the first version waits for QA. The fleet never publishes an update. Replaces "an upload bundle goes live automatically" and the human-only publishing rule (slide-type-creator #2802). Takes effect only once Dave signs off: the matching code (slide-type-creator PR #2891, `AUTO_PUBLISH_FIRST_VERSION`) stays off until then. Sections 1 and 4 updated. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
