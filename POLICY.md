@@ -1,9 +1,9 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.24
+- **Version:** 1.25
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
-- **Last updated:** 6 November 2026
+- **Last updated:** 18 November 2026
 - **Sole approver of changes:** Dave
 
 > This is the canonical, agent-readable source of the policy. The human-readable,
@@ -25,7 +25,8 @@ The live list of every field, its options and current usage is at <https://ahasl
 Every submission is more than the implementation. It must include:
 
 - **Slide type name**: what the slide type is called. *Mandatory.*
-- **The implementation**: the working slide type.
+- **The implementation**: the working slide type. Write its UI text in English only; AhaSlides
+ supplies every other language (section 4, "Slide type text in other languages").
 - **Subheading**: the one-line summary.
 - **Long description**: spelling out its **use cases** and **instructions**.
 - **Preview GIF**: showing it in action.
@@ -184,9 +185,10 @@ fleet's job to make sure every standard is met before a slide type goes live.
 - **Held**: nothing for you to fix; a fleet-owned guarantee (section 5) fails. The slide type goes
  live once the fleet makes it work, and it is never charged to you as not passed.
 
-- **Fixes are yours to make.** The fleet will not fix the issues for you. The one exception is
- marketing copy: the fleet fixes any copy that fails section 7 itself where it can, and notes the
- change (section 7.7).
+- **Fixes are yours to make.** The fleet will not fix the issues for you. There are two exceptions:
+ marketing copy, which the fleet fixes itself where it fails section 7, noting the change (section 7.7);
+ and a slide type's UI text in languages other than English, which AhaSlides translates and corrects
+ itself (see "Slide type text in other languages").
 - **A rejection never triggers changes nobody asked for.** A not-passed result goes back to you with
  its notes and nothing else happens: no agent edits, rebuilds or resubmits your slide type in response
  unless you ask it to. The fleet-owned guarantees (section 5) are the one exception: making those work
@@ -239,6 +241,33 @@ go-live**: an approved slide type goes live without waiting for them.
  update moves to a new page, AhaSlides instead rebuilds the samples there and replaces any you saved,
  because they show the old build. Other live slide types are not affected.
 - Saved samples carry over when you resubmit on the same page; you only change them if you want to.
+
+### Slide type text in other languages
+
+- **One central catalog.** The UI text (strings) of every Gen 4 slide type, first-party and
+ third-party, lives in AhaSlides' central string catalog, not in the slide type's own language files.
+ The host app gives each view its strings in the presentation's language.
+- **You supply English only.** Write your strings in English in the slide type. AhaSlides reads them
+ into the catalog when you save, submit or resubmit. English stays yours, and changes only through a
+ normal submit or resubmit.
+- **AhaSlides machine-translates every other language.** A machine translation goes live once the
+ fleet copy check passes, and is marked unreviewed until a reviewer checks it. The copy check keeps
+ placeholders (such as `{count}`) and product and slide type names untranslated, keeps each
+ translation within 1.6 times the length of its English, and allows no English left in a non-English
+ string.
+- **A missing translation shows English, never a raw key.** When a string has no translation in the
+ viewer's language, the slide type shows the language's fallback (Portuguese for Brazilian
+ Portuguese), then English; a string key is never shown to a user.
+- **Slide Lab reviewers may edit any live non-English string.** The edit is live at once, outside a
+ Slide Lab round, and is recorded in an audit log. The fleet copy check runs on the edited string; a
+ failing check keeps the edit and flags it to the reviewer to fix, and never rolls it back. A slide
+ developer cannot edit a live non-English string.
+- **A new language needs nothing from you.** When AhaSlides adds a language, every live slide type's
+ strings are machine-translated into it, with no page edit, submit or republish. The language is
+ shown to users only after it has been reviewed and switched on.
+- **One-time migration.** To move live slide types onto the catalog, AhaSlides republishes a live
+ page once when its only change is its language files, without a new Slide Lab round. Until a slide
+ type is migrated, it keeps its own language files.
 
 ### Standards owners and take-down
 
@@ -551,6 +580,7 @@ approved it, and each approved change is recorded below.
 | 1.22 | 6 November 2026 | Sample presentations are now created automatically (SLPL-1084): once a slide type that has never gone live is approved, AhaSlides creates 5 sample presentations that use it, each showing a different use case, and saves them as its samples. The submitter can replace or add to them at any time (at least 5, each a share link showing a different use case). Samples still do not hold go-live, and saving them never publishes or unpublishes. Slide types already live are not affected, and saved samples carry over on resubmit. | Dave |
 | 1.23 | 6 November 2026 | Corrected the automatic samples wording to match how it runs (SLPL-1084). Samples are created when a new slide type is first published, or on approval if it has no publish step, topping up to 5 and keeping any the submitter saved. Submitters may save any number from 1. A live slide type with a publish step gets any missing samples when an update is published. If the update moves to a new page, its samples are rebuilt, replacing any saved; on the same page, saved samples carry over. Other live slide types are not affected. | Dave |
 | 1.24 | 6 November 2026 | UI style rules restated (SLPL-1833, Dave). The Settings view (the editing view) must always comply with the design system and respect the presentation's theme settings, whatever the UI style. The UI style covers four views: Presenting (Canvas), Audience, Self-paced and Report; Standard means all four comply with the design system and respect the theme settings; Immersive gives the developer full creative freedom, while partly aligning with the design system and theme is encouraged for continuity with other slide types in the same presentation. Immersive is only for games and simulation activities where immersion is an important part of the UX; otherwise a slide type is Standard. Sections 2 and 6 updated; the views are now named Settings, Presenting, Audience, Self-paced and Report. | Dave |
+| 1.25 | 18 November 2026 | Slide type text moves to a central catalog (SLPL-2786, Amber). The UI strings of every Gen 4 slide type, first-party and third-party, live in AhaSlides' central string catalog. Developers supply English only, and change it only through a submit. AhaSlides machine-translates every other language; a translation goes live after the fleet copy check, marked unreviewed. A missing translation falls back to English and never shows a raw key. Slide Lab reviewers may edit any live non-English string: live at once, copy-checked and audit-logged, and a failing check keeps the edit and flags it. A new language needs no page edit, submit or republish, and is shown only after review. A one-time migration republishes live pages whose only change is their language files, without a new Slide Lab round. Sections 2 and 4 updated. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
