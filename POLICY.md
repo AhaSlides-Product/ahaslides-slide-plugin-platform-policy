@@ -1,7 +1,7 @@
 # AhaSlides slide plugin platform policy
 
 - **Edition:** 1.0 (internal)
-- **Version:** 1.25
+- **Version:** 1.26
 - **Applies to:** Internal slide developers: AhaSliders and trusted partners
 - **Last updated:** 19 November 2026
 - **Sole approver of changes:** Dave
@@ -160,7 +160,8 @@ in-repo build. The submission package in section 2 is required either way.
 
 There is **no human QA or UI / UX review** of a submission, with one exception: a Gen 4 slide type
 that migrates an earlier-generation one (see below). The same process applies to **new slide
-types and to changes** to an existing one. Adding a Self-paced View to a slide type that is already
+types and to changes** to an existing one, and both are published automatically once approved (see
+"Publishing: automatic once approved"). Adding a Self-paced View to a slide type that is already
 live is a change: it goes through the same fleet checks, which test the new view (sections 5 and 6) as
 well as the views that already exist.
 
@@ -181,12 +182,13 @@ fleet's job to make sure every standard is met before a slide type goes live.
 
 **The answer is one of:**
 
-- **Pass**: approved. An **upload bundle** goes live automatically (the bundle and its hosted page).
- A **first-party (reference)** slide type goes live via its repo PR merge.
+- **Pass**: approved. The slide type is published automatically, its **first version** and every
+ **later update** alike (see "Publishing: automatic once approved"). A **first-party (reference)**
+ slide type goes live via its repo PR merge.
 - **Not passed**: always with comments naming the **broken function** (or, for the copy check, the
  failing rule and its subsection, section 7.7), **why** it fails and **what to change**. Fix it and resubmit.
-- **Held**: nothing for you to fix; a fleet-owned guarantee (section 5) fails. The slide type goes
- live once the fleet makes it work, and it is never charged to you as not passed.
+- **Held**: nothing for you to fix; a fleet-owned guarantee (section 5) fails. The slide type is
+ approved once the fleet makes it work, and it is never charged to you as not passed.
 
 - **Fixes are yours to make.** The fleet will not fix the issues for you. The one exception is
  marketing copy: the fleet fixes any copy that fails section 7 itself where it can, and notes the
@@ -198,6 +200,18 @@ fleet's job to make sure every standard is met before a slide type goes live.
 - **Track your submission.** Check your submission's status and the fleet's feedback any time in the
  developer portal at `staging-slides-marketplace.ahaslides.io/developer`.
 
+### Publishing: automatic once approved
+
+- **Every version is published automatically.** Once approved, a new slide type's first version and
+ every later update of a live slide type are published (the bundle and its hosted page). No one needs
+ to press Publish.
+- **The live version keeps serving** until the update is published.
+- **Publish checks still apply.** Automatic publishing runs the same checks as a manual publish. If one
+ fails, nothing is published and the approved version waits for a QA reviewer to publish it; the
+ reason shows in the developer portal.
+- **Not published automatically:** a slide type that is taken down or unpublished, or an update of
+ one. These wait for a QA reviewer, and republishing stays with a person.
+
 ### When the fleet QA check runs, and what it can reject
 
 - **Only on a submit or resubmit.** The fleet QA check runs when a slide type is submitted or
@@ -205,7 +219,7 @@ fleet's job to make sure every standard is met before a slide type goes live.
  Slack or anywhere else, never starts a QA check.
 - **Only a broken function rejects.** A submission is not passed only when something does not work:
  an edge case that breaks it, or a control that cannot be reached or operated by keyboard. A failing
- fleet-owned guarantee (section 5) also holds go-live until the fleet makes it work, but it is never
+ fleet-owned guarantee (section 5) also holds approval and publishing until the fleet makes it work, but it is never
  charged to you as a not-passed result. Design-system, layout, style and taste findings
  (section 6) are **advice**: they are written in the check's notes for you to consider, and never
  reject a submission on their own.
@@ -230,7 +244,7 @@ UI / UX standard (section 6) still describe what the human checks.
 When a new slide type is first published, or on approval if it has no publish step, AhaSlides
 **automatically creates sample presentations** until it has **5**, each showing a **different use
 case**, and saves them as the slide type's samples. You do not need to make them. Samples **do not hold
-go-live**: an approved slide type goes live without waiting for them.
+publishing**: an approved slide type is published without waiting for them.
 
 - Each sample is a real AhaSlides presentation that uses the slide type.
 - Each of the 5 samples shows a genuinely different way of using the slide type, not a variation on
@@ -579,6 +593,7 @@ approved it, and each approved change is recorded below.
 | 1.23 | 6 November 2026 | Corrected the automatic samples wording to match how it runs (SLPL-1084). Samples are created when a new slide type is first published, or on approval if it has no publish step, topping up to 5 and keeping any the submitter saved. Submitters may save any number from 1. A live slide type with a publish step gets any missing samples when an update is published. If the update moves to a new page, its samples are rebuilt, replacing any saved; on the same page, saved samples carry over. Other live slide types are not affected. | Dave |
 | 1.24 | 6 November 2026 | UI style rules restated (SLPL-1833, Dave). The Settings view (the editing view) must always comply with the design system and respect the presentation's theme settings, whatever the UI style. The UI style covers four views: Presenting (Canvas), Audience, Self-paced and Report; Standard means all four comply with the design system and respect the theme settings; Immersive gives the developer full creative freedom, while partly aligning with the design system and theme is encouraged for continuity with other slide types in the same presentation. Immersive is only for games and simulation activities where immersion is an important part of the UX; otherwise a slide type is Standard. Sections 2 and 6 updated; the views are now named Settings, Presenting, Audience, Self-paced and Report. | Dave |
 | 1.25 | 19 November 2026 | Scoring must match Leaderboard points (SLPL-2846, Tony). A slide type with Leaderboard points No never returns a scored result in any answer path: 0 points, no `CORRECT` / `WRONG` verdict, no streak `COUNT` / `BREAK`. A slide type with Leaderboard points Yes returns a scored result for a correct answer. The field decides: Yes reaches the leaderboard through the `Scored` search keyword or the `enableLeaderboardScoring` opt-in, No uses neither. New scoring check: Slide Lab runs the answer handler on a sample answer on every submit and resubmit, and a No slide type that scores is a broken function (not passed); a Yes slide type no sample answer scores is flagged in the notes. Sections 2, 4 and 5 updated. | Dave |
+| 1.26 | 19 November 2026 | Publishing is automatic once approved (SLPL-2099, Amber). Once the fleet QA check and copy check approve a slide type, its first version and every later update of a live slide type are published automatically, with no one pressing Publish; the live version keeps serving until the update is published. Automatic publishing runs the same publish checks as a manual publish; if one fails, nothing is published and the approved version waits for a QA reviewer. A slide type that is taken down or unpublished, or an update of one, is never published automatically, and republishing stays with a person. Replaces "an upload bundle goes live automatically" and the human-only publishing rule (slide-type-creator #2802). Matching code: slide-type-creator PRs #2891 and #2915 (`AUTO_PUBLISH_FIRST_VERSION`, `AUTO_PUBLISH_UPDATES`). Section 4 updated. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
