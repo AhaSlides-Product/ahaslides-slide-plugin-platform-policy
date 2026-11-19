@@ -44,7 +44,8 @@ Every submission is more than the implementation. It must include:
  section 6 for what each style means.
 - **Leaderboard points**: *required*, Yes or No: does the slide type add points to the
  presentation's leaderboard (as Pick answer does)? A game that keeps its own internal score but does
- not add it to the leaderboard is No. Yes is recorded as the `Scored` search keyword. What the slide
+ not add it to the leaderboard is No. Yes is recorded as the `Scored` search keyword or the
+ `enableLeaderboardScoring` opt-in (section 5). What the slide
  type scores must match it (section 5, "Scoring matches Leaderboard points").
 - **Season** (*optional*): at most one, chosen from the platform's season calendar: Halloween,
   Christmas, Lunar New Year, Valentine's Day, Easter. Calendar events only, never hemisphere seasons
