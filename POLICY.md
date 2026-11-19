@@ -308,13 +308,13 @@ answer handler returns must match its **Leaderboard points** field (section 2), 
 - **Leaderboard points Yes**: a correct answer
  **returns a scored result**, more than 0 points with a `CORRECT` verdict.
 
-The Leaderboard points field decides. A Yes slide type carries the `Scored` search keyword and a No
-slide type never does; the scoring check fails a slide type whose keyword does not match its field.
+The Leaderboard points field decides. A Yes slide type reaches the leaderboard through the `Scored`
+search keyword, or by opting its slides in to leaderboard scoring (the manifest setting
+`enableLeaderboardScoring`, for a slide type that must not carry `Scored`); a No slide type uses neither.
 
 **Slide Lab checks it on every submit and resubmit.** The scoring check runs the slide
 type's answer handler on sample answers and compares the result with the field. A Leaderboard
-points No slide type that scores, or a `Scored` keyword that does not match the field, is a broken
-function: the submission is not passed, with the answer path and the result it returned. A Yes slide
+points No slide type that scores is a broken function: the submission is not passed, with the answer path and the result it returned. A Yes slide
 type that no sample answer scores is flagged in the check's notes, because the sample cannot know
 every slide type's correct answer.
 
@@ -577,7 +577,7 @@ approved it, and each approved change is recorded below.
 | 1.22 | 6 November 2026 | Sample presentations are now created automatically (SLPL-1084): once a slide type that has never gone live is approved, AhaSlides creates 5 sample presentations that use it, each showing a different use case, and saves them as its samples. The submitter can replace or add to them at any time (at least 5, each a share link showing a different use case). Samples still do not hold go-live, and saving them never publishes or unpublishes. Slide types already live are not affected, and saved samples carry over on resubmit. | Dave |
 | 1.23 | 6 November 2026 | Corrected the automatic samples wording to match how it runs (SLPL-1084). Samples are created when a new slide type is first published, or on approval if it has no publish step, topping up to 5 and keeping any the submitter saved. Submitters may save any number from 1. A live slide type with a publish step gets any missing samples when an update is published. If the update moves to a new page, its samples are rebuilt, replacing any saved; on the same page, saved samples carry over. Other live slide types are not affected. | Dave |
 | 1.24 | 6 November 2026 | UI style rules restated (SLPL-1833, Dave). The Settings view (the editing view) must always comply with the design system and respect the presentation's theme settings, whatever the UI style. The UI style covers four views: Presenting (Canvas), Audience, Self-paced and Report; Standard means all four comply with the design system and respect the theme settings; Immersive gives the developer full creative freedom, while partly aligning with the design system and theme is encouraged for continuity with other slide types in the same presentation. Immersive is only for games and simulation activities where immersion is an important part of the UX; otherwise a slide type is Standard. Sections 2 and 6 updated; the views are now named Settings, Presenting, Audience, Self-paced and Report. | Dave |
-| 1.25 | 19 November 2026 | Scoring must match Leaderboard points (SLPL-2846, Tony). A slide type with Leaderboard points No never returns a scored result in any answer path: 0 points, no `CORRECT` / `WRONG` verdict, no streak `COUNT` / `BREAK`. A slide type with Leaderboard points Yes returns a scored result for a correct answer. The field decides: Yes carries the `Scored` search keyword, No never does, and a mismatch fails the scoring check. New scoring check: Slide Lab runs the answer handler on a sample answer on every submit and resubmit, and a No slide type that scores, or a `Scored` keyword that does not match the field, is a broken function (not passed); a Yes slide type no sample answer scores is flagged in the notes. Sections 2, 4 and 5 updated. | Pending - Dave |
+| 1.25 | 19 November 2026 | Scoring must match Leaderboard points (SLPL-2846, Tony). A slide type with Leaderboard points No never returns a scored result in any answer path: 0 points, no `CORRECT` / `WRONG` verdict, no streak `COUNT` / `BREAK`. A slide type with Leaderboard points Yes returns a scored result for a correct answer. The field decides: Yes reaches the leaderboard through the `Scored` search keyword or the `enableLeaderboardScoring` opt-in, No uses neither. New scoring check: Slide Lab runs the answer handler on a sample answer on every submit and resubmit, and a No slide type that scores is a broken function (not passed); a Yes slide type no sample answer scores is flagged in the notes. Sections 2, 4 and 5 updated. | Pending - Dave |
 
 To propose a change: raise it, have it drafted, and route it to Dave for approval. Once approved, add
 a dated row here and bump the version.
